@@ -1,0 +1,9 @@
+﻿/outputs/
+/work/
+/dist/
+*.log
+*.obj
+*.pdb
+*.ilk
+
+/releases/

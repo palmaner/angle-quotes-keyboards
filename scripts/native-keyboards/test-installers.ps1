@@ -1,0 +1,65 @@
+﻿$ErrorActionPreference='Stop'
+Add-Type @'
+using System;
+using System.Text;
+using System.Runtime.InteropServices;
+public static class LayoutDisplayName {
+ [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)] static extern IntPtr LoadLibraryEx(string path,IntPtr file,uint flags);
+ [DllImport("user32.dll",CharSet=CharSet.Unicode)] static extern int LoadString(IntPtr module,uint id,StringBuilder text,int capacity);
+ [DllImport("kernel32.dll")] static extern bool FreeLibrary(IntPtr module);
+ public static string Read(string path) {
+   IntPtr module=LoadLibraryEx(path,IntPtr.Zero,0x22);
+   if(module==IntPtr.Zero) throw new Exception("Cannot read layout resources: "+path);
+   try {
+     var text=new StringBuilder(512);
+     if(LoadString(module,1000,text,text.Capacity)==0) throw new Exception("Missing keyboard display name: "+path);
+     return text.ToString();
+   } finally {FreeLibrary(module);}
+ }
+}
+'@
+$repo=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..'))
+$layouts=Get-Content (Join-Path $PSScriptRoot 'layouts.json') -Raw | ConvertFrom-Json
+$installer=New-Object -ComObject WindowsInstaller.Installer
+$codes=@{}
+$checks=0
+foreach($layout in $layouts) {
+    $dir=Join-Path $repo ('outputs\native-keyboards\'+$layout.slug)
+    foreach($suffix in @('_i386.msi','_amd64.msi')) {
+        $db=$installer.OpenDatabase((Join-Path $dir ($layout.name+$suffix)),0)
+        $properties=@{}
+        $view=$db.OpenView('SELECT `Property`,`Value` FROM `Property`')
+        $view.Execute()
+        while($rec=$view.Fetch()) {$properties[$rec.StringData(1)]=$rec.StringData(2)}
+        $view.Close()
+        if($properties.ProductName -ne $layout.title){throw 'Wrong installer name'}
+        if($properties.LayoutFile -ne ($layout.name+'.dll')){throw 'Wrong layout DLL'}
+        if($properties.LCIDValue -ne ([Globalization.CultureInfo]$layout.locale).LCID.ToString('x4')){throw 'Wrong input locale'}
+        if($codes.ContainsKey($properties.ProductCode) -and $codes[$properties.ProductCode] -ne $layout.name){throw 'Product code collision'}
+        $codes[$properties.ProductCode]=$layout.name
+        $view=$db.OpenView('SELECT `Component`,`Condition` FROM `Component`')
+        $view.Execute()
+        $conditions=@()
+        while($rec=$view.Fetch()) {if($rec.StringData(2)){$conditions+=$rec.StringData(2)}}
+        $view.Close()
+        foreach($condition in @('NOT VersionNT64','Msix64','Intel64','VersionNT64')) {
+            if($condition -notin $conditions){throw 'Missing architecture condition'}
+        }
+        $checks++
+        [void][Runtime.InteropServices.Marshal]::FinalReleaseComObject($view)
+        [void][Runtime.InteropServices.Marshal]::FinalReleaseComObject($db)
+    }
+    foreach($arch in @(@('i386',0x14c),@('amd64',0x8664),@('wow64',0x14c))) {
+        $bytes=[IO.File]::ReadAllBytes((Join-Path $dir ($arch[0]+'\'+$layout.name+'.dll')))
+        $pe=[BitConverter]::ToInt32($bytes,60)
+        if([BitConverter]::ToUInt16($bytes,$pe+4) -ne $arch[1]){throw 'Wrong PE architecture'}
+        $checks++
+        $displayName=[LayoutDisplayName]::Read((Join-Path $dir ($arch[0]+'\'+$layout.name+'.dll')))
+        if($displayName -ne $layout.title){throw ('Wrong Windows selector name: '+$layout.slug+' '+$arch[0]+' '+$displayName)}
+        $checks++
+    }
+    if(-not (Test-Path -LiteralPath (Join-Path $dir 'setup.exe'))){throw 'Missing executable installer'}
+}
+[void][Runtime.InteropServices.Marshal]::FinalReleaseComObject($installer)
+@{passed=$true;installerAndArchitectureChecks=$checks;uniqueProducts=$codes.Count;installed=$false} | ConvertTo-Json | Set-Content (Join-Path $repo 'work\native-keyboards\validation-installers.json') -Encoding UTF8
+Write-Output ('PASSED: '+$checks+' installer metadata and architecture checks')

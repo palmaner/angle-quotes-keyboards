@@ -1,0 +1,111 @@
+﻿{
+  "en": {
+    "intro": "I created this experimental layout so English keyboard users can try angle quotes directly in Windows, without AutoHotkey or a background app.",
+    "install": "INSTALL\n1. Extract the whole ZIP, keep its files together and run setup.exe. Approve the administrator prompt.\n2. Press Windows+Space and select the exact keyboard name above.\n3. Try right Alt+5 and right Alt+7 in Notepad using the top number row. Right Alt acts as AltGr in this layout.\nThe installer may require you to sign out and back in. If the keyboard is still missing, add it through your language's keyboard options in Windows Settings.\nUse Windows+Space to return to your original keyboard. Select the original first, then rerun this installer and choose Remove to uninstall.",
+    "changes": "CHANGED POSITIONS (BEFORE → AFTER)",
+    "empty": "unassigned",
+    "none": "These AltGr positions were unassigned; no existing symbol has been displaced.",
+    "experimental": "EXPERIMENTAL: intended for trying angle quotes, not as a proposed standard English keyboard. This uses the standard US or UK Windows base, not US-International or UK Extended. Native Ctrl+Alt may produce the same characters as AltGr.",
+    "limits": "Windows x86/x64; ARM64 is not included. The installer is unsigned. I have checked the character tables automatically; this experimental layout has not yet been tested by typing or installing it on a clean PC.",
+    "practice": "PRACTICE: Copy practice.txt into Monkeytype custom mode or another typing tool. These fictional texts were generated with AI for practice and may contain errors.\npractice/: short.txt, medium.txt, long.txt."
+  },
+  "es": {
+    "intro": "He creado este teclado para integrar las comillas angulares en Windows, sin AutoHotkey ni aplicaciones en segundo plano.",
+    "install": "INSTALACIÓN\n1. Extrae todo el ZIP y ejecuta setup.exe. Acepta los permisos de administrador.\n2. Pulsa Win+Espacio y selecciona el nombre indicado arriba.\n3. Prueba los atajos en el Bloc de notas con AltGr y la fila superior de números.\nSi no aparece, cierra sesión y vuelve a entrar; añádelo desde las opciones de idioma si es necesario.\nPara volver al teclado anterior usa Win+Espacio. Para desinstalar, selecciónalo primero y desinstala este teclado desde Aplicaciones.",
+    "changes": "POSICIONES MODIFICADAS (ANTES → AHORA)",
+    "empty": "sin asignación",
+    "euro": "El euro (€) deja AltGr+5 y sigue disponible con AltGr+E; no se ha añadido un atajo nuevo para él.",
+    "none": "Estas posiciones no tenían caracteres asignados; no se ha desplazado ningún símbolo.",
+    "limits": "Windows x86/x64; ARM64 no incluido. El instalador no está firmado. He comprobado las tablas y los acentos automáticamente; falta la prueba completa de instalación en un PC limpio.",
+    "variant": "Base: teclado Español (Latinoamérica) de Windows, asociado a Español (México).",
+    "practice": "PRÁCTICA: Copia practice.txt en el modo custom de Monkeytype u otra herramienta de mecanografía. Son textos ficticios generados con IA para practicar y pueden contener errores.\npractice/: short.txt, medium.txt, long.txt."
+  },
+  "it": {
+    "intro": "Ho creato questa tastiera per integrare le virgolette angolari in Windows, senza AutoHotkey né applicazioni in background.",
+    "install": "INSTALLAZIONE\n1. Estrai l'intero ZIP ed esegui setup.exe. Autorizza l'installazione come amministratore.\n2. Premi Win+Spazio e seleziona il nome indicato sopra.\n3. Prova le scorciatoie nel Blocco note con AltGr e la fila superiore dei numeri.\nSe la tastiera non compare, esci dalla sessione e accedi di nuovo; aggiungila nelle opzioni della lingua se necessario.\nWin+Spazio ripristina la tastiera precedente. Per disinstallare, seleziona prima quella precedente e rimuovi questa dalle applicazioni installate.",
+    "changes": "POSIZIONI MODIFICATE (PRIMA → DOPO)",
+    "empty": "non assegnato",
+    "euro": "L'euro (€) lascia AltGr+5 e rimane disponibile con AltGr+E; questa scorciatoia esisteva già.",
+    "limits": "Windows x86/x64; ARM64 escluso. L'installer non è firmato. Ho verificato automaticamente le tabelle e gli accenti; l'installazione completa su un PC pulito non è ancora stata provata.",
+    "variant": "Base: tastiera italiana standard di Windows.",
+    "practice": "ESERCIZI: Copia practice.txt nella modalità custom di Monkeytype o in un altro programma di dattilografia. Questi testi di fantasia sono stati generati con IA per esercitarsi e possono contenere errori.\npractice/: short.txt, medium.txt, long.txt."
+  },
+  "ru": {
+    "intro": "Я создал эту раскладку, чтобы добавить угловые кавычки непосредственно в Windows, без AutoHotkey и фоновых приложений.",
+    "install": "УСТАНОВКА\n1. Полностью распакуйте ZIP и запустите setup.exe. Подтвердите права администратора.\n2. Нажмите Win+Пробел и выберите указанное выше название.\n3. Проверьте сочетания в Блокноте: правый Alt и верхний ряд цифр.\nЕсли раскладка не появилась, выйдите из системы и войдите снова; при необходимости добавьте её в параметрах языка.\nWin+Пробел возвращает прежнюю раскладку. Для удаления сначала переключитесь на неё, затем удалите эту раскладку из списка установленных приложений.",
+    "changes": "ИЗМЕНЁННЫЕ СОЧЕТАНИЯ (БЫЛО → СТАЛО)",
+    "empty": "не назначено",
+    "none": "Этим сочетаниям символы не были назначены; существующие символы не перенесены.",
+    "limits": "Windows x86/x64; ARM64 не поддерживается. Установщик не подписан. Я автоматически проверил таблицы и диакритические знаки; полная установка на чистом ПК ещё не проверена.",
+    "practice": "ПРАКТИКА: Скопируйте practice.txt в режим custom на Monkeytype или в другой тренажёр печати. Это вымышленные тексты, созданные ИИ для практики; они могут содержать ошибки.\npractice/: short.txt, medium.txt, long.txt."
+  },
+  "uk": {
+    "intro": "Я створив цю розкладку, щоб додати кутові лапки безпосередньо до Windows, без AutoHotkey і фонових програм.",
+    "install": "ВСТАНОВЛЕННЯ\n1. Повністю розпакуйте ZIP і запустіть setup.exe. Надайте дозвіл адміністратора.\n2. Натисніть Win+Пробіл і виберіть указану вище назву.\n3. Перевірте сполучення в Блокноті: правий Alt і верхній ряд цифр.\nЯкщо розкладка не з’явилася, вийдіть із системи й увійдіть знову; за потреби додайте її в параметрах мови.\nWin+Пробіл повертає попередню розкладку. Для видалення спочатку перейдіть на неї, потім видаліть цю розкладку зі списку встановлених програм.",
+    "changes": "ЗМІНЕНІ СПОЛУЧЕННЯ (БУЛО → СТАЛО)",
+    "empty": "не призначено",
+    "none": "Цим сполученням символи не були призначені; наявні символи не перенесено.",
+    "limits": "Windows x86/x64; ARM64 не підтримується. Інсталятор не підписаний. Я автоматично перевірив таблиці й діакритичні знаки; повне встановлення на чистому ПК ще не перевірено.",
+    "variant": "Основа: стандартна розкладка Ukrainian, а не Ukrainian (Enhanced).",
+    "practice": "ПРАКТИКА: Скопіюйте practice.txt у режим custom на Monkeytype або в інший тренажер друку. Це вигадані тексти, створені ШІ для практики; вони можуть містити помилки.\npractice/: short.txt, medium.txt, long.txt."
+  },
+  "be": {
+    "intro": "Я стварыў гэтую раскладку, каб дадаць вуглавыя двукоссі непасрэдна ў Windows, без AutoHotkey і фонавых праграм.",
+    "install": "УСТАЛЯВАННЕ\n1. Цалкам распакуйце ZIP і запусціце setup.exe. Пацвердзіце правы адміністратара.\n2. Націсніце Win+Прабел і выберыце пазначаную вышэй назву.\n3. Праверце спалучэнні ў Нататніку: правы Alt і верхні рад лічбаў.\nКалі раскладка не з’явілася, выйдзіце з сістэмы і ўвайдзіце зноў; пры патрэбе дадайце яе ў параметрах мовы.\nWin+Прабел вяртае папярэднюю раскладку. Каб выдаліць гэтую раскладку, спачатку пераключыцеся на папярэднюю, потым выдаліце яе са спіса ўсталяваных праграм.",
+    "changes": "ЗМЕНЕНЫЯ СПАЛУЧЭННІ (БЫЛО → СТАЛА)",
+    "empty": "не прызначана",
+    "none": "Гэтым спалучэнням сімвалы не былі прызначаны; існыя сімвалы не перанесены.",
+    "limits": "Windows x86/x64; ARM64 не падтрымліваецца. Усталёўшчык не падпісаны. Я аўтаматычна праверыў табліцы і дыякрытычныя знакі; поўнае ўсталяванне на чыстым ПК яшчэ не праверана.",
+    "practice": "ПРАКТЫКА: Скапіруйце practice.txt у рэжым custom на Monkeytype або ў іншы трэнажор друку. Гэта выдуманыя тэксты, створаныя ШІ для практыкі; яны могуць змяшчаць памылкі.\npractice/: short.txt, medium.txt, long.txt."
+  },
+  "fr": {
+    "intro": "J’ai créé ce clavier pour intégrer les guillemets dans Windows, sans AutoHotkey ni application en arrière-plan.",
+    "install": "INSTALLATION\n1. Extrayez tout le ZIP et lancez setup.exe. Acceptez les droits administrateur.\n2. Appuyez sur Win+Espace et sélectionnez le nom indiqué ci-dessus.\n3. Testez les raccourcis dans le Bloc-notes avec AltGr et la rangée supérieure des chiffres.\nSi le clavier manque, déconnectez-vous puis reconnectez-vous ; ajoutez-le dans les options de langue si nécessaire.\nWin+Espace permet de revenir au clavier précédent. Pour désinstaller, sélectionnez d’abord celui-ci, puis supprimez ce clavier des applications installées.",
+    "changes": "POSITIONS MODIFIÉES (AVANT → APRÈS)",
+    "empty": "non attribué",
+    "belgian": "Le crochet [ quitte AltGr+5 mais reste accessible avec AltGr+touche ^ (juste à droite de P). Ce raccourci existait déjà. N’ajoutez pas Maj pour les positions 5 et 7. Base : Belgian French, pas Belgian (Period).",
+    "swiss": "§ passe d’AltGr+5 à AltGr+8 et reste aussi sur la touche §, à gauche de 1. | passe d’AltGr+7 à AltGr+1. Les caractères ¢ (ancien AltGr+8) et ¦ (ancien AltGr+1) sont remplacés, sans nouveau raccourci dans cette version.",
+    "lux": "Base : clavier français suisse, associé au français du Luxembourg. Il ne s’agit pas d’une disposition luxembourgeoise générale.",
+    "limits": "Windows x86/x64 ; ARM64 non inclus. L’installateur n’est pas signé. J’ai vérifié automatiquement les tables et les accents ; l’installation complète sur un PC vierge reste à tester.",
+    "practice": "ENTRAÎNEMENT : Copiez practice.txt dans le mode custom de Monkeytype ou un autre outil de dactylographie. Ces textes fictifs ont été générés par IA pour la pratique et peuvent contenir des erreurs.\npractice/: short.txt, medium.txt, long.txt."
+  },
+  "pt": {
+    "intro": "Criei este teclado para integrar as aspas angulares no Windows, sem AutoHotkey nem aplicações em segundo plano.",
+    "install": "INSTALAÇÃO\n1. Extraia todo o ZIP e execute setup.exe. Aceite a autorização de administrador.\n2. Prima Win+Espaço e selecione o nome indicado acima.\n3. Teste os atalhos no Bloco de Notas com AltGr e a fila superior dos números.\nSe o teclado não aparecer, termine a sessão e volte a entrar; adicione-o nas opções de idioma, se necessário.\nWin+Espaço permite voltar ao teclado anterior. Para desinstalar, selecione-o primeiro e remova este teclado das aplicações instaladas.",
+    "changes": "POSIÇÕES ALTERADAS (ANTES → DEPOIS)",
+    "empty": "sem atribuição",
+    "euro": "O euro (€) sai de AltGr+5 e continua disponível em AltGr+E; este atalho já existia.",
+    "variant": "Base: teclado Português de Portugal, não Brasileiro.",
+    "limits": "Windows x86/x64; ARM64 não incluído. O instalador não está assinado. Verifiquei automaticamente as tabelas e os acentos; falta testar a instalação completa num PC sem instalações anteriores.",
+    "practice": "PRÁTICA: Copie practice.txt para o modo custom do Monkeytype ou outra ferramenta de dactilografia. Estes textos fictícios foram gerados com IA para praticar e podem conter erros.\npractice/: short.txt, medium.txt, long.txt."
+  },
+  "no": {
+    "intro": "Jeg har laget dette tastaturoppsettet for å legge vinkelanførselstegn direkte til Windows, uten AutoHotkey eller bakgrunnsprogrammer.",
+    "install": "INSTALLASJON\n1. Pakk ut hele ZIP-filen og kjør setup.exe. Godkjenn administratorforespørselen.\n2. Trykk Win+Mellomrom og velg navnet ovenfor.\n3. Prøv snarveiene i Notisblokk med AltGr og den øverste tallraden.\nHvis oppsettet mangler, logg ut og inn igjen; legg det til i språkalternativene ved behov.\nWin+Mellomrom bytter tilbake til det opprinnelige oppsettet. Velg dette først, og fjern deretter det nye oppsettet fra installerte apper for å avinstallere.",
+    "changes": "ENDREDE KOMBINASJONER (FØR → ETTER)",
+    "empty": "ikke tilordnet",
+    "euro": "Eurotegnet (€) fjernes fra AltGr+5, men er fortsatt tilgjengelig med AltGr+E. Denne snarveien fantes allerede.",
+    "limits": "Windows x86/x64; ARM64 er ikke inkludert. Installasjonsprogrammet er usignert. Jeg har kontrollert tegntabellene og aksentene automatisk; full installasjon på en ren PC er ikke testet ennå.",
+    "practice": "ØVING: Kopier practice.txt til custom-modus i Monkeytype eller et annet skriveverktøy. Disse oppdiktede tekstene er laget med KI for øving og kan inneholde feil.\npractice/: short.txt, medium.txt, long.txt."
+  },
+  "de": {
+    "intro": "Ich habe diese Tastaturbelegung erstellt, um Guillemets direkt in Windows einzufügen, ohne AutoHotkey oder Hintergrundprogramme.",
+    "install": "INSTALLATION\n1. Entpacke die gesamte ZIP-Datei und starte setup.exe. Bestätige die Administratorabfrage.\n2. Drücke Win+Leertaste und wähle den oben angegebenen Namen.\n3. Teste die Kombinationen im Editor mit AltGr und der oberen Zahlenreihe.\nFalls die Belegung fehlt, melde dich ab und wieder an; füge sie bei Bedarf in den Sprachoptionen hinzu.\nWin+Leertaste wechselt zur bisherigen Belegung zurück. Wähle diese zuerst aus und entferne anschließend die neue Belegung unter den installierten Apps.",
+    "changes": "GEÄNDERTE KOMBINATIONEN (VORHER → NACHHER)",
+    "empty": "nicht belegt",
+    "none": "Diese Kombinationen waren unbelegt; es wurden keine vorhandenen Zeichen verschoben.",
+    "swiss": "§ wechselt von AltGr+5 zu AltGr+8 und bleibt außerdem auf der §-Taste links neben 1 verfügbar. | wechselt von AltGr+7 zu AltGr+1. ¢ (bisher AltGr+8) und ¦ (bisher AltGr+1) werden ersetzt und erhalten in dieser Version keine neue Tastenkombination.",
+    "austria": "Grundlage: die deutsche Windows-Tastaturbelegung, der Sprache Deutsch (Österreich) zugeordnet.",
+    "limits": "Windows x86/x64; ARM64 ist nicht enthalten. Das Installationsprogramm ist nicht signiert. Ich habe Zeichentabellen und Akzente automatisch geprüft; eine vollständige Installation auf einem sauberen PC wurde noch nicht getestet.",
+    "practice": "ÜBUNG: Kopiere practice.txt in den Modus custom von Monkeytype oder in ein anderes Tipptraining. Diese erfundenen Texte wurden mit KI zum Üben erstellt und können Fehler enthalten.\npractice/: short.txt, medium.txt, long.txt."
+  },
+  "da": {
+    "intro": "Jeg har lavet dette tastaturlayout for at tilføje vinkelanførselstegn direkte i Windows uden AutoHotkey eller baggrundsprogrammer.",
+    "install": "INSTALLATION\n1. Pak hele ZIP-filen ud, og kør setup.exe. Godkend administratoranmodningen.\n2. Tryk Win+Mellemrum, og vælg navnet ovenfor.\n3. Afprøv genvejene i Notesblok med AltGr og den øverste talrække.\nHvis layoutet mangler, skal du logge ud og ind igen; tilføj det i sprogindstillingerne om nødvendigt.\nWin+Mellemrum skifter tilbage til det oprindelige layout. Vælg dette først, og fjern derefter det nye layout fra installerede apps for at afinstallere.",
+    "changes": "ÆNDREDE KOMBINATIONER (FØR → EFTER)",
+    "empty": "ikke tildelt",
+    "euro": "Eurotegnet (€) fjernes fra AltGr+5, men er stadig tilgængeligt med AltGr+E. Denne genvej fandtes allerede.",
+    "limits": "Windows x86/x64; ARM64 er ikke inkluderet. Installationsprogrammet er ikke signeret. Jeg har kontrolleret tegntabeller og accenter automatisk; en fuld installation på en ren pc er endnu ikke testet.",
+    "practice": "ØVELSE: Kopiér practice.txt til custom-tilstand i Monkeytype eller et andet skriveværktøj. Disse opdigtede tekster er lavet med AI til øvelse og kan indeholde fejl.\npractice/: short.txt, medium.txt, long.txt."
+  }
+}

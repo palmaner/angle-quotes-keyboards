@@ -1,0 +1,19 @@
+[
+  {"slug":"Spanish-Spain","name":"aqes","base":"0000040A","locale":"es-ES","title":"Spanish (Spain) - Angle Quotes","keys":{"06":"00ab","08":"00bb"}},
+  {"slug":"Spanish-Latin-America","name":"aqla","base":"0000080A","locale":"es-MX","title":"Spanish (Latin America) - Angle Quotes","keys":{"06":"00ab","08":"00bb"}},
+  {"slug":"Italian","name":"aqit","base":"00000410","locale":"it-IT","title":"Italian - Angle Quotes","keys":{"06":"00ab","08":"00bb"}},
+  {"slug":"Russian","name":"aqru","base":"00000419","locale":"ru-RU","title":"Russian - Angle Quotes","keys":{"06":"00ab","08":"00bb"}},
+  {"slug":"Ukrainian","name":"aqua","base":"00000422","locale":"uk-UA","title":"Ukrainian - Angle Quotes","keys":{"06":"00ab","08":"00bb"}},
+  {"slug":"Belarusian","name":"aqby","base":"00000423","locale":"be-BY","title":"Belarusian - Angle Quotes","keys":{"06":"00ab","08":"00bb"}},
+  {"slug":"Belgian-French","name":"aqbe","base":"0000080C","locale":"fr-BE","title":"Belgian French - Angle Quotes","keys":{"06":"00ab","08":"00bb"}},
+  {"slug":"Portuguese-Portugal","name":"aqpt","base":"00000816","locale":"pt-PT","title":"Portuguese (Portugal) - Angle Quotes","keys":{"06":"00ab","07":"00bb"}},
+  {"slug":"Swiss-French","name":"aqsf","base":"0000100C","locale":"fr-CH","title":"Swiss French - Angle Quotes","keys":{"06":"00ab","08":"00bb","09":"00a7","02":"007c"}},
+  {"slug":"Swiss-German","name":"aqsg","base":"00000807","locale":"de-CH","title":"Swiss German - Angle Quotes","keys":{"06":"00ab","08":"00bb","09":"00a7","02":"007c"}},
+  {"slug":"Luxembourg-Swiss-French","name":"aqlu","base":"0000100C","locale":"fr-LU","title":"Luxembourg (Swiss French) - Angle Quotes","keys":{"06":"00ab","08":"00bb","09":"00a7","02":"007c"}},
+  {"slug":"Norwegian","name":"aqno","base":"00000414","locale":"nb-NO","title":"Norwegian - Angle Quotes","keys":{"06":"00ab","07":"00bb"}},
+  {"slug":"German-Germany","name":"aqde","base":"00000407","locale":"de-DE","title":"German (Germany) - Angle Quotes","keys":{"06":"00bb","07":"00ab"}},
+  {"slug":"German-Austria","name":"aqat","base":"00000407","locale":"de-AT","title":"German (Austria) - Angle Quotes","keys":{"06":"00bb","07":"00ab"}},
+  {"slug":"Danish","name":"aqdk","base":"00000406","locale":"da-DK","title":"Danish - Angle Quotes","keys":{"06":"00bb","07":"00ab"}}
+ ,{"slug":"English-United-States","name":"aqus","base":"00000409","locale":"en-US","title":"English (United States) - Angle Quotes","experimental":true,"keys":{"06":"00ab","08":"00bb"}}
+ ,{"slug":"English-United-Kingdom","name":"aqgb","base":"00000809","locale":"en-GB","title":"English (United Kingdom) - Angle Quotes","experimental":true,"keys":{"06":"00ab","08":"00bb"}}
+]
