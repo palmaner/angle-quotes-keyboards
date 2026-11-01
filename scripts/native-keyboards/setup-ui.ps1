@@ -6,8 +6,10 @@ Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 [Windows.Forms.Application]::EnableVisualStyles()
 . (Join-Path $PSScriptRoot 'setup-core.ps1')
+. (Join-Path $PSScriptRoot 'setup-msi.ps1')
+$script:AqWindowTitle='Angle Quotes'
 function Show-AqError($ErrorRecord){
-    $details=Get-AqErrorText $ErrorRecord
+    $details=$script:AqWindowTitle+"`r`n"+(Get-AqErrorText $ErrorRecord)
     $heading=if($t){$t.failure}else{'Angle Quotes: setup could not complete.'}
     $path=''
     try {
@@ -19,10 +21,11 @@ function Show-AqError($ErrorRecord){
     $summary=$heading+"`r`n`r`n"+$ErrorRecord.Exception.Message+"`r`n"+$ErrorRecord.FullyQualifiedErrorId
     if($ErrorRecord.InvocationInfo.PositionMessage){$summary+="`r`n"+$ErrorRecord.InvocationInfo.PositionMessage}
     if($path){$summary+="`r`n`r`n"+$path}
-    [void][Windows.Forms.MessageBox]::Show($summary,'Angle Quotes','OK','Error')
+    [void][Windows.Forms.MessageBox]::Show($summary,$script:AqWindowTitle,'OK','Error')
 }
 try {
     $config=Get-Content (Join-Path $PSScriptRoot 'setup-config.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $script:AqWindowTitle='Angle Quotes - v'+$config.version
     $layout=$config.layout
     $code=[Globalization.CultureInfo]::CurrentUICulture.TwoLetterISOLanguageName
     if($Preview -and $PreviewLanguage){$code=$PreviewLanguage}
@@ -32,7 +35,7 @@ try {
     $script:AqStateRoot=Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'AngleQuotes\defaults'
     $mutex=New-Object Threading.Mutex($false,('Local\AngleQuotes-Setup-'+[Security.Principal.WindowsIdentity]::GetCurrent().User.Value))
     try{$locked=$mutex.WaitOne(0)}catch [Threading.AbandonedMutexException]{$locked=$true}
-    if(-not $locked){[void][Windows.Forms.MessageBox]::Show($t.alreadyOpen,'Angle Quotes');exit 1}
+    if(-not $locked){[void][Windows.Forms.MessageBox]::Show($t.alreadyOpen,$script:AqWindowTitle);exit 1}
     function Refresh-AqForm {
         if($Preview){$script:status=[pscustomobject]@{Installed=($PreviewState -ne 'Absent');Active=($PreviewState -eq 'Active');Id=''}}
         else{$script:status=Get-AqStatus $layout}
@@ -66,16 +69,30 @@ try {
             return [string]$combo.SelectedItem.Tip
         }finally{$dialog.Dispose()}
     }
-    function Invoke-AqMsi([switch]$Uninstall) {
-        $suffix=if([Environment]::Is64BitOperatingSystem){'_amd64.msi'}else{'_i386.msi'}
-        $msi=Join-Path $PackageRoot ($layout.name+$suffix)
-        if(-not (Test-Path -LiteralPath $msi -PathType Leaf)){throw ($t.missing+"`r`n"+$msi)}
-        $verb=if($Uninstall){'/x'}else{'/i'}
-        $process=Start-Process -FilePath (Join-Path $env:SystemRoot 'System32\msiexec.exe') -Verb RunAs -ArgumentList ($verb+' "'+$msi+'" /passive /norestart') -PassThru
+    function Assert-AqMsiPlan($Plan) {
+        if($Plan.Available){return}
+        $logs=Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'AngleQuotes\logs'
+        New-Item -ItemType Directory -Path $logs -Force | Out-Null
+        $diagnostic=Join-Path $logs ('msi-inventory-'+[Guid]::NewGuid().ToString('N')+'.json')
+        $Plan | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $diagnostic -Encoding UTF8
+        throw ($t.($Plan.Reason)+"`r`n"+$diagnostic)
+    }
+    function Invoke-AqMsi($Plan) {
+        if(-not $Plan){$Plan=Get-AqMsiPlan $layout $PackageRoot}
+        Assert-AqMsiPlan $Plan
+        $logs=Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'AngleQuotes\logs'
+        New-Item -ItemType Directory -Path $logs -Force | Out-Null
+        $log=Join-Path $logs ('msi-'+$Plan.Operation+'-'+[Guid]::NewGuid().ToString('N')+'.log')
+        $Plan | ConvertTo-Json | Set-Content -LiteralPath ($log+'.json') -Encoding UTF8
+        $parameters=@{FilePath=(Join-Path $env:SystemRoot 'System32\msiexec.exe');ArgumentList=(Get-AqMsiArguments $Plan $log);PassThru=$true}
+        if($Plan.Elevate){$parameters.Verb='RunAs'}
+        $process=Start-Process @parameters
         try {
             while(-not $process.WaitForExit(100)){[Windows.Forms.Application]::DoEvents()}
             if($process.ExitCode -eq 1602){throw [OperationCanceledException]::new($t.cancel)}
-            if($process.ExitCode -notin @(0,3010)){throw ('Windows Installer: '+$process.ExitCode)}
+            if($process.ExitCode -eq 1605){throw ($t.uninstallUnknown+"`r`nWindows Installer: 1605`r`n"+$log)}
+            if($process.ExitCode -notin @(0,3010)){throw ('Windows Installer: '+$process.ExitCode+"`r`n"+$log)}
+            if($process.ExitCode -eq 0 -and -not (Test-AqMsiCompletion $Plan)){throw ($t.msiIncomplete+"`r`n"+$log)}
             return ($process.ExitCode -eq 3010)
         }finally{$process.Dispose()}
     }
@@ -87,7 +104,7 @@ try {
         if($Busy){$state.Text=$t.working;$form.Refresh()}
     }
     $form=New-Object Windows.Forms.Form
-    $form.Text='Angle Quotes';$form.ClientSize=New-Object Drawing.Size(650,340)
+    $form.Text=$script:AqWindowTitle;$form.ClientSize=New-Object Drawing.Size(650,340)
     $form.Font=New-Object Drawing.Font('Segoe UI',10)
     $form.StartPosition='CenterScreen';$form.FormBorderStyle='FixedDialog'
     $form.MaximizeBox=$false;$form.MinimizeBox=$false
@@ -126,23 +143,27 @@ try {
             Refresh-AqForm
             $message=$t.saved+"`r`n`r`n"+$t.signOut
             if($restart){$message+="`r`n"+$t.restart}
-            [void][Windows.Forms.MessageBox]::Show($form,$message,'Angle Quotes','OK','Information')
+            [void][Windows.Forms.MessageBox]::Show($form,$message,$script:AqWindowTitle,'OK','Information')
         }catch [OperationCanceledException]{}catch{Show-AqError $_}
         finally{Refresh-AqForm;Set-AqBusy $false}
     })
     $remove.Add_Click({
         if($Preview){return}
-        if([Windows.Forms.MessageBox]::Show($form,$t.confirmRemove,'Angle Quotes','YesNo','Question') -ne 'Yes'){return}
+        if([Windows.Forms.MessageBox]::Show($form,$t.confirmRemove,$script:AqWindowTitle,'YesNo','Question') -ne 'Yes'){return}
         try {
             Set-AqBusy $true
             $current=Get-AqStatus $layout
+            $plan=Get-AqMsiPlan $layout $PackageRoot -Uninstall
+            Assert-AqMsiPlan $plan
             if($current.Active){Disable-AqDefault $layout (Select-AqFallback)}
-            $restart=Invoke-AqMsi -Uninstall
+            $restart=Invoke-AqMsi $plan
             Remove-AqUserTip $layout $current.Id
             $path=Get-AqStatePath $layout
             if(Test-Path -LiteralPath $path){Remove-Item -LiteralPath $path}
             Refresh-AqForm
-            [void][Windows.Forms.MessageBox]::Show($form,$t.saved+"`r`n`r`n"+$t.signOut,'Angle Quotes','OK','Information')
+            $message=$t.saved+"`r`n`r`n"+$t.signOut
+            if($restart){$message+="`r`n"+$t.restart}
+            [void][Windows.Forms.MessageBox]::Show($form,$message,$script:AqWindowTitle,'OK','Information')
         }catch [OperationCanceledException]{}catch{Show-AqError $_}
         finally{Refresh-AqForm;Set-AqBusy $false}
     })

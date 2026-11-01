@@ -35,6 +35,8 @@ Windows 10/11 en equipos x86 o x64; ARM64 no está incluido. No necesitas Intern
 
 Si setup.exe no arranca, abre `_amd64.msi` para Windows de 64 bits o `_i386.msi` para 32 bits. Los instaladores no están firmados; Windows puede mostrar «Editor desconocido». Abrir directamente el MSI omite la casilla de configuración del predeterminado.
 
+Las instalaciones nuevas dejan el teclado disponible para todo el equipo; la preferencia de predeterminado solo afecta a tu cuenta. Desinstalar el teclado puede afectar a otras cuentas. Si una instalación antigua pertenece a otra cuenta, quítala allí antes de reinstalar; abrir el instalador nuevo no la migra.
+
 SmartScreen: el aviso «Windows protegió su PC», con «Editor desconocido», se ha observado al ejecutar setup.exe descargado de GitHub tanto en v0.1.0 como en v0.2.0. Los instaladores siguen sin firma digital. Si has comprobado el origen del archivo y decides continuar, pulsa «Más información» y después «Ejecutar de todas formas», si Windows ofrece esa opción. No es necesario desactivar SmartScreen ni Microsoft Defender.
 
 ## Cambios de caracteres
@@ -61,7 +63,7 @@ He probado cinco variantes originales en mi portátil y funcionan, aunque a vece
 
 Mantengo este proyecto. Para comunicar un fallo, abre una incidencia con la versión de Windows, el teclado, el atajo, el resultado y si cerrar sesión ayudó.
 
-La nueva casilla ha superado las pruebas automáticas simuladas y la revisión de paquetes. El usuario comunica una prueba manual global satisfactoria con Spanish (Spain) en Windows Home x64, versión indicada 26H2, compilación 26300.9818. No hay un registro separado de cada caso ni cobertura manual acreditada de las otras distribuciones o sistemas. Las nuevas traducciones no han recibido revisión lingüística independiente.
+v0.2.1: He probado satisfactoriamente Spanish (Spain) en una cuenta recién creada: instalación, activación y desactivación del predeterminado, persistencia tras cerrar sesión o reiniciar y desinstalación. Primero retiré la instalación anterior por usuario. No he probado manualmente las otras 16 distribuciones ni todas las configuraciones de Windows; las traducciones no han recibido revisión lingüística independiente. La recompilación final añade la versión visible a la lógica probada.
 
 Creado con [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). Mi código original y mis modificaciones usan la [licencia MIT](LICENSE). Los componentes de Microsoft conservan sus condiciones; consulta los [avisos de terceros](THIRD_PARTY_NOTICES.md).
 

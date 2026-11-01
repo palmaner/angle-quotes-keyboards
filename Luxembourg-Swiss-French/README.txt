@@ -25,6 +25,8 @@ Si setup.exe ne démarre pas, ouvrez _amd64.msi pour Windows 64 bits ou _i386.ms
 
 Pour ne plus l’utiliser par défaut, rouvrez setup.exe, décochez la case et cliquez sur « Appliquer ». La préférence précédente est rétablie et le clavier reste installé. Si l’ancien clavier n’est plus disponible, choisissez-en un autre. Pour supprimer la disposition, cliquez sur « Désinstaller » dans la même fenêtre ; le clavier par défaut est d’abord rétabli si nécessaire. Win+Espace change le clavier sélectionné sans effacer cette préférence. La suppression directe depuis les applications Windows ou le MSI ne réalise pas cette restauration.
 
+Les nouvelles installations rendent le clavier disponible pour tout l’ordinateur ; la préférence par défaut ne concerne que votre compte. Supprimer le clavier peut affecter d’autres comptes. Si une ancienne installation appartient à un autre compte, supprimez-la depuis celui-ci avant de réinstaller ; ouvrir le nouvel installateur ne la migre pas.
+
 SmartScreen : l’avertissement « Windows a protégé votre ordinateur », avec « Éditeur inconnu », a été observé en lançant setup.exe téléchargé depuis GitHub dans v0.1.0 et v0.2.0. Les installateurs restent non signés. Si vous avez vérifié l’origine du fichier et décidez de continuer, choisissez « Informations complémentaires », puis « Exécuter quand même », si Windows propose cette option. Il n’est pas nécessaire de désactiver SmartScreen ou Microsoft Defender.
 
 ENTRAÎNEMENT : Copiez practice.txt dans le mode custom de Monkeytype ou un autre outil de dactylographie. Ces textes fictifs ont été générés par IA pour la pratique et peuvent contenir des erreurs.

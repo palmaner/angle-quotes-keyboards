@@ -28,9 +28,9 @@ SmartScreen: o aviso «O Windows protegeu o seu PC», com «Editor desconhecido�
 - Passam 35 verificações isoladas de preferências em Windows PowerShell 5.1 de 32 e 64 bits, usando definições do Windows e entradas do registo simuladas.
 - Passam 204 verificações de metadados de instaladores, arquiteturas, nomes apresentados e recursos incorporados. Os relatórios das tabelas abrangem as 17 disposições, com 11 016 comparações de caracteres em cada arquitetura x86, x64 e WOW64, além de verificações de teclas mortas.
 - As auditorias verificam os hashes dos 18 ZIP, os conteúdos das pastas individuais, as cópias dos README, as ligações locais e a codificação. O arranque real do instalador foi também verificado apenas para leitura em PowerShell de 32 e 64 bits.
-- O utilizador comunica um teste manual global bem-sucedido da candidata corrigida **Spanish (Spain) - Angle Quotes** em Windows Home x64, versão indicada 26H2, compilação 26300.9818. Os casos individuais não foram registados separadamente. Não está comprovada a cobertura manual das outras 16 disposições nem de todas as versões Windows suportadas. As novas traduções não receberam revisão linguística independente.
+- Testei com sucesso a candidata corrigida **Spanish (Spain) - Angle Quotes** em Windows Home x64, versão 26H2, compilação 26300.9818. Os casos individuais não foram registados separadamente. Não está comprovada a cobertura manual das outras 16 disposições nem de todas as versões Windows suportadas. As novas traduções não receberam revisão linguística independente.
 
-Teste adicional de compatibilidade comunicado pelo utilizador: com uma disposição v0.1.0 já instalada, o instalador v0.2.0 reconheceu a instalação existente e permitiu defini-la como teclado predefinido. Isto verifica esse caso no computador testado, sem comprovar uma desinstalação e reinstalação completas nem a cobertura de todas as disposições.
+Também verifiquei a compatibilidade: com uma disposição v0.1.0 já instalada, o instalador v0.2.0 reconheceu a instalação existente e permitiu defini-la como teclado predefinido. Isto verifica esse caso no computador testado, sem comprovar uma desinstalação e reinstalação completas nem a cobertura de todas as disposições.
 
 ## Transferências
 

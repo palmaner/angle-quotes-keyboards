@@ -20,6 +20,7 @@ public static class LayoutDisplayName {
 '@
 $repo=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..'))
 $layouts=Get-Content (Join-Path $PSScriptRoot 'layouts.json') -Raw | ConvertFrom-Json
+$version=[string](Get-Content (Join-Path $PSScriptRoot 'version.json') -Raw -Encoding UTF8 | ConvertFrom-Json).version
 $installer=New-Object -ComObject WindowsInstaller.Installer
 $codes=@{}
 $checks=0
@@ -64,18 +65,21 @@ foreach($layout in $layouts) {
     $assembly=[Reflection.Assembly]::Load($setupBytes)
     $reader=[IO.StreamReader]::new($assembly.GetManifestResourceStream('setup-config.json'))
     try{$config=$reader.ReadToEnd() | ConvertFrom-Json}finally{$reader.Dispose()}
-    if($config.layout.name -ne $layout.name -or $config.layout.locale -ne $layout.locale -or $config.layout.title -ne $layout.title){throw 'Wrong setup identity'}
+    if($config.version -ne $version -or $config.layout.name -ne $layout.name -or $config.layout.locale -ne $layout.locale -or $config.layout.title -ne $layout.title){throw 'Wrong setup identity or version'}
+    $versionInfo=[Diagnostics.FileVersionInfo]::GetVersionInfo((Join-Path $dir 'setup.exe'))
+    if($versionInfo.FileVersion -ne ($version+'.0') -or $versionInfo.ProductVersion -ne $version){throw 'Wrong executable version metadata'}
+    $checks++
     foreach($language in @('es','en','fr','de','it','pt','nb','da','ru','uk','be')){
         foreach($key in $config.texts.en.PSObject.Properties.Name){
             if(-not $config.texts.$language.$key){throw ('Missing setup translation: '+$language+' '+$key)}
         }
     }
-    foreach($resource in @('setup-core.ps1','setup-ui.ps1')){
+    foreach($resource in @('setup-core.ps1','setup-ui.ps1','setup-msi.ps1')){
         $reader=[IO.StreamReader]::new($assembly.GetManifestResourceStream($resource))
         try{$embedded=$reader.ReadToEnd()}finally{$reader.Dispose()}
         if($embedded -cne [IO.File]::ReadAllText((Join-Path $PSScriptRoot $resource))){throw 'Stale embedded setup script'}
     }
-    $checks+=4
+    $checks+=5
 }
 [void][Runtime.InteropServices.Marshal]::FinalReleaseComObject($installer)
 @{passed=$true;installerAndArchitectureChecks=$checks;uniqueProducts=$codes.Count;installed=$false} | ConvertTo-Json | Set-Content (Join-Path $repo 'work\native-keyboards\validation-installers.json') -Encoding UTF8

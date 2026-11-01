@@ -23,6 +23,8 @@ If setup.exe does not start, open _amd64.msi for 64-bit Windows or _i386.msi for
 
 To stop using it as default, reopen setup.exe, clear the checkbox and click “Apply”. This restores your previous preference and leaves the keyboard installed. If the previous keyboard is unavailable, choose another. To remove the layout, click “Uninstall” in the same window; the default is restored first if needed. Windows+Space switches the selected keyboard but does not clear this preference. Removing directly through Windows Apps or MSI bypasses this restoration.
 
+New installations make the keyboard available to the whole computer; the default preference applies only to your account. Removing the keyboard can affect other accounts. If an older installation belongs to another account, remove it there before reinstalling; opening the new installer alone does not migrate it.
+
 SmartScreen: the “Windows protected your PC” warning with “Unknown publisher” has been observed when running setup.exe downloaded from GitHub in both v0.1.0 and v0.2.0. The installers remain unsigned. If you have checked the file’s origin and decide to continue, select “More info” and then “Run anyway”, if Windows offers that option. You do not need to disable SmartScreen or Microsoft Defender.
 
 PRACTICE: Copy practice.txt into Monkeytype custom mode or another typing tool. These fictional texts were generated with AI for practice and may contain errors.

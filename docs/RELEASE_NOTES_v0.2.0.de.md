@@ -28,9 +28,9 @@ SmartScreen: Die Warnung „Der Computer wurde durch Windows geschützt“ mit �
 - 35 isolierte Einstellungsprüfungen bestehen in Windows PowerShell 5.1 mit 32 und 64 Bit, mit simulierten Windows-Einstellungen und Registrierungseinträgen.
 - 204 Prüfungen von Installationsmetadaten, Architekturen, Anzeigenamen und eingebetteten Ressourcen bestehen. Die Zeichentabellenberichte decken alle 17 Belegungen ab, mit 11 016 Zeichenvergleichen je Architektur x86, x64 und WOW64 sowie Prüfungen toter Tasten.
 - Paketprüfungen kontrollieren die Hashes der 18 ZIP-Dateien, die einzelnen Ordnerinhalte, README-Kopien, lokalen Links und die Kodierung. Der echte Startpfad wurde auch unter 32- und 64-Bit-PowerShell nur lesend geprüft.
-- Der Nutzer berichtet einen insgesamt erfolgreichen manuellen Test des korrigierten Kandidaten **Spanish (Spain) - Angle Quotes** unter Windows Home x64, gemeldete Version 26H2, Build 26300.9818. Einzelne Fälle wurden nicht gesondert protokolliert. Das belegt keine manuelle Abdeckung der anderen 16 Belegungen oder aller unterstützten Windows-Versionen. Die neuen Übersetzungen wurden nicht unabhängig sprachlich geprüft.
+- Ich habe den korrigierten Kandidaten **Spanish (Spain) - Angle Quotes** unter Windows Home x64, Version 26H2, Build 26300.9818 erfolgreich getestet. Einzelne Fälle wurden nicht gesondert protokolliert. Das belegt keine manuelle Abdeckung der anderen 16 Belegungen oder aller unterstützten Windows-Versionen. Die neuen Übersetzungen wurden nicht unabhängig sprachlich geprüft.
 
-Zusätzlicher vom Nutzer gemeldeter Kompatibilitätstest: Bei bereits installierter v0.1.0-Belegung erkannte das v0.2.0-Installationsprogramm die vorhandene Installation und konnte sie als Standardtastatur festlegen. Dies bestätigt diesen Fall auf dem getesteten Rechner, ohne eine vollständige Deinstallation und Neuinstallation oder die Abdeckung aller Belegungen zu belegen.
+Ich habe außerdem die Kompatibilität geprüft: Bei bereits installierter v0.1.0-Belegung erkannte das v0.2.0-Installationsprogramm die vorhandene Installation und konnte sie als Standardtastatur festlegen. Dies bestätigt diesen Fall auf dem getesteten Rechner, ohne eine vollständige Deinstallation und Neuinstallation oder die Abdeckung aller Belegungen zu belegen.
 
 ## Downloads
 

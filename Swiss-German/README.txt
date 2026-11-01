@@ -24,6 +24,8 @@ Startet setup.exe nicht, öffne _amd64.msi für 64-Bit-Windows oder _i386.msi f�
 
 Um die Belegung nicht mehr als Standard zu verwenden, öffne setup.exe erneut, entferne das Häkchen und klicke auf „Übernehmen“. Die vorherige Einstellung wird wiederhergestellt; die Tastatur bleibt installiert. Ist die vorherige Tastatur nicht mehr verfügbar, wähle eine andere. Zum Entfernen klicke im selben Fenster auf „Deinstallieren“; bei Bedarf wird vorher der Standard wiederhergestellt. Win+Leertaste wechselt die ausgewählte Tastatur, hebt diese Einstellung aber nicht auf. Die direkte Entfernung über Windows-Apps oder MSI führt diese Wiederherstellung nicht aus.
 
+Neue Installationen machen die Tastatur für den ganzen Computer verfügbar; die Standardeinstellung gilt nur für dein Konto. Das Entfernen kann andere Konten betreffen. Gehört eine ältere Installation zu einem anderen Konto, entferne sie dort vor der Neuinstallation; das neue Installationsprogramm migriert sie beim Öffnen nicht.
+
 SmartScreen: Die Warnung „Der Computer wurde durch Windows geschützt“ mit „Unbekannter Herausgeber“ wurde beim Start von setup.exe aus GitHub-Downloads sowohl bei v0.1.0 als auch bei v0.2.0 beobachtet. Die Installationsprogramme sind weiterhin unsigniert. Wenn du die Herkunft der Datei geprüft hast und fortfahren möchtest, wähle „Weitere Informationen“ und dann „Trotzdem ausführen“, sofern Windows diese Option anbietet. SmartScreen oder Microsoft Defender müssen nicht deaktiviert werden.
 
 ÜBUNG: Kopiere practice.txt in den Modus custom von Monkeytype oder in ein anderes Tipptraining. Diese erfundenen Texte wurden mit KI zum Üben erstellt und können Fehler enthalten.

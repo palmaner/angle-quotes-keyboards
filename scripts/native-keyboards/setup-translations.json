@@ -1,5 +1,8 @@
-{
+﻿{
   "es": {
+    "uninstallUnknown": "Windows reconoce el teclado, pero no se ha podido identificar un producto MSI verificable para desinstalarlo desde esta cuenta. Prueba desde la cuenta que lo instaló y conserva el registro de diagnóstico.",
+    "uninstallAmbiguous": "Se han encontrado varias instalaciones de este teclado. No se elegirá una automáticamente. Revisa el registro de diagnóstico antes de desinstalar.",
+    "msiIncomplete": "Windows Installer ha terminado, pero no se ha podido confirmar el cambio en su registro de productos. Revisa el diagnóstico antes de reintentarlo.",
     "default": "Usar como teclado predeterminado para mi cuenta",
     "firstNote": "Marca la casilla si quieres usar esta distribución por defecto. Podrás cambiar esta opción al volver a abrir el instalador.",
     "active": "Activo como predeterminado",
@@ -21,9 +24,12 @@
     "noFallback": "No hay otro teclado disponible. Añade uno desde Configuración de Windows y vuelve a intentarlo.",
     "cancel": "Cancelar",
     "missing": "Falta el paquete MSI. Extrae todo el ZIP y conserva sus archivos juntos.",
-    "confirmRemove": "¿Desinstalar esta distribución? Si es la predeterminada, se restaurará la preferencia anterior."
+    "confirmRemove": "¿Desinstalar esta distribución? Si es la predeterminada, se restaurará la preferencia anterior. La eliminación del teclado del equipo puede afectar a otras cuentas que lo usen."
   },
   "en": {
+    "uninstallUnknown": "Windows recognizes the keyboard, but no verifiable MSI product was found for removal from this account. Try the account that installed it and keep the diagnostic log.",
+    "uninstallAmbiguous": "Multiple installations of this keyboard were found. None will be selected automatically. Review the diagnostic log before uninstalling.",
+    "msiIncomplete": "Windows Installer finished, but the change could not be confirmed in its product inventory. Review the diagnostic log before retrying.",
     "default": "Use as the default keyboard for my account",
     "firstNote": "Select the checkbox to use this layout by default. You can change this option by reopening the installer.",
     "active": "Active as default",
@@ -45,9 +51,12 @@
     "noFallback": "No other keyboard is available. Add one in Windows Settings, then try again.",
     "cancel": "Cancel",
     "missing": "The MSI package is missing. Extract the whole ZIP and keep its files together.",
-    "confirmRemove": "Uninstall this layout? If it is the default, the previous preference will be restored."
+    "confirmRemove": "Uninstall this layout? If it is the default, the previous preference will be restored. Removing the keyboard from this computer can affect other accounts that use it."
   },
   "fr": {
+    "uninstallUnknown": "Windows reconnaît le clavier, mais aucun produit MSI vérifiable n’a été trouvé pour le supprimer depuis ce compte. Essayez avec le compte qui l’a installé et conservez le diagnostic.",
+    "uninstallAmbiguous": "Plusieurs installations de ce clavier ont été trouvées. Aucune ne sera choisie automatiquement. Consultez le diagnostic avant de désinstaller.",
+    "msiIncomplete": "Windows Installer a terminé, mais la modification n’a pas pu être confirmée dans son inventaire. Consultez le diagnostic avant de réessayer.",
     "default": "Utiliser comme clavier par défaut pour mon compte",
     "firstNote": "Cochez la case pour utiliser cette disposition par défaut. Vous pourrez modifier ce choix en rouvrant l’installateur.",
     "active": "Actif par défaut",
@@ -69,9 +78,12 @@
     "noFallback": "Aucun autre clavier disponible. Ajoutez-en un dans les paramètres Windows, puis réessayez.",
     "cancel": "Annuler",
     "missing": "Le paquet MSI est absent. Extrayez tout le ZIP et gardez les fichiers ensemble.",
-    "confirmRemove": "Désinstaller cette disposition ? Si elle est définie par défaut, la préférence précédente sera rétablie."
+    "confirmRemove": "Désinstaller cette disposition ? Si elle est définie par défaut, la préférence précédente sera rétablie. La suppression du clavier de cet ordinateur peut affecter les autres comptes qui l’utilisent."
   },
   "de": {
+    "uninstallUnknown": "Windows erkennt die Tastatur, aber für dieses Konto wurde kein überprüfbares MSI-Produkt zum Entfernen gefunden. Versuche es mit dem Konto, das sie installiert hat, und bewahre das Diagnoseprotokoll auf.",
+    "uninstallAmbiguous": "Mehrere Installationen dieser Tastatur wurden gefunden. Keine wird automatisch ausgewählt. Prüfe das Diagnoseprotokoll vor der Deinstallation.",
+    "msiIncomplete": "Windows Installer ist fertig, aber die Änderung konnte im Produktbestand nicht bestätigt werden. Prüfe das Diagnoseprotokoll vor einem erneuten Versuch.",
     "default": "Als Standardtastatur für mein Konto verwenden",
     "firstNote": "Aktiviere das Kästchen, um diese Belegung als Standard zu verwenden. Du kannst die Einstellung später im Installationsprogramm ändern.",
     "active": "Als Standard aktiv",
@@ -93,9 +105,12 @@
     "noFallback": "Keine andere Tastatur verfügbar. Fügen Sie in den Windows-Einstellungen eine hinzu und versuchen Sie es erneut.",
     "cancel": "Abbrechen",
     "missing": "Das MSI-Paket fehlt. Entpacken Sie die gesamte ZIP-Datei und lassen Sie die Dateien zusammen.",
-    "confirmRemove": "Dieses Layout deinstallieren? Wenn es Standard ist, wird die vorherige Einstellung wiederhergestellt."
+    "confirmRemove": "Dieses Layout deinstallieren? Wenn es Standard ist, wird die vorherige Einstellung wiederhergestellt. Das Entfernen der Tastatur vom Computer kann andere Konten betreffen, die sie verwenden."
   },
   "it": {
+    "uninstallUnknown": "Windows riconosce la tastiera, ma non è stato trovato un prodotto MSI verificabile da rimuovere da questo account. Prova dall’account che l’ha installata e conserva il registro diagnostico.",
+    "uninstallAmbiguous": "Sono state trovate più installazioni di questa tastiera. Nessuna verrà scelta automaticamente. Controlla il registro diagnostico prima di disinstallare.",
+    "msiIncomplete": "Windows Installer ha terminato, ma la modifica non è stata confermata nel suo inventario. Controlla il registro diagnostico prima di riprovare.",
     "default": "Usa come tastiera predefinita per il mio account",
     "firstNote": "Seleziona la casella per usare questa disposizione come predefinita. Potrai cambiare la scelta riaprendo il programma di installazione.",
     "active": "Attiva come predefinita",
@@ -117,9 +132,12 @@
     "noFallback": "Nessun’altra tastiera disponibile. Aggiungine una nelle Impostazioni di Windows e riprova.",
     "cancel": "Annulla",
     "missing": "Pacchetto MSI mancante. Estrai tutto lo ZIP e conserva insieme i file.",
-    "confirmRemove": "Disinstallare questa disposizione? Se è predefinita, verrà ripristinata la preferenza precedente."
+    "confirmRemove": "Disinstallare questa disposizione? Se è predefinita, verrà ripristinata la preferenza precedente. Rimuovere la tastiera dal computer può interessare altri account che la usano."
   },
   "pt": {
+    "uninstallUnknown": "O Windows reconhece o teclado, mas não foi encontrado um produto MSI verificável para o remover desta conta. Tente na conta que o instalou e guarde o diagnóstico.",
+    "uninstallAmbiguous": "Foram encontradas várias instalações deste teclado. Nenhuma será escolhida automaticamente. Consulte o diagnóstico antes de desinstalar.",
+    "msiIncomplete": "O Windows Installer terminou, mas a alteração não foi confirmada no inventário de produtos. Consulte o diagnóstico antes de tentar novamente.",
     "default": "Usar como teclado predefinido da minha conta",
     "firstNote": "Selecione a caixa para usar esta disposição como predefinida. Pode alterar esta opção voltando a abrir o instalador.",
     "active": "Ativo como predefinido",
@@ -141,9 +159,12 @@
     "noFallback": "Não há outro teclado disponível. Adicione um nas Definições do Windows e tente novamente.",
     "cancel": "Cancelar",
     "missing": "Falta o pacote MSI. Extraia todo o ZIP e mantenha os ficheiros juntos.",
-    "confirmRemove": "Desinstalar esta disposição? Se for a predefinida, será restaurada a preferência anterior."
+    "confirmRemove": "Desinstalar esta disposição? Se for a predefinida, será restaurada a preferência anterior. Remover o teclado do computador pode afetar outras contas que o utilizem."
   },
   "nb": {
+    "uninstallUnknown": "Windows gjenkjenner tastaturet, men fant ikke et verifiserbart MSI-produkt som kan fjernes fra denne kontoen. Prøv kontoen som installerte det, og behold diagnoseloggen.",
+    "uninstallAmbiguous": "Flere installasjoner av dette tastaturet ble funnet. Ingen velges automatisk. Les diagnoseloggen før avinstallering.",
+    "msiIncomplete": "Windows Installer er ferdig, men endringen kunne ikke bekreftes i produktoversikten. Les diagnoseloggen før du prøver igjen.",
     "default": "Bruk som standardtastatur for kontoen min",
     "firstNote": "Merk av for å bruke dette oppsettet som standard. Du kan endre valget ved å åpne installasjonsprogrammet igjen.",
     "active": "Aktivt som standard",
@@ -165,9 +186,12 @@
     "noFallback": "Ingen andre tastaturer er tilgjengelige. Legg til et i Windows-innstillingene og prøv igjen.",
     "cancel": "Avbryt",
     "missing": "MSI-pakken mangler. Pakk ut hele ZIP-filen og behold filene sammen.",
-    "confirmRemove": "Avinstallere dette oppsettet? Hvis det er standard, gjenopprettes forrige innstilling."
+    "confirmRemove": "Avinstallere dette oppsettet? Hvis det er standard, gjenopprettes forrige innstilling. Fjerning av tastaturet fra datamaskinen kan påvirke andre kontoer som bruker det."
   },
   "da": {
+    "uninstallUnknown": "Windows genkender tastaturet, men fandt ikke et verificerbart MSI-produkt, der kan fjernes fra denne konto. Prøv den konto, som installerede det, og gem diagnoseloggen.",
+    "uninstallAmbiguous": "Der blev fundet flere installationer af dette tastatur. Ingen vælges automatisk. Læs diagnoseloggen før afinstallation.",
+    "msiIncomplete": "Windows Installer er færdig, men ændringen kunne ikke bekræftes i produktoversigten. Læs diagnoseloggen, før du prøver igen.",
     "default": "Brug som standardtastatur for min konto",
     "firstNote": "Markér feltet for at bruge dette layout som standard. Du kan ændre valget ved at åbne installationsprogrammet igen.",
     "active": "Aktivt som standard",
@@ -189,9 +213,12 @@
     "noFallback": "Der er ingen andre tastaturer. Tilføj et i Windows-indstillingerne og prøv igen.",
     "cancel": "Annuller",
     "missing": "MSI-pakken mangler. Pak hele ZIP-filen ud, og behold filerne sammen.",
-    "confirmRemove": "Afinstallere dette layout? Hvis det er standard, gendannes den tidligere indstilling."
+    "confirmRemove": "Afinstallere dette layout? Hvis det er standard, gendannes den tidligere indstilling. Fjernelse af tastaturet fra computeren kan påvirke andre konti, der bruger det."
   },
   "ru": {
+    "uninstallUnknown": "Windows распознаёт раскладку, но не найден проверяемый продукт MSI для удаления из этой учётной записи. Попробуйте учётную запись, из которой выполнялась установка, и сохраните журнал диагностики.",
+    "uninstallAmbiguous": "Найдено несколько установок этой раскладки. Ни одна не будет выбрана автоматически. Перед удалением проверьте журнал диагностики.",
+    "msiIncomplete": "Windows Installer завершил работу, но изменение не подтверждено в списке продуктов. Перед повторной попыткой проверьте журнал диагностики.",
     "default": "Использовать по умолчанию для моей учётной записи",
     "firstNote": "Установите флажок, чтобы использовать эту раскладку по умолчанию. Изменить выбор можно, снова открыв установщик.",
     "active": "Используется по умолчанию",
@@ -213,9 +240,12 @@
     "noFallback": "Других раскладок нет. Добавьте раскладку в параметрах Windows и повторите попытку.",
     "cancel": "Отмена",
     "missing": "Пакет MSI отсутствует. Извлеките весь ZIP-архив и храните файлы вместе.",
-    "confirmRemove": "Удалить эту раскладку? Если она используется по умолчанию, прежняя настройка будет восстановлена."
+    "confirmRemove": "Удалить эту раскладку? Если она используется по умолчанию, прежняя настройка будет восстановлена. Удаление раскладки с компьютера может повлиять на другие учётные записи, использующие её."
   },
   "uk": {
+    "uninstallUnknown": "Windows розпізнає розкладку, але не знайдено перевірюваного продукту MSI для видалення з цього облікового запису. Спробуйте обліковий запис, з якого її встановлено, і збережіть журнал діагностики.",
+    "uninstallAmbiguous": "Знайдено кілька інсталяцій цієї розкладки. Жодну не буде вибрано автоматично. Перед видаленням перегляньте журнал діагностики.",
+    "msiIncomplete": "Windows Installer завершив роботу, але зміну не підтверджено у списку продуктів. Перед повторною спробою перегляньте журнал діагностики.",
     "default": "Використовувати за замовчуванням для мого облікового запису",
     "firstNote": "Установіть прапорець, щоб використовувати цю розкладку за замовчуванням. Змінити вибір можна, знову відкривши інсталятор.",
     "active": "Використовується за замовчуванням",
@@ -237,9 +267,12 @@
     "noFallback": "Інших розкладок немає. Додайте розкладку в параметрах Windows і повторіть спробу.",
     "cancel": "Скасувати",
     "missing": "Пакет MSI відсутній. Розпакуйте весь ZIP-архів і зберігайте файли разом.",
-    "confirmRemove": "Видалити цю розкладку? Якщо вона використовується за замовчуванням, попереднє налаштування буде відновлено."
+    "confirmRemove": "Видалити цю розкладку? Якщо вона використовується за замовчуванням, попереднє налаштування буде відновлено. Видалення розкладки з комп’ютера може вплинути на інші облікові записи, що нею користуються."
   },
   "be": {
+    "uninstallUnknown": "Windows распазнае раскладку, але не знойдзены прадукт MSI, які можна праверыць і выдаліць з гэтага ўліковага запісу. Паспрабуйце ўліковы запіс, з якога яе ўсталявалі, і захавайце журнал дыягностыкі.",
+    "uninstallAmbiguous": "Знойдзена некалькі ўсталяванняў гэтай раскладкі. Ніводнае не будзе выбрана аўтаматычна. Перад выдаленнем прачытайце журнал дыягностыкі.",
+    "msiIncomplete": "Windows Installer завяршыў працу, але змена не пацверджана ў спісе прадуктаў. Перад паўторнай спробай прачытайце журнал дыягностыкі.",
     "default": "Выкарыстоўваць па змаўчанні для майго ўліковага запісу",
     "firstNote": "Пазначце сцяжок, каб выкарыстоўваць гэтую раскладку па змаўчанні. Змяніць выбар можна, зноў адкрыўшы ўсталёўшчык.",
     "active": "Выкарыстоўваецца па змаўчанні",
@@ -261,6 +294,6 @@
     "noFallback": "Іншых раскладак няма. Дадайце раскладку ў параметрах Windows і паўтарыце спробу.",
     "cancel": "Скасаваць",
     "missing": "Пакет MSI адсутнічае. Распакуйце ўвесь ZIP-архіў і захоўвайце файлы разам.",
-    "confirmRemove": "Выдаліць гэтую раскладку? Калі яна выкарыстоўваецца па змаўчанні, папярэдняя налада будзе адноўлена."
+    "confirmRemove": "Выдаліць гэтую раскладку? Калі яна выкарыстоўваецца па змаўчанні, папярэдняя налада будзе адноўлена. Выдаленне раскладкі з камп’ютара можа паўплываць на іншыя ўліковыя запісы, якія ёю карыстаюцца."
   }
 }

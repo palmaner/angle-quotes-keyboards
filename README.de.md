@@ -35,6 +35,8 @@ Windows 10/11 auf x86- oder x64-PCs; ARM64 ist nicht enthalten. Internet und ein
 
 Startet setup.exe nicht, öffne `_amd64.msi` für 64-Bit-Windows oder `_i386.msi` für 32 Bit. Die Installationsprogramme sind nicht signiert; Windows kann einen unbekannten Herausgeber anzeigen. Beim direkten Öffnen des MSI ist das Kästchen für die Standardtastatur nicht verfügbar.
 
+Neue Installationen machen die Tastatur für den ganzen Computer verfügbar; die Standardeinstellung gilt nur für dein Konto. Das Entfernen kann andere Konten betreffen. Gehört eine ältere Installation zu einem anderen Konto, entferne sie dort vor der Neuinstallation; das neue Installationsprogramm migriert sie beim Öffnen nicht.
+
 SmartScreen: Die Warnung „Der Computer wurde durch Windows geschützt“ mit „Unbekannter Herausgeber“ wurde beim Start von setup.exe aus GitHub-Downloads sowohl bei v0.1.0 als auch bei v0.2.0 beobachtet. Die Installationsprogramme sind weiterhin unsigniert. Wenn du die Herkunft der Datei geprüft hast und fortfahren möchtest, wähle „Weitere Informationen“ und dann „Trotzdem ausführen“, sofern Windows diese Option anbietet. SmartScreen oder Microsoft Defender müssen nicht deaktiviert werden.
 
 ## Zeichenänderungen
@@ -61,7 +63,7 @@ Ich habe fünf ursprüngliche Varianten auf meinem Laptop ausprobiert. Sie funkt
 
 Ich betreue dieses Projekt. Melde Probleme als Issue mit Windows-Version, Belegung, Tastenkombination, Ergebnis und der Information, ob erneutes Anmelden geholfen hat.
 
-Das neue Kästchen besteht die simulierten automatischen Tests und Paketprüfungen. Der Nutzer berichtet von einem insgesamt erfolgreichen manuellen Test von Spanish (Spain) unter Windows Home x64, gemeldete Version 26H2, Build 26300.9818. Einzelne Fälle wurden nicht gesondert protokolliert; manuelle Abdeckung der anderen Belegungen oder Systeme ist nicht belegt. Die neuen Übersetzungen wurden nicht unabhängig sprachlich geprüft.
+v0.2.1: Ich habe Spanish (Spain) in einem neu angelegten Konto erfolgreich getestet: Installation, Standard aktivieren/deaktivieren, Beibehaltung nach Abmelden oder Neustart und Deinstallation. Zuerst habe ich die ältere Benutzerinstallation entfernt. Die anderen 16 Belegungen und alle Windows-Konfigurationen habe ich nicht manuell getestet; die Übersetzungen wurden nicht unabhängig sprachlich geprüft. Der abschließende Build ergänzt die getestete Logik um die sichtbare Version.
 
 Erstellt mit [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). Mein ursprünglicher Code und meine Änderungen stehen unter der [MIT-Lizenz](LICENSE). Für Microsoft-Komponenten gelten weiterhin deren Bedingungen; siehe [Hinweise zu Drittanbietern](THIRD_PARTY_NOTICES.md).
 

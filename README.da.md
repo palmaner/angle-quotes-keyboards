@@ -35,6 +35,8 @@ Windows 10/11 på x86- eller x64-pc'er; ARM64 er ikke inkluderet. Du behøver hv
 
 Hvis setup.exe ikke starter, åbn `_amd64.msi` til 64-bit Windows eller `_i386.msi` til 32-bit Windows. Installationsprogrammerne er usignerede; Windows kan vise en ukendt udgiver. Hvis MSI åbnes direkte, er afkrydsningsfeltet for standardtastatur ikke tilgængeligt.
 
+Nye installationer gør tastaturet tilgængeligt for hele computeren; standardindstillingen gælder kun din konto. Fjernelse kan påvirke andre konti. Hvis en ældre installation tilhører en anden konto, fjern den der før geninstallation; åbning af det nye program migrerer den ikke.
+
 SmartScreen: Advarslen »Windows beskyttede din pc« med »Ukendt udgiver« er observeret ved kørsel af setup.exe hentet fra GitHub i både v0.1.0 og v0.2.0. Installationsprogrammerne er stadig usignerede. Hvis du har kontrolleret filens oprindelse og vil fortsætte, vælger du »Flere oplysninger« og derefter »Kør alligevel«, hvis Windows tilbyder dette. Du behøver ikke deaktivere SmartScreen eller Microsoft Defender.
 
 ## Ændrede tegn
@@ -61,7 +63,7 @@ Jeg har prøvet fem oprindelige varianter på min bærbare pc. De virker, nogle 
 
 Jeg vedligeholder projektet. Opret en issue med Windows-version, layout, genvej, resultat og om nyt login hjalp.
 
-Det nye afkrydsningsfelt består simulerede automatiske tests og pakkekontroller. Brugeren rapporterer en samlet vellykket manuel test af Spanish (Spain) på Windows Home x64, angivet version 26H2, build 26300.9818. De enkelte tilfælde blev ikke registreret separat; manuel dækning af andre layouts eller systemer er ikke dokumenteret. De nye oversættelser har ikke fået uafhængig sproglig gennemgang.
+v0.2.1: Jeg har testet Spanish (Spain) i en ny konto med godt resultat: installation, aktivering/deaktivering af standard, bevarelse efter aflogning eller genstart og afinstallation. Jeg fjernede den gamle brugerinstallation først. Jeg har ikke testet de øvrige 16 layouts eller alle Windows-konfigurationer manuelt; oversættelserne har ikke fået uafhængig sproglig gennemgang. Det endelige build tilføjer synlig version til den testede logik.
 
 Lavet med [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). Min oprindelige kode og mine ændringer bruger [MIT-licensen](LICENSE). Microsoft-komponenter beholder deres vilkår; se [tredjepartsmeddelelser](THIRD_PARTY_NOTICES.md).
 

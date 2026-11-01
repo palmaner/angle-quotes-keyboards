@@ -1,7 +1,7 @@
 ﻿param([Parameter(Mandatory=$true)][string]$OutputRoot,[string]$ReleaseBodyPath)
 $ErrorActionPreference='Stop'
 $data=Get-Content (Join-Path $PSScriptRoot 'release-notes-translations.json') -Raw -Encoding UTF8 | ConvertFrom-Json
-$version=[string]$data.version
+$version='v'+[string](Get-Content (Join-Path $PSScriptRoot 'version.json') -Raw -Encoding UTF8 | ConvertFrom-Json).version
 if($version -notmatch '^v\d+\.\d+\.\d+$'){throw 'Invalid release notes version'}
 $languages=[ordered]@{
     es='Español';en='English';fr='Français';de='Deutsch';it='Italiano';pt='Português';
@@ -38,8 +38,7 @@ if($ReleaseBodyPath){
         '['+$languages[$_]+'](https://github.com/palmaner/angle-quotes-keyboards/blob/'+$version+'/docs/'+(Get-NotesName $_)+')'
     }) -join ' · '
     $body=@(
-        'Native Windows keyboard layouts with an optional default-keyboard checkbox. Reopen `setup.exe` to restore your preceding preference, or uninstall from the same window.'
-        'Existing v0.1.0 installations are recognized. Keyboard mappings and MSI packages are unchanged; this release updates the setup interface and documentation.'
+        $data.summary
         '### Notas de versión / Release notes'
         $links
         '### Downloads'

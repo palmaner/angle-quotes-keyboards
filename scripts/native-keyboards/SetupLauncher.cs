@@ -8,12 +8,13 @@ using System.Windows.Forms;
 
 // Only msiexec is elevated. The preference UI always runs as the initiating user.
 internal static class SetupLauncher {
+    static string Caption { get { return "Angle Quotes - v" + Application.ProductVersion; } }
     [STAThread]
     static int Main() {
         string temp = null;
         try {
             if (new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator)) {
-                MessageBox.Show("Abre setup.exe normalmente, sin «Ejecutar como administrador».\nOpen setup.exe normally, without 'Run as administrator'.", "Angle Quotes");
+                MessageBox.Show("Abre setup.exe normalmente, sin «Ejecutar como administrador».\nOpen setup.exe normally, without 'Run as administrator'.", Caption);
                 return 1;
             }
             string arch = Environment.GetEnvironmentVariable("PROCESSOR_ARCHITEW6432") ?? Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE");
@@ -21,7 +22,7 @@ internal static class SetupLauncher {
                 throw new NotSupportedException("ARM64 is not supported.");
             temp = Path.Combine(Path.GetTempPath(), "AngleQuotes-" + Guid.NewGuid().ToString("N"));
             Directory.CreateDirectory(temp);
-            foreach (string name in new [] {"setup-ui.ps1", "setup-core.ps1", "setup-config.json"}) {
+            foreach (string name in new [] {"setup-ui.ps1", "setup-core.ps1", "setup-msi.ps1", "setup-config.json"}) {
                 using (Stream source = Assembly.GetExecutingAssembly().GetManifestResourceStream(name))
                 using (Stream target = File.Create(Path.Combine(temp, name))) { source.CopyTo(target); }
             }
@@ -35,7 +36,7 @@ internal static class SetupLauncher {
             start.CreateNoWindow = true;
             using (Process process = Process.Start(start)) { process.WaitForExit(); return process.ExitCode; }
         } catch (Exception error) {
-            MessageBox.Show(error.Message, "Angle Quotes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(error.Message, Caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
             return 1;
         } finally {
             try { if (temp != null && Directory.Exists(temp)) Directory.Delete(temp, true); }

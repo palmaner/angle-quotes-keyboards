@@ -22,6 +22,8 @@ Si setup.exe no arranca, abre _amd64.msi para Windows de 64 bits o _i386.msi par
 
 Para dejar de usarlo como predeterminado, abre de nuevo setup.exe, desmarca la casilla y pulsa «Aplicar». Se recupera la preferencia anterior y el teclado sigue instalado. Si la anterior ya no está disponible, elige otra. Para eliminarlo, pulsa «Desinstalar» en esa misma ventana; primero se restaura el predeterminado si es necesario. Win+Espacio cambia el teclado seleccionado, pero no desmarca esta preferencia. La desinstalación directa desde Aplicaciones o MSI no ejecuta esta restauración.
 
+Las instalaciones nuevas dejan el teclado disponible para todo el equipo; la preferencia de predeterminado solo afecta a tu cuenta. Desinstalar el teclado puede afectar a otras cuentas. Si una instalación antigua pertenece a otra cuenta, quítala allí antes de reinstalar; abrir el instalador nuevo no la migra.
+
 SmartScreen: el aviso «Windows protegió su PC», con «Editor desconocido», se ha observado al ejecutar setup.exe descargado de GitHub tanto en v0.1.0 como en v0.2.0. Los instaladores siguen sin firma digital. Si has comprobado el origen del archivo y decides continuar, pulsa «Más información» y después «Ejecutar de todas formas», si Windows ofrece esa opción. No es necesario desactivar SmartScreen ni Microsoft Defender.
 
 PRÁCTICA: Copia practice.txt en el modo custom de Monkeytype u otra herramienta de mecanografía. Son textos ficticios generados con IA para practicar y pueden contener errores.

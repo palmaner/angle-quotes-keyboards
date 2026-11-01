@@ -23,6 +23,8 @@ Se setup.exe non parte, apri _amd64.msi per Windows a 64 bit oppure _i386.msi pe
 
 Per non usarla più come predefinita, riapri setup.exe, deseleziona la casella e premi «Applica». La preferenza precedente viene ripristinata e la tastiera resta installata. Se la tastiera precedente non è disponibile, scegline un’altra. Per rimuovere la disposizione, premi «Disinstalla» nella stessa finestra; se necessario viene prima ripristinata la preferenza precedente. Win+Spazio cambia la tastiera selezionata senza cancellare questa preferenza. La rimozione diretta tramite le app di Windows o MSI non esegue questo ripristino.
 
+Le nuove installazioni rendono la tastiera disponibile per tutto il computer; la preferenza predefinita riguarda solo il tuo account. Rimuoverla può interessare altri account. Se una vecchia installazione appartiene a un altro account, rimuovila da lì prima di reinstallare; aprire il nuovo programma non la migra.
+
 SmartScreen: l’avviso «PC protetto da Windows», con «Autore sconosciuto», è stato osservato eseguendo setup.exe scaricato da GitHub sia in v0.1.0 sia in v0.2.0. I programmi di installazione restano privi di firma digitale. Se hai verificato l’origine del file e decidi di continuare, scegli «Ulteriori informazioni» e poi «Esegui comunque», se Windows offre questa opzione. Non occorre disattivare SmartScreen o Microsoft Defender.
 
 ESERCIZI: Copia practice.txt nella modalità custom di Monkeytype o in un altro programma di dattilografia. Questi testi di fantasia sono stati generati con IA per esercitarsi e possono contenere errori.

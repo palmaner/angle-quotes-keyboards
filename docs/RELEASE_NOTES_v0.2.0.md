@@ -28,9 +28,9 @@ SmartScreen: the “Windows protected your PC” warning with “Unknown publish
 - 35 isolated preference assertions pass in both 32-bit and 64-bit Windows PowerShell 5.1, using simulated Windows settings and registry entries.
 - 204 installer metadata, architecture, display-name and embedded-resource checks pass. Character-table reports cover all 17 layouts, with 11,016 character comparisons in each of x86, x64 and WOW64, plus dead-key checks.
 - Package audits check the 18 ZIP hashes, individual-folder contents, README copies, local links and encoding. The actual setup startup path was also checked read-only in 32-bit and 64-bit PowerShell.
-- The user reports successful overall manual testing of the corrected **Spanish (Spain) - Angle Quotes** candidate on Windows Home x64, reported version 26H2, OS build 26300.9818. Individual test cases were not recorded separately. This does not establish manual coverage of the other 16 layouts or all supported Windows versions. New translations have not received independent linguistic review.
+- I successfully tested the corrected **Spanish (Spain) - Angle Quotes** candidate on Windows Home x64, version 26H2, OS build 26300.9818. Individual test cases were not recorded separately. This does not establish manual coverage of the other 16 layouts or all supported Windows versions. New translations have not received independent linguistic review.
 
-Additional user-reported compatibility test: with a v0.1.0 layout already installed, the v0.2.0 setup correctly recognized the existing installation and successfully set it as the default keyboard. This verifies that scenario on the tested machine, rather than a full uninstall/reinstall or coverage of every layout.
+I also checked compatibility: with a v0.1.0 layout already installed, the v0.2.0 setup correctly recognized the existing installation and successfully set it as the default keyboard. This verifies that scenario on the tested machine, rather than a full uninstall/reinstall or coverage of every layout.
 
 ## Downloads
 

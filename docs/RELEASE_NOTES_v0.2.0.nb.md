@@ -28,9 +28,9 @@ SmartScreen: Advarselen «Windows beskyttet PC-en» med «Ukjent utgiver» er ob
 - 35 isolerte innstillingskontroller består i både 32- og 64-biters Windows PowerShell 5.1, med simulerte Windows-innstillinger og registeroppføringer.
 - 204 kontroller av installasjonsmetadata, arkitekturer, visningsnavn og innebygde ressurser består. Tegntabellrapportene dekker alle 17 oppsett, med 11 016 tegnsammenligninger for hver av arkitekturene x86, x64 og WOW64, samt kontroller av dødtaster.
 - Pakkegranskingen kontrollerer hashene til de 18 ZIP-filene, innholdet i de enkelte mappene, README-kopier, lokale lenker og tegnkoding. Den faktiske oppstarten er også kontrollert med skrivebeskyttet tilgang i 32- og 64-biters PowerShell.
-- Brukeren rapporterer en samlet vellykket manuell test av den korrigerte **Spanish (Spain) - Angle Quotes**-kandidaten på Windows Home x64, oppgitt versjon 26H2, bygg 26300.9818. Enkelttilfellene ble ikke registrert separat. Dette dokumenterer ikke manuell dekning av de andre 16 oppsettene eller alle støttede Windows-versjoner. De nye oversettelsene er ikke gjennomgått av en uavhengig språkkyndig.
+- Jeg har testet den korrigerte **Spanish (Spain) - Angle Quotes**-kandidaten på Windows Home x64, versjon 26H2, bygg 26300.9818, med godt resultat. Enkelttilfellene ble ikke registrert separat. Dette dokumenterer ikke manuell dekning av de andre 16 oppsettene eller alle støttede Windows-versjoner. De nye oversettelsene er ikke gjennomgått av en uavhengig språkkyndig.
 
-Ytterligere kompatibilitetstest rapportert av brukeren: Med et v0.1.0-oppsett installert gjenkjente v0.2.0-programmet den eksisterende installasjonen og kunne angi den som standardtastatur. Dette bekrefter dette tilfellet på den testede maskinen, uten å dokumentere en full avinstallasjon og nyinstallasjon eller dekning av alle oppsett.
+Jeg har også kontrollert kompatibiliteten: Med et v0.1.0-oppsett installert gjenkjente v0.2.0-programmet den eksisterende installasjonen og kunne angi den som standardtastatur. Dette bekrefter dette tilfellet på den testede maskinen, uten å dokumentere en full avinstallasjon og nyinstallasjon eller dekning av alle oppsett.
 
 ## Nedlastinger
 

@@ -1,8 +1,7 @@
 ﻿{
-  "version": "v0.2.0",
   "languages": {
     "en": {
-      "title": "Default keyboard selection",
+      "title": "Reliable uninstall across Windows accounts",
       "headings": [
         "New installer",
         "Reliability and documentation",
@@ -11,36 +10,36 @@
         "Downloads"
       ],
       "installer": [
-        "All 17 layouts now include a setup window with an optional **Use as the default keyboard for my account** checkbox. Select it and install or apply to save the Windows default-input preference.",
-        "Reopen `setup.exe`, clear the checkbox and click **Apply** to restore the preceding preference while keeping the keyboard installed. If the previous keyboard is unavailable, setup asks you to choose another available input method.",
-        "The checkbox reflects the current Windows preference. Other languages and keyboards are preserved, and repeated activation does not overwrite the original recovery record with the same layout.",
-        "**Uninstall** restores the preceding default first when needed, then removes the layout. Direct removal through MSI or Windows Apps bypasses this extra restoration step.",
-        "The interface follows the Windows UI language in Spanish, English, French, German, Italian, Portuguese, Norwegian Bokmål, Danish, Russian, Ukrainian and Belarusian, with English fallback.",
-        "Start `setup.exe` normally, without **Run as administrator**. Only MSI operations request elevation; default-input preferences apply to the initiating account. No background application or scheduled task is installed."
+        "Fixes error **1605** caused by confusing a system keyboard registration with an MSI installation belonging to the current account.",
+        "Uninstallation selects the actual registered product after checking its cached MSI, name and keyboard DLL, rather than assuming that the downloaded package identifies it.",
+        "Existing per-user installations are removed in their owning account. Machine installations request administrator authorization.",
+        "New installations are registered for the whole computer; the default-keyboard preference remains separate for each account.",
+        "Missing, ambiguous or unverifiable products are reported before restoring a default preference. No keyboard files or registry entries are deleted manually.",
+        "The setup window and dialogs now show **v0.2.1**. File properties identify the same version. Removing a system keyboard may affect other accounts."
       ],
       "reliability": [
-        "Setup avoids unnecessary preference queries at startup and handles a plain exception from the Windows default-input query with a read-only lookup of the stored preference. Access errors and malformed values remain errors.",
-        "Setup configuration errors show the command and script location and write a local diagnostic file under `%LOCALAPPDATA%\\AngleQuotes\\logs`. Logs are not uploaded automatically.",
-        "Installation, restoration and removal instructions have been updated across all 11 README languages and all 17 layout folders. Build sources, translations and isolated preference tests are included."
+        "Fresh MSI installation explicitly uses `ALLUSERS=1`. User-context removals avoid relaunching the operation as another administrator.",
+        "Verbose `/L*V` logs and product/context diagnostics are saved locally under `%LOCALAPPDATA%\\AngleQuotes\\logs`. They are not uploaded automatically and may contain account identifiers and paths.",
+        "Successful exit `0` is checked against the MSI inventory before reporting completion. Restart-required exit `3010` is preserved. Version metadata comes from one shared source."
       ],
       "compatibility": [
-        "Keyboard DLLs, MSI packages, character assignments and practice texts are unchanged from v0.1.0. Support remains Windows 10/11 on x86/x64; ARM64 is not included. Windows may require sign-out or restart before a keyboard appears or behaves correctly.",
+        "Keyboard DLLs, MSI packages, character assignments and practice texts are unchanged from v0.2.0. Support remains Windows 10/11 on x86/x64; ARM64 is not included. Windows may require sign-out or restart before a keyboard appears or behaves correctly.",
         "SmartScreen: the “Windows protected your PC” warning with “Unknown publisher” has been observed when running setup.exe downloaded from GitHub in both v0.1.0 and v0.2.0. The installers remain unsigned. If you have checked the file’s origin and decide to continue, select “More info” and then “Run anyway”, if Windows offers that option. You do not need to disable SmartScreen or Microsoft Defender."
       ],
       "validation": [
-        "35 isolated preference assertions pass in both 32-bit and 64-bit Windows PowerShell 5.1, using simulated Windows settings and registry entries.",
-        "204 installer metadata, architecture, display-name and embedded-resource checks pass. Character-table reports cover all 17 layouts, with 11,016 character comparisons in each of x86, x64 and WOW64, plus dead-key checks.",
-        "Package audits check the 18 ZIP hashes, individual-folder contents, README copies, local links and encoding. The actual setup startup path was also checked read-only in 32-bit and 64-bit PowerShell.",
-        "The user reports successful overall manual testing of the corrected **Spanish (Spain) - Angle Quotes** candidate on Windows Home x64, reported version 26H2, OS build 26300.9818. Individual test cases were not recorded separately. This does not establish manual coverage of the other 16 layouts or all supported Windows versions. New translations have not received independent linguistic review."
+        "26 isolated MSI identity/context checks and the existing 35 preference checks pass in both 32-bit and 64-bit Windows PowerShell 5.1. Windows settings and MSI operations are simulated.",
+        "238 installer metadata, architecture, display-name, embedded-resource and version checks cover all 17 layouts. Keyboard DLLs and MSI packages remain unchanged.",
+        "The 18 ZIP hashes, folder contents, documentation copies, local links and encoding are audited. Read-only checks exercise native MSI discovery and the real setup startup path.",
+        "I successfully tested Spanish (Spain) in a newly created account: installation, enabling/disabling the default, persistence after sign-out or restart, and uninstall. I removed the older per-user installation first. I have not manually tested the other 16 layouts or every Windows configuration; the translations have not received independent linguistic review. The final rebuild adds visible version information to the tested logic."
       ],
-      "upgrade": "Additional user-reported compatibility test: with a v0.1.0 layout already installed, the v0.2.0 setup correctly recognized the existing installation and successfully set it as the default keyboard. This verifies that scenario on the tested machine, rather than a full uninstall/reinstall or coverage of every layout.",
+      "upgrade": "For an older installation owned by another account, first uninstall from that original account, then install this version from the intended account. Creating a new account or merely opening the new installer does not migrate an existing per-user MSI registration. I successfully completed this migration and then repeated the full test in a fresh account.",
       "downloads": [
         "Choose `ANGLE_QUOTES_NATIVE_WINDOWS.zip` for all layouts, or the individual ZIP for your layout. Extract the complete ZIP and keep its files together. `SHA256SUMS.txt` lists SHA256 hashes for the 18 downloadable ZIPs.",
         "GitHub's **Source code** ZIP/TAR.GZ downloads are generated separately and are not the packaged installer downloads."
       ]
     },
     "es": {
-      "title": "Selección del teclado predeterminado",
+      "title": "Desinstalación fiable entre cuentas de Windows",
       "headings": [
         "Nuevo instalador",
         "Fiabilidad y documentación",
@@ -49,36 +48,36 @@
         "Descargas"
       ],
       "installer": [
-        "Las 17 distribuciones incluyen ahora una ventana de instalación con la casilla opcional **Usar como teclado predeterminado para mi cuenta**. Márcala e instala o aplica el cambio para guardar la preferencia de entrada predeterminada de Windows.",
-        "Vuelve a abrir `setup.exe`, desmarca la casilla y pulsa **Aplicar** para recuperar la preferencia anterior manteniendo el teclado instalado. Si el teclado anterior ya no está disponible, el instalador pide elegir otro método de entrada disponible.",
-        "La casilla refleja la preferencia actual de Windows. Se conservan los demás idiomas y teclados, y activar varias veces no sustituye el registro de recuperación original por la misma distribución.",
-        "**Desinstalar** restaura primero el predeterminado anterior cuando corresponde y después elimina la distribución. La desinstalación directa mediante MSI o Aplicaciones de Windows omite este paso adicional de restauración.",
-        "La interfaz sigue el idioma de Windows: español, inglés, francés, alemán, italiano, portugués, noruego bokmål, danés, ruso, ucraniano y bielorruso, con inglés como alternativa.",
-        "Abre `setup.exe` normalmente, sin **Ejecutar como administrador**. Solo las operaciones MSI solicitan elevación; las preferencias de entrada se aplican a la cuenta que abrió el instalador. No se instala ninguna aplicación en segundo plano ni tarea programada."
+        "Corrige el error **1605** causado al confundir el registro de un teclado en el equipo con una instalación MSI perteneciente a la cuenta actual.",
+        "La desinstalación selecciona el producto realmente registrado tras comprobar su MSI en caché, nombre y DLL del teclado, en lugar de suponer que lo identifica el paquete descargado.",
+        "Las instalaciones existentes por usuario se quitan desde su cuenta propietaria. Las instalaciones del equipo solicitan autorización de administrador.",
+        "Las instalaciones nuevas se registran para todo el equipo; la preferencia de teclado predeterminado sigue siendo independiente por cuenta.",
+        "Los productos ausentes, ambiguos o no verificables se notifican antes de restaurar una preferencia predeterminada. No se borran manualmente archivos de teclado ni entradas de registro.",
+        "La ventana y los diálogos del instalador muestran ahora **v0.2.1**. Las propiedades del archivo identifican la misma versión. Desinstalar un teclado del equipo puede afectar a otras cuentas."
       ],
       "reliability": [
-        "El instalador evita consultas innecesarias de preferencias al arrancar. Si la consulta del predeterminado de Windows lanza una excepción genérica, consulta la preferencia almacenada en modo de solo lectura. Los errores de acceso y los valores mal formados siguen notificándose como errores.",
-        "Los errores de configuración muestran el comando y la ubicación en el script y guardan un archivo de diagnóstico local en `%LOCALAPPDATA%\\AngleQuotes\\logs`. Los registros no se envían automáticamente.",
-        "Se han actualizado las instrucciones de instalación, restauración y desinstalación en los 11 idiomas de los README y las carpetas de las 17 distribuciones. Se incluyen las fuentes de compilación, las traducciones y las pruebas aisladas de preferencias."
+        "La instalación MSI nueva usa explícitamente `ALLUSERS=1`. Las desinstalaciones por usuario evitan relanzar la operación como otro administrador.",
+        "Los registros detallados `/L*V` y los diagnósticos de producto y contexto se guardan localmente en `%LOCALAPPDATA%\\AngleQuotes\\logs`. No se envían automáticamente y pueden contener identificadores de cuenta y rutas.",
+        "La salida correcta `0` se contrasta con el inventario MSI antes de comunicar el éxito. Se conserva la salida `3010`, que solicita reiniciar. Los datos de versión proceden de una única fuente."
       ],
       "compatibility": [
-        "Las DLL de teclado, los paquetes MSI, las asignaciones de caracteres y los textos de práctica no cambian respecto a v0.1.0. Se mantiene Windows 10/11 en x86/x64; ARM64 no está incluido. Windows puede requerir cerrar sesión o reiniciar para que el teclado aparezca o funcione correctamente.",
+        "Las DLL de teclado, los paquetes MSI, las asignaciones de caracteres y los textos de práctica no cambian respecto a v0.2.0. Se mantiene Windows 10/11 en x86/x64; ARM64 no está incluido. Windows puede requerir cerrar sesión o reiniciar para que el teclado aparezca o funcione correctamente.",
         "SmartScreen: el aviso «Windows protegió su PC», con «Editor desconocido», se ha observado al ejecutar setup.exe descargado de GitHub tanto en v0.1.0 como en v0.2.0. Los instaladores siguen sin firma digital. Si has comprobado el origen del archivo y decides continuar, pulsa «Más información» y después «Ejecutar de todas formas», si Windows ofrece esa opción. No es necesario desactivar SmartScreen ni Microsoft Defender."
       ],
       "validation": [
-        "Se superan 35 comprobaciones aisladas de preferencias tanto en Windows PowerShell 5.1 de 32 bits como de 64 bits, usando configuraciones de Windows y entradas de registro simuladas.",
-        "Se superan 204 comprobaciones de metadatos de instaladores, arquitecturas, nombres visibles y recursos integrados. Los informes de tablas de caracteres abarcan las 17 distribuciones, con 11 016 comparaciones de caracteres en cada una de las arquitecturas x86, x64 y WOW64, además de comprobaciones de teclas muertas.",
-        "Las auditorías de paquetes comprueban los hashes de los 18 ZIP, los contenidos de las carpetas individuales, las copias de los README, los enlaces locales y la codificación. También se comprobó el arranque real del instalador en modo de solo lectura con PowerShell de 32 y 64 bits.",
-        "El usuario comunica una prueba manual global satisfactoria de la candidata corregida **Spanish (Spain) - Angle Quotes** en Windows Home x64, versión indicada 26H2, compilación 26300.9818. Los casos individuales no se registraron por separado. Esto no acredita cobertura manual de las otras 16 distribuciones ni de todas las versiones de Windows compatibles. Las nuevas traducciones no han recibido revisión lingüística independiente."
+        "Se superan 26 comprobaciones aisladas de identidad y contexto MSI y las 35 de preferencias existentes en Windows PowerShell 5.1 de 32 y 64 bits. Las configuraciones de Windows y operaciones MSI se simulan.",
+        "238 comprobaciones de metadatos, arquitecturas, nombres visibles, recursos integrados y versiones abarcan las 17 distribuciones. Las DLL de teclado y los paquetes MSI no cambian.",
+        "Se auditan los hashes de los 18 ZIP, contenidos de carpetas, copias de documentación, enlaces locales y codificación. Las comprobaciones de solo lectura prueban la detección MSI nativa y el arranque real del instalador.",
+        "He probado satisfactoriamente Spanish (Spain) en una cuenta recién creada: instalación, activación y desactivación del predeterminado, persistencia tras cerrar sesión o reiniciar y desinstalación. Primero retiré la instalación anterior por usuario. No he probado manualmente las otras 16 distribuciones ni todas las configuraciones de Windows; las traducciones no han recibido revisión lingüística independiente. La recompilación final añade la versión visible a la lógica probada."
       ],
-      "upgrade": "Prueba adicional de compatibilidad comunicada por el usuario: con una distribución de v0.1.0 ya instalada, el instalador de v0.2.0 reconoció correctamente la instalación existente y permitió establecerla como teclado predeterminado. Esto verifica ese caso en el equipo probado, sin acreditar una desinstalación y reinstalación completas ni cobertura de todas las distribuciones.",
+      "upgrade": "Si una instalación antigua pertenece a otra cuenta, desinstálala primero desde esa cuenta original y después instala esta versión desde la cuenta deseada. Crear una cuenta nueva o abrir el instalador nuevo no migra un registro MSI por usuario ya existente. He completado esta migración y después he repetido satisfactoriamente la prueba completa en una cuenta nueva.",
       "downloads": [
         "Elige `ANGLE_QUOTES_NATIVE_WINDOWS.zip` para obtener todas las distribuciones o el ZIP individual de la tuya. Extrae el ZIP completo y conserva juntos sus archivos. `SHA256SUMS.txt` contiene los hashes SHA256 de los 18 ZIP descargables.",
         "Las descargas **Source code** ZIP/TAR.GZ de GitHub se generan por separado y no son los paquetes de instalación."
       ]
     },
     "fr": {
-      "title": "Choix du clavier par défaut",
+      "title": "Désinstallation fiable entre comptes Windows",
       "headings": [
         "Nouvel installateur",
         "Fiabilité et documentation",
@@ -87,36 +86,36 @@
         "Téléchargements"
       ],
       "installer": [
-        "Les 17 dispositions incluent désormais une fenêtre d’installation avec la case facultative **Utiliser comme clavier par défaut pour mon compte**. Cochez-la puis installez ou appliquez le changement pour enregistrer la préférence de saisie par défaut de Windows.",
-        "Rouvrez `setup.exe`, décochez la case et cliquez sur **Appliquer** pour rétablir la préférence précédente tout en gardant le clavier installé. Si l’ancien clavier n’est plus disponible, l’installateur demande de choisir une autre méthode de saisie disponible.",
-        "La case reflète la préférence actuelle de Windows. Les autres langues et claviers sont conservés ; les activations répétées ne remplacent pas la préférence de récupération originale par cette même disposition.",
-        "**Désinstaller** rétablit d’abord le clavier par défaut précédent si nécessaire, puis supprime la disposition. La suppression directe par MSI ou les applications Windows contourne cette restauration supplémentaire.",
-        "L’interface suit la langue de Windows : espagnol, anglais, français, allemand, italien, portugais, norvégien bokmål, danois, russe, ukrainien et biélorusse, avec l’anglais par défaut si nécessaire.",
-        "Ouvrez `setup.exe` normalement, sans **Exécuter en tant qu’administrateur**. Seules les opérations MSI demandent une élévation ; les préférences de saisie s’appliquent au compte ayant ouvert l’installateur. Aucune application en arrière-plan ni tâche planifiée n’est installée."
+        "Corrige l’erreur **1605** due à la confusion entre un clavier enregistré sur l’ordinateur et une installation MSI appartenant au compte actuel.",
+        "La désinstallation choisit le produit réellement enregistré après vérification de son MSI en cache, de son nom et de sa DLL, sans supposer que le paquet téléchargé l’identifie.",
+        "Les installations existantes par utilisateur se suppriment depuis leur compte propriétaire. Les installations pour l’ordinateur demandent l’autorisation administrateur.",
+        "Les nouvelles installations sont enregistrées pour tout l’ordinateur ; la préférence de clavier par défaut reste propre à chaque compte.",
+        "Les produits absents, ambigus ou non vérifiables sont signalés avant de rétablir une préférence par défaut. Aucun fichier de clavier ni entrée du registre n’est supprimé manuellement.",
+        "La fenêtre et les dialogues affichent maintenant **v0.2.1**. Les propriétés du fichier indiquent la même version. Supprimer un clavier système peut affecter d’autres comptes."
       ],
       "reliability": [
-        "L’installateur évite les requêtes de préférences inutiles au démarrage. Si la requête Windows du clavier par défaut lève une exception générique, il consulte la préférence enregistrée en lecture seule. Les erreurs d’accès et les valeurs mal formées restent des erreurs.",
-        "Les erreurs de configuration affichent la commande et l’emplacement dans le script et créent un diagnostic local dans `%LOCALAPPDATA%\\AngleQuotes\\logs`. Les journaux ne sont pas envoyés automatiquement.",
-        "Les instructions d’installation, de restauration et de suppression ont été mises à jour dans les 11 langues des README et les dossiers des 17 dispositions. Les sources de compilation, les traductions et les tests isolés de préférences sont inclus."
+        "Les nouvelles installations MSI utilisent explicitement `ALLUSERS=1`. Les suppressions par utilisateur évitent de relancer l’opération sous un autre administrateur.",
+        "Les journaux détaillés `/L*V` et les diagnostics du produit et du contexte sont conservés localement dans `%LOCALAPPDATA%\\AngleQuotes\\logs`. Ils ne sont pas envoyés automatiquement et peuvent contenir des identifiants de compte et des chemins.",
+        "La sortie réussie `0` est confrontée à l’inventaire MSI avant d’annoncer le succès. Le code `3010`, demandant un redémarrage, est conservé. Les données de version ont une source unique."
       ],
       "compatibility": [
-        "Les DLL de clavier, les paquets MSI, les affectations de caractères et les textes d’entraînement restent identiques à v0.1.0. Windows 10/11 sur x86/x64 reste pris en charge ; ARM64 n’est pas inclus. Windows peut demander une déconnexion ou un redémarrage avant que le clavier apparaisse ou fonctionne correctement.",
+        "Les DLL de clavier, les paquets MSI, les affectations de caractères et les textes d’entraînement restent identiques à v0.2.0. Windows 10/11 sur x86/x64 reste pris en charge ; ARM64 n’est pas inclus. Windows peut demander une déconnexion ou un redémarrage avant que le clavier apparaisse ou fonctionne correctement.",
         "SmartScreen : l’avertissement « Windows a protégé votre ordinateur », avec « Éditeur inconnu », a été observé en lançant setup.exe téléchargé depuis GitHub dans v0.1.0 et v0.2.0. Les installateurs restent non signés. Si vous avez vérifié l’origine du fichier et décidez de continuer, choisissez « Informations complémentaires », puis « Exécuter quand même », si Windows propose cette option. Il n’est pas nécessaire de désactiver SmartScreen ou Microsoft Defender."
       ],
       "validation": [
-        "35 vérifications isolées des préférences réussissent dans Windows PowerShell 5.1 en 32 et 64 bits, avec des paramètres Windows et des entrées du registre simulés.",
-        "204 contrôles des métadonnées des installateurs, architectures, noms affichés et ressources intégrées réussissent. Les rapports de tables de caractères couvrent les 17 dispositions, avec 11 016 comparaisons de caractères pour chacune des architectures x86, x64 et WOW64, ainsi que des contrôles des touches mortes.",
-        "Les audits vérifient les empreintes des 18 ZIP, le contenu des dossiers individuels, les copies des README, les liens locaux et l’encodage. Le démarrage réel de l’installateur a également été vérifié en lecture seule dans PowerShell 32 et 64 bits.",
-        "L’utilisateur rapporte un essai manuel global réussi du candidat corrigé **Spanish (Spain) - Angle Quotes** sur Windows Home x64, version indiquée 26H2, build 26300.9818. Les cas individuels n’ont pas été consignés séparément. Cela n’établit pas une couverture manuelle des 16 autres dispositions ni de toutes les versions Windows prises en charge. Les nouvelles traductions n’ont pas reçu de révision linguistique indépendante."
+        "26 contrôles isolés d’identité et de contexte MSI et les 35 contrôles de préférences existants réussissent dans Windows PowerShell 5.1 en 32 et 64 bits. Les paramètres Windows et les opérations MSI sont simulés.",
+        "238 contrôles de métadonnées, architectures, noms affichés, ressources intégrées et versions couvrent les 17 dispositions. Les DLL de clavier et les paquets MSI restent inchangés.",
+        "Les empreintes des 18 ZIP, les contenus des dossiers, copies de documentation, liens locaux et encodages sont audités. Les vérifications en lecture seule exercent la détection MSI native et le démarrage réel.",
+        "J’ai testé avec succès Spanish (Spain) dans un compte nouvellement créé : installation, activation/désactivation du défaut, persistance après déconnexion ou redémarrage, et désinstallation. J’ai d’abord supprimé l’ancienne installation par utilisateur. Je n’ai pas testé manuellement les 16 autres dispositions ni toutes les configurations Windows ; les traductions n’ont pas reçu de révision linguistique indépendante. La compilation finale ajoute la version visible à la logique testée."
       ],
-      "upgrade": "Essai de compatibilité supplémentaire rapporté par l’utilisateur : avec une disposition v0.1.0 déjà installée, l’installateur v0.2.0 a reconnu l’installation existante et a permis de la définir comme clavier par défaut. Cet essai confirme ce cas sur la machine testée, sans établir une désinstallation et réinstallation complètes ni la couverture de toutes les dispositions.",
+      "upgrade": "Si une ancienne installation appartient à un autre compte, désinstallez-la depuis ce compte d’origine avant d’installer cette version depuis le compte voulu. Créer un compte ou ouvrir le nouvel installateur ne migre pas un enregistrement MSI existant par utilisateur. J’ai effectué cette migration avec succès puis répété le test complet dans un nouveau compte.",
       "downloads": [
         "Choisissez `ANGLE_QUOTES_NATIVE_WINDOWS.zip` pour toutes les dispositions, ou le ZIP individuel correspondant à votre clavier. Extrayez le ZIP complet et gardez les fichiers ensemble. `SHA256SUMS.txt` contient les empreintes SHA256 des 18 ZIP téléchargeables.",
         "Les archives **Source code** ZIP/TAR.GZ de GitHub sont générées séparément et ne sont pas les paquets d’installation."
       ]
     },
     "de": {
-      "title": "Auswahl der Standardtastatur",
+      "title": "Zuverlässige Deinstallation zwischen Windows-Konten",
       "headings": [
         "Neues Installationsprogramm",
         "Zuverlässigkeit und Dokumentation",
@@ -125,36 +124,36 @@
         "Downloads"
       ],
       "installer": [
-        "Alle 17 Belegungen enthalten jetzt ein Installationsfenster mit dem optionalen Kästchen **Als Standardtastatur für mein Konto verwenden**. Aktiviere es und installiere oder übernimm die Änderung, um die Windows-Standardeingabe zu speichern.",
-        "Öffne `setup.exe` erneut, entferne das Häkchen und klicke auf **Übernehmen**, um die vorherige Einstellung wiederherzustellen und die Tastatur installiert zu lassen. Ist die vorherige Tastatur nicht mehr verfügbar, musst du eine andere verfügbare Eingabemethode auswählen.",
-        "Das Kästchen zeigt die aktuelle Windows-Einstellung. Andere Sprachen und Tastaturen bleiben erhalten; wiederholtes Aktivieren überschreibt die ursprüngliche Wiederherstellungseinstellung nicht mit derselben Belegung.",
-        "**Deinstallieren** stellt bei Bedarf zuerst den vorherigen Standard wieder her und entfernt dann die Belegung. Die direkte Entfernung über MSI oder Windows-Apps umgeht diesen zusätzlichen Wiederherstellungsschritt.",
-        "Die Oberfläche folgt der Windows-Sprache: Spanisch, Englisch, Französisch, Deutsch, Italienisch, Portugiesisch, Norwegisch Bokmål, Dänisch, Russisch, Ukrainisch und Belarussisch. Falls erforderlich wird Englisch verwendet.",
-        "Öffne `setup.exe` normal, ohne **Als Administrator ausführen**. Nur MSI-Vorgänge fordern erhöhte Rechte an; Eingabeeinstellungen gelten für das Konto, das das Installationsprogramm geöffnet hat. Es werden keine Hintergrundanwendung und keine geplante Aufgabe installiert."
+        "Behebt Fehler **1605**, der entsteht, wenn eine systemweite Tastaturregistrierung mit einer MSI-Installation des aktuellen Kontos verwechselt wird.",
+        "Die Deinstallation wählt das tatsächlich registrierte Produkt nach Prüfung von MSI-Cache, Namen und Tastatur-DLL, statt die Identität aus dem heruntergeladenen Paket anzunehmen.",
+        "Bestehende Installationen pro Benutzer werden aus ihrem Eigentümerkonto entfernt. Installationen für den Computer fordern Administratorfreigabe an.",
+        "Neue Installationen werden für den gesamten Computer registriert; die Standardtastatur bleibt eine Einstellung pro Konto.",
+        "Fehlende, mehrdeutige oder nicht überprüfbare Produkte werden vor der Wiederherstellung einer Standardeinstellung gemeldet. Tastaturdateien und Registrierungseinträge werden nicht manuell gelöscht.",
+        "Fenster und Dialoge zeigen jetzt **v0.2.1**. Die Dateieigenschaften zeigen dieselbe Version. Das Entfernen einer Systemtastatur kann andere Konten betreffen."
       ],
       "reliability": [
-        "Das Installationsprogramm vermeidet unnötige Einstellungsabfragen beim Start. Löst die Windows-Abfrage der Standardeingabe eine allgemeine Ausnahme aus, wird die gespeicherte Einstellung nur lesend abgefragt. Zugriffsfehler und ungültige Werte bleiben Fehler.",
-        "Konfigurationsfehler zeigen den Befehl und die Skriptposition und speichern eine lokale Diagnosedatei unter `%LOCALAPPDATA%\\AngleQuotes\\logs`. Protokolle werden nicht automatisch hochgeladen.",
-        "Installations-, Wiederherstellungs- und Deinstallationsanleitungen wurden in allen 11 README-Sprachen und den Ordnern aller 17 Belegungen aktualisiert. Build-Quellen, Übersetzungen und isolierte Einstellungstests sind enthalten."
+        "Neue MSI-Installationen verwenden ausdrücklich `ALLUSERS=1`. Deinstallationen pro Benutzer werden nicht als anderer Administrator neu gestartet.",
+        "Ausführliche `/L*V`-Protokolle und Produkt-/Kontextdiagnosen werden lokal unter `%LOCALAPPDATA%\\AngleQuotes\\logs` gespeichert. Sie werden nicht automatisch hochgeladen und können Konto-IDs und Pfade enthalten.",
+        "Der Erfolgscode `0` wird vor der Erfolgsmeldung mit dem MSI-Inventar abgeglichen. Der Neustartcode `3010` bleibt erhalten. Versionsdaten stammen aus einer gemeinsamen Quelle."
       ],
       "compatibility": [
-        "Tastatur-DLLs, MSI-Pakete, Zeichenzuweisungen und Übungstexte bleiben gegenüber v0.1.0 unverändert. Unterstützt wird weiterhin Windows 10/11 auf x86/x64; ARM64 ist nicht enthalten. Windows kann Abmelden oder einen Neustart erfordern, bevor eine Tastatur erscheint oder richtig funktioniert.",
+        "Tastatur-DLLs, MSI-Pakete, Zeichenzuweisungen und Übungstexte bleiben gegenüber v0.2.0 unverändert. Unterstützt wird weiterhin Windows 10/11 auf x86/x64; ARM64 ist nicht enthalten. Windows kann Abmelden oder einen Neustart erfordern, bevor eine Tastatur erscheint oder richtig funktioniert.",
         "SmartScreen: Die Warnung „Der Computer wurde durch Windows geschützt“ mit „Unbekannter Herausgeber“ wurde beim Start von setup.exe aus GitHub-Downloads sowohl bei v0.1.0 als auch bei v0.2.0 beobachtet. Die Installationsprogramme sind weiterhin unsigniert. Wenn du die Herkunft der Datei geprüft hast und fortfahren möchtest, wähle „Weitere Informationen“ und dann „Trotzdem ausführen“, sofern Windows diese Option anbietet. SmartScreen oder Microsoft Defender müssen nicht deaktiviert werden."
       ],
       "validation": [
-        "35 isolierte Einstellungsprüfungen bestehen in Windows PowerShell 5.1 mit 32 und 64 Bit, mit simulierten Windows-Einstellungen und Registrierungseinträgen.",
-        "204 Prüfungen von Installationsmetadaten, Architekturen, Anzeigenamen und eingebetteten Ressourcen bestehen. Die Zeichentabellenberichte decken alle 17 Belegungen ab, mit 11 016 Zeichenvergleichen je Architektur x86, x64 und WOW64 sowie Prüfungen toter Tasten.",
-        "Paketprüfungen kontrollieren die Hashes der 18 ZIP-Dateien, die einzelnen Ordnerinhalte, README-Kopien, lokalen Links und die Kodierung. Der echte Startpfad wurde auch unter 32- und 64-Bit-PowerShell nur lesend geprüft.",
-        "Der Nutzer berichtet einen insgesamt erfolgreichen manuellen Test des korrigierten Kandidaten **Spanish (Spain) - Angle Quotes** unter Windows Home x64, gemeldete Version 26H2, Build 26300.9818. Einzelne Fälle wurden nicht gesondert protokolliert. Das belegt keine manuelle Abdeckung der anderen 16 Belegungen oder aller unterstützten Windows-Versionen. Die neuen Übersetzungen wurden nicht unabhängig sprachlich geprüft."
+        "26 isolierte MSI-Identitäts-/Kontextprüfungen und die vorhandenen 35 Einstellungsprüfungen bestehen in Windows PowerShell 5.1 mit 32 und 64 Bit. Windows-Einstellungen und MSI-Vorgänge sind simuliert.",
+        "238 Prüfungen von Metadaten, Architekturen, Anzeigenamen, eingebetteten Ressourcen und Versionen decken alle 17 Belegungen ab. Tastatur-DLLs und MSI-Pakete bleiben unverändert.",
+        "Hashes der 18 ZIP-Dateien, Ordnerinhalte, Dokumentationskopien, lokale Links und Kodierung werden geprüft. Nur lesende Prüfungen testen die native MSI-Erkennung und den echten Startpfad.",
+        "Ich habe Spanish (Spain) in einem neu angelegten Konto erfolgreich getestet: Installation, Standard aktivieren/deaktivieren, Beibehaltung nach Abmelden oder Neustart und Deinstallation. Zuerst habe ich die ältere Benutzerinstallation entfernt. Die anderen 16 Belegungen und alle Windows-Konfigurationen habe ich nicht manuell getestet; die Übersetzungen wurden nicht unabhängig sprachlich geprüft. Der abschließende Build ergänzt die getestete Logik um die sichtbare Version."
       ],
-      "upgrade": "Zusätzlicher vom Nutzer gemeldeter Kompatibilitätstest: Bei bereits installierter v0.1.0-Belegung erkannte das v0.2.0-Installationsprogramm die vorhandene Installation und konnte sie als Standardtastatur festlegen. Dies bestätigt diesen Fall auf dem getesteten Rechner, ohne eine vollständige Deinstallation und Neuinstallation oder die Abdeckung aller Belegungen zu belegen.",
+      "upgrade": "Gehört eine ältere Installation zu einem anderen Konto, entferne sie zuerst aus diesem Ursprungskonto und installiere diese Version dann aus dem gewünschten Konto. Ein neues Konto oder das Öffnen des neuen Installationsprogramms migriert keine bestehende MSI-Benutzerregistrierung. Ich habe diese Migration erfolgreich abgeschlossen und anschließend den vollständigen Test in einem neuen Konto wiederholt.",
       "downloads": [
         "Wähle `ANGLE_QUOTES_NATIVE_WINDOWS.zip` für alle Belegungen oder die einzelne ZIP-Datei deiner Belegung. Entpacke das gesamte ZIP und lasse die Dateien zusammen. `SHA256SUMS.txt` enthält SHA256-Hashes für die 18 herunterladbaren ZIP-Dateien.",
         "Die **Source code**-Downloads ZIP/TAR.GZ von GitHub werden separat erzeugt und sind nicht die gepackten Installationsdownloads."
       ]
     },
     "it": {
-      "title": "Scelta della tastiera predefinita",
+      "title": "Disinstallazione affidabile tra account Windows",
       "headings": [
         "Nuovo programma di installazione",
         "Affidabilità e documentazione",
@@ -163,36 +162,36 @@
         "Download"
       ],
       "installer": [
-        "Tutte le 17 disposizioni includono una finestra con la casella facoltativa **Usa come tastiera predefinita per il mio account**. Selezionala e installa o applica la modifica per salvare la preferenza di input predefinito di Windows.",
-        "Riapri `setup.exe`, deseleziona la casella e premi **Applica** per ripristinare la preferenza precedente lasciando la tastiera installata. Se la tastiera precedente non è disponibile, il programma chiede di scegliere un altro metodo di input disponibile.",
-        "La casella riflette la preferenza attuale di Windows. Le altre lingue e tastiere vengono conservate; attivazioni ripetute non sovrascrivono il dato originale di ripristino con la stessa disposizione.",
-        "**Disinstalla** ripristina prima la preferenza precedente, se necessario, e poi rimuove la disposizione. La rimozione diretta tramite MSI o le app di Windows salta questo passaggio aggiuntivo.",
-        "L’interfaccia segue la lingua di Windows: spagnolo, inglese, francese, tedesco, italiano, portoghese, norvegese bokmål, danese, russo, ucraino e bielorusso, con inglese come alternativa.",
-        "Apri `setup.exe` normalmente, senza **Esegui come amministratore**. Solo le operazioni MSI richiedono privilegi elevati; le preferenze di input riguardano l’account che ha aperto il programma. Non vengono installate app in background né attività pianificate."
+        "Corregge l’errore **1605** dovuto alla confusione tra una tastiera registrata nel sistema e un’installazione MSI dell’account attuale.",
+        "La disinstallazione seleziona il prodotto realmente registrato verificandone MSI in cache, nome e DLL, senza dedurne l’identità dal pacchetto scaricato.",
+        "Le installazioni esistenti per utente si rimuovono dall’account proprietario. Quelle del computer richiedono l’autorizzazione di amministratore.",
+        "Le nuove installazioni vengono registrate per tutto il computer; la tastiera predefinita resta una preferenza per account.",
+        "Prodotti mancanti, ambigui o non verificabili vengono segnalati prima di ripristinare la preferenza. File di tastiera e voci del registro non vengono eliminati manualmente.",
+        "Finestra e messaggi mostrano **v0.2.1**. Le proprietà del file indicano la stessa versione. Rimuovere una tastiera di sistema può interessare altri account."
       ],
       "reliability": [
-        "Il programma evita letture inutili delle preferenze all’avvio. Se la lettura Windows dell’input predefinito genera un’eccezione generica, consulta la preferenza memorizzata in sola lettura. Gli errori di accesso e i valori non validi restano errori.",
-        "Gli errori di configurazione mostrano il comando e la posizione nello script e salvano un file diagnostico locale in `%LOCALAPPDATA%\\AngleQuotes\\logs`. I registri non vengono inviati automaticamente.",
-        "Le istruzioni di installazione, ripristino e rimozione sono aggiornate nelle 11 lingue dei README e nelle cartelle delle 17 disposizioni. Sono inclusi sorgenti di compilazione, traduzioni e test isolati delle preferenze."
+        "Le nuove installazioni MSI usano esplicitamente `ALLUSERS=1`. Le rimozioni per utente non rilanciano l’operazione come un altro amministratore.",
+        "I registri dettagliati `/L*V` e i dati diagnostici di prodotto e contesto sono salvati localmente in `%LOCALAPPDATA%\\AngleQuotes\\logs`. Non vengono inviati automaticamente e possono contenere identificativi degli account e percorsi.",
+        "Il codice di successo `0` viene verificato nell’inventario MSI prima della conferma. Il codice di riavvio `3010` viene conservato. La versione proviene da un’unica fonte."
       ],
       "compatibility": [
-        "DLL delle tastiere, pacchetti MSI, assegnazioni dei caratteri e testi di pratica non cambiano rispetto a v0.1.0. Restano supportati Windows 10/11 su x86/x64; ARM64 non è incluso. Windows può richiedere disconnessione o riavvio prima che la tastiera compaia o funzioni correttamente.",
+        "DLL delle tastiere, pacchetti MSI, assegnazioni dei caratteri e testi di pratica non cambiano rispetto a v0.2.0. Restano supportati Windows 10/11 su x86/x64; ARM64 non è incluso. Windows può richiedere disconnessione o riavvio prima che la tastiera compaia o funzioni correttamente.",
         "SmartScreen: l’avviso «PC protetto da Windows», con «Autore sconosciuto», è stato osservato eseguendo setup.exe scaricato da GitHub sia in v0.1.0 sia in v0.2.0. I programmi di installazione restano privi di firma digitale. Se hai verificato l’origine del file e decidi di continuare, scegli «Ulteriori informazioni» e poi «Esegui comunque», se Windows offre questa opzione. Non occorre disattivare SmartScreen o Microsoft Defender."
       ],
       "validation": [
-        "Superate 35 verifiche isolate delle preferenze in Windows PowerShell 5.1 sia a 32 sia a 64 bit, con impostazioni Windows e voci del registro simulate.",
-        "Superate 204 verifiche di metadati degli installer, architetture, nomi visualizzati e risorse integrate. I rapporti delle tabelle coprono le 17 disposizioni, con 11 016 confronti di caratteri per ciascuna architettura x86, x64 e WOW64, oltre alle verifiche dei tasti morti.",
-        "Le verifiche dei pacchetti controllano gli hash dei 18 ZIP, i contenuti delle cartelle individuali, le copie dei README, i collegamenti locali e la codifica. Anche il percorso reale di avvio è stato controllato in sola lettura con PowerShell a 32 e 64 bit.",
-        "L’utente segnala una prova manuale complessivamente riuscita della candidata corretta **Spanish (Spain) - Angle Quotes** su Windows Home x64, versione indicata 26H2, build 26300.9818. I singoli casi non sono stati registrati separatamente. Non è accertata la copertura manuale delle altre 16 disposizioni né di tutte le versioni Windows supportate. Le nuove traduzioni non hanno ricevuto una revisione linguistica indipendente."
+        "Superate 26 verifiche isolate di identità e contesto MSI e le 35 verifiche delle preferenze in Windows PowerShell 5.1 a 32 e 64 bit. Impostazioni Windows e operazioni MSI sono simulate.",
+        "238 controlli di metadati, architetture, nomi visualizzati, risorse integrate e versioni coprono le 17 disposizioni. DLL e pacchetti MSI restano invariati.",
+        "Si verificano hash dei 18 ZIP, contenuti delle cartelle, copie della documentazione, collegamenti locali e codifica. Le prove in sola lettura controllano rilevamento MSI nativo e avvio reale.",
+        "Ho provato con successo Spanish (Spain) in un account nuovo: installazione, attivazione/disattivazione del predefinito, persistenza dopo disconnessione o riavvio e disinstallazione. Prima ho rimosso la vecchia installazione per utente. Non ho testato manualmente le altre 16 disposizioni né tutte le configurazioni Windows; le traduzioni non hanno ricevuto una revisione linguistica indipendente. La compilazione finale aggiunge la versione visibile alla logica provata."
       ],
-      "upgrade": "Ulteriore prova di compatibilità segnalata dall’utente: con una disposizione v0.1.0 già installata, il programma v0.2.0 ha riconosciuto l’installazione esistente e ha consentito di impostarla come tastiera predefinita. La prova verifica questo caso sul computer usato, senza attestare una disinstallazione e reinstallazione complete o la copertura di tutte le disposizioni.",
+      "upgrade": "Se una vecchia installazione appartiene a un altro account, rimuovila prima dall’account originale e poi installa questa versione da quello desiderato. Creare un account o aprire il nuovo programma non migra una registrazione MSI per utente esistente. Ho completato questa migrazione con successo e poi ripetuto il test completo in un account nuovo.",
       "downloads": [
         "Scegli `ANGLE_QUOTES_NATIVE_WINDOWS.zip` per tutte le disposizioni oppure lo ZIP individuale della tua. Estrai tutto lo ZIP e conserva insieme i file. `SHA256SUMS.txt` elenca gli hash SHA256 dei 18 ZIP scaricabili.",
         "Gli archivi **Source code** ZIP/TAR.GZ di GitHub sono generati separatamente e non sono i pacchetti di installazione."
       ]
     },
     "pt": {
-      "title": "Escolha do teclado predefinido",
+      "title": "Desinstalação fiável entre contas Windows",
       "headings": [
         "Novo instalador",
         "Fiabilidade e documentação",
@@ -201,36 +200,36 @@
         "Transferências"
       ],
       "installer": [
-        "As 17 disposições incluem agora uma janela com a caixa opcional **Usar como teclado predefinido da minha conta**. Selecione-a e instale ou aplique a alteração para guardar a preferência de entrada predefinida do Windows.",
-        "Volte a abrir `setup.exe`, desmarque a caixa e clique em **Aplicar** para restaurar a preferência anterior, mantendo o teclado instalado. Se o teclado anterior não estiver disponível, o instalador pede para escolher outro método de entrada disponível.",
-        "A caixa reflete a preferência atual do Windows. Os outros idiomas e teclados são preservados; ativações repetidas não substituem o registo de recuperação original pela mesma disposição.",
-        "**Desinstalar** restaura primeiro o predefinido anterior, se necessário, e depois remove a disposição. A remoção direta por MSI ou Aplicações do Windows omite esta etapa adicional.",
-        "A interface segue o idioma do Windows: espanhol, inglês, francês, alemão, italiano, português, norueguês bokmål, dinamarquês, russo, ucraniano e bielorrusso, com inglês como alternativa.",
-        "Abra `setup.exe` normalmente, sem **Executar como administrador**. Só as operações MSI pedem elevação; as preferências aplicam-se à conta que abriu o instalador. Não é instalada nenhuma aplicação em segundo plano nem tarefa agendada."
+        "Corrige o erro **1605** causado pela confusão entre um teclado registado no sistema e uma instalação MSI pertencente à conta atual.",
+        "A desinstalação seleciona o produto realmente registado após verificar o MSI em cache, o nome e a DLL, sem presumir a identidade a partir do pacote transferido.",
+        "As instalações existentes por utilizador removem-se na conta proprietária. As instalações do computador pedem autorização de administrador.",
+        "As novas instalações ficam registadas para todo o computador; o teclado predefinido continua a ser uma preferência por conta.",
+        "Produtos ausentes, ambíguos ou não verificáveis são comunicados antes de restaurar a preferência. Não se apagam manualmente ficheiros de teclado nem entradas do registo.",
+        "A janela e os diálogos mostram **v0.2.1**. As propriedades do ficheiro indicam a mesma versão. Remover um teclado do sistema pode afetar outras contas."
       ],
       "reliability": [
-        "O instalador evita consultas desnecessárias de preferências no arranque. Se a consulta do predefinido do Windows gerar uma exceção genérica, consulta a preferência guardada apenas para leitura. Os erros de acesso e valores inválidos continuam a ser erros.",
-        "Os erros de configuração mostram o comando e a localização no script e guardam um ficheiro de diagnóstico local em `%LOCALAPPDATA%\\AngleQuotes\\logs`. Os registos não são enviados automaticamente.",
-        "As instruções de instalação, restauração e remoção foram atualizadas nos 11 idiomas dos README e nas pastas das 17 disposições. Incluem-se os códigos-fonte de compilação, as traduções e os testes isolados de preferências."
+        "As novas instalações MSI usam explicitamente `ALLUSERS=1`. As remoções por utilizador não relançam a operação como outro administrador.",
+        "Os registos detalhados `/L*V` e os diagnósticos de produto e contexto ficam localmente em `%LOCALAPPDATA%\\AngleQuotes\\logs`. Não são enviados automaticamente e podem conter identificadores de conta e caminhos.",
+        "A saída de sucesso `0` é verificada no inventário MSI antes da confirmação. Mantém-se a saída `3010`, que pede reinício. A versão tem uma única fonte."
       ],
       "compatibility": [
-        "As DLL de teclado, pacotes MSI, atribuições de caracteres e textos de prática mantêm-se iguais aos da v0.1.0. Mantém-se o suporte de Windows 10/11 em x86/x64; ARM64 não está incluído. O Windows pode exigir terminar a sessão ou reiniciar antes de o teclado aparecer ou funcionar corretamente.",
+        "As DLL de teclado, pacotes MSI, atribuições de caracteres e textos de prática mantêm-se iguais aos da v0.2.0. Mantém-se o suporte de Windows 10/11 em x86/x64; ARM64 não está incluído. O Windows pode exigir terminar a sessão ou reiniciar antes de o teclado aparecer ou funcionar corretamente.",
         "SmartScreen: o aviso «O Windows protegeu o seu PC», com «Editor desconhecido», foi observado ao executar setup.exe transferido do GitHub tanto na v0.1.0 como na v0.2.0. Os instaladores continuam sem assinatura digital. Se verificou a origem do ficheiro e decidir continuar, escolha «Mais informações» e depois «Executar mesmo assim», se o Windows disponibilizar essa opção. Não é necessário desativar o SmartScreen nem o Microsoft Defender."
       ],
       "validation": [
-        "Passam 35 verificações isoladas de preferências em Windows PowerShell 5.1 de 32 e 64 bits, usando definições do Windows e entradas do registo simuladas.",
-        "Passam 204 verificações de metadados de instaladores, arquiteturas, nomes apresentados e recursos incorporados. Os relatórios das tabelas abrangem as 17 disposições, com 11 016 comparações de caracteres em cada arquitetura x86, x64 e WOW64, além de verificações de teclas mortas.",
-        "As auditorias verificam os hashes dos 18 ZIP, os conteúdos das pastas individuais, as cópias dos README, as ligações locais e a codificação. O arranque real do instalador foi também verificado apenas para leitura em PowerShell de 32 e 64 bits.",
-        "O utilizador comunica um teste manual global bem-sucedido da candidata corrigida **Spanish (Spain) - Angle Quotes** em Windows Home x64, versão indicada 26H2, compilação 26300.9818. Os casos individuais não foram registados separadamente. Não está comprovada a cobertura manual das outras 16 disposições nem de todas as versões Windows suportadas. As novas traduções não receberam revisão linguística independente."
+        "Passam 26 verificações isoladas de identidade e contexto MSI e as 35 de preferências em Windows PowerShell 5.1 de 32 e 64 bits. As definições Windows e operações MSI são simuladas.",
+        "238 verificações de metadados, arquiteturas, nomes apresentados, recursos incorporados e versões abrangem as 17 disposições. As DLL e pacotes MSI não mudam.",
+        "Auditam-se os hashes dos 18 ZIP, conteúdos das pastas, cópias de documentação, ligações locais e codificação. As verificações apenas para leitura testam a deteção MSI nativa e o arranque real.",
+        "Testei com sucesso Spanish (Spain) numa conta nova: instalação, ativação/desativação do predefinido, persistência após terminar sessão ou reiniciar e desinstalação. Primeiro removi a instalação antiga por utilizador. Não testei manualmente as outras 16 disposições nem todas as configurações Windows; as traduções não receberam revisão linguística independente. A compilação final acrescenta a versão visível à lógica testada."
       ],
-      "upgrade": "Teste adicional de compatibilidade comunicado pelo utilizador: com uma disposição v0.1.0 já instalada, o instalador v0.2.0 reconheceu a instalação existente e permitiu defini-la como teclado predefinido. Isto verifica esse caso no computador testado, sem comprovar uma desinstalação e reinstalação completas nem a cobertura de todas as disposições.",
+      "upgrade": "Se uma instalação antiga pertencer a outra conta, remova-a primeiro na conta original e depois instale esta versão na conta pretendida. Criar uma conta ou abrir o novo instalador não migra um registo MSI por utilizador existente. Completei esta migração com sucesso e depois repeti o teste completo numa conta nova.",
       "downloads": [
         "Escolha `ANGLE_QUOTES_NATIVE_WINDOWS.zip` para todas as disposições ou o ZIP individual da sua. Extraia todo o ZIP e mantenha os ficheiros juntos. `SHA256SUMS.txt` contém os hashes SHA256 dos 18 ZIP disponíveis.",
         "Os arquivos **Source code** ZIP/TAR.GZ do GitHub são gerados separadamente e não são os pacotes de instalação."
       ]
     },
     "nb": {
-      "title": "Valg av standardtastatur",
+      "title": "Pålitelig avinstallering mellom Windows-kontoer",
       "headings": [
         "Nytt installasjonsprogram",
         "Pålitelighet og dokumentasjon",
@@ -239,36 +238,36 @@
         "Nedlastinger"
       ],
       "installer": [
-        "Alle 17 oppsett har nå et installasjonsvindu med den valgfrie avmerkingen **Bruk som standardtastatur for kontoen min**. Merk av og installer eller bruk endringen for å lagre standard inndatametode i Windows.",
-        "Åpne `setup.exe` igjen, fjern avmerkingen og klikk **Bruk** for å gjenopprette forrige innstilling mens tastaturet forblir installert. Hvis det forrige tastaturet ikke er tilgjengelig, ber programmet deg velge en annen tilgjengelig inndatametode.",
-        "Avmerkingen viser gjeldende Windows-innstilling. Andre språk og tastaturer beholdes; gjentatt aktivering overskriver ikke den opprinnelige gjenopprettingsoppføringen med samme oppsett.",
-        "**Avinstaller** gjenoppretter først forrige standard ved behov og fjerner deretter oppsettet. Direkte fjerning via MSI eller Windows-apper hopper over dette ekstra gjenopprettingstrinnet.",
-        "Grensesnittet følger Windows-språket: spansk, engelsk, fransk, tysk, italiensk, portugisisk, norsk bokmål, dansk, russisk, ukrainsk og belarusisk, med engelsk som reserve.",
-        "Åpne `setup.exe` normalt, uten **Kjør som administrator**. Bare MSI-operasjoner ber om administratorrettigheter; innstillingene gjelder kontoen som åpnet programmet. Ingen bakgrunnsapp eller planlagt oppgave installeres."
+        "Retter feil **1605** som skyldes at en systemregistrert tastaturbelegging forveksles med en MSI-installasjon for gjeldende konto.",
+        "Avinstalleringen velger det registrerte produktet etter kontroll av bufret MSI, navn og DLL, fremfor å anta identiteten fra den nedlastede pakken.",
+        "Eksisterende installasjoner per bruker fjernes fra eierkontoen. Maskininstallasjoner ber om administratorgodkjenning.",
+        "Nye installasjoner registreres for hele datamaskinen; standardtastaturet er fortsatt en egen innstilling per konto.",
+        "Manglende, tvetydige eller ikke verifiserbare produkter meldes før standardinnstillingen gjenopprettes. Tastaturfiler og registeroppføringer slettes ikke manuelt.",
+        "Vindu og dialoger viser **v0.2.1**. Filegenskapene viser samme versjon. Fjerning av et systemtastatur kan påvirke andre kontoer."
       ],
       "reliability": [
-        "Programmet unngår unødvendige innstillingsspørringer ved oppstart. Hvis Windows-spørringen om standard inndatametode kaster et generelt unntak, leses den lagrede innstillingen med skrivebeskyttet tilgang. Tilgangsfeil og ugyldige verdier forblir feil.",
-        "Konfigurasjonsfeil viser kommandoen og plasseringen i skriptet og lagrer en lokal diagnosefil under `%LOCALAPPDATA%\\AngleQuotes\\logs`. Logger lastes ikke opp automatisk.",
-        "Installasjons-, gjenopprettings- og fjerningsinstruksjoner er oppdatert i alle 11 README-språk og mappene til de 17 oppsettene. Byggekilder, oversettelser og isolerte innstillingstester er inkludert."
+        "Nye MSI-installasjoner bruker uttrykkelig `ALLUSERS=1`. Fjerning per bruker starter ikke operasjonen på nytt som en annen administrator.",
+        "Detaljerte `/L*V`-logger og produkt-/kontekstdiagnoser lagres lokalt under `%LOCALAPPDATA%\\AngleQuotes\\logs`. De lastes ikke opp automatisk og kan inneholde konto-ID-er og stier.",
+        "Suksesskoden `0` kontrolleres mot MSI-oversikten før fullføring bekreftes. Omstartskoden `3010` beholdes. Versjonen kommer fra én felles kilde."
       ],
       "compatibility": [
-        "Tastatur-DLL-er, MSI-pakker, tegntilordninger og øvingstekster er uendret fra v0.1.0. Windows 10/11 på x86/x64 støttes fortsatt; ARM64 er ikke inkludert. Windows kan kreve avlogging eller omstart før tastaturet vises eller fungerer riktig.",
+        "Tastatur-DLL-er, MSI-pakker, tegntilordninger og øvingstekster er uendret fra v0.2.0. Windows 10/11 på x86/x64 støttes fortsatt; ARM64 er ikke inkludert. Windows kan kreve avlogging eller omstart før tastaturet vises eller fungerer riktig.",
         "SmartScreen: Advarselen «Windows beskyttet PC-en» med «Ukjent utgiver» er observert ved kjøring av setup.exe lastet ned fra GitHub i både v0.1.0 og v0.2.0. Installasjonsprogrammene er fortsatt usignerte. Hvis du har kontrollert filens opprinnelse og vil fortsette, velger du «Mer informasjon» og deretter «Kjør likevel», hvis Windows tilbyr dette. Du trenger ikke deaktivere SmartScreen eller Microsoft Defender."
       ],
       "validation": [
-        "35 isolerte innstillingskontroller består i både 32- og 64-biters Windows PowerShell 5.1, med simulerte Windows-innstillinger og registeroppføringer.",
-        "204 kontroller av installasjonsmetadata, arkitekturer, visningsnavn og innebygde ressurser består. Tegntabellrapportene dekker alle 17 oppsett, med 11 016 tegnsammenligninger for hver av arkitekturene x86, x64 og WOW64, samt kontroller av dødtaster.",
-        "Pakkegranskingen kontrollerer hashene til de 18 ZIP-filene, innholdet i de enkelte mappene, README-kopier, lokale lenker og tegnkoding. Den faktiske oppstarten er også kontrollert med skrivebeskyttet tilgang i 32- og 64-biters PowerShell.",
-        "Brukeren rapporterer en samlet vellykket manuell test av den korrigerte **Spanish (Spain) - Angle Quotes**-kandidaten på Windows Home x64, oppgitt versjon 26H2, bygg 26300.9818. Enkelttilfellene ble ikke registrert separat. Dette dokumenterer ikke manuell dekning av de andre 16 oppsettene eller alle støttede Windows-versjoner. De nye oversettelsene er ikke gjennomgått av en uavhengig språkkyndig."
+        "26 isolerte MSI-identitets-/kontekstkontroller og de eksisterende 35 innstillingskontrollene består i 32- og 64-biters Windows PowerShell 5.1. Windows-innstillinger og MSI-operasjoner simuleres.",
+        "238 kontroller av metadata, arkitekturer, visningsnavn, innebygde ressurser og versjoner dekker alle 17 oppsett. DLL-er og MSI-pakker er uendret.",
+        "Hashene til de 18 ZIP-filene, mappeinnhold, dokumentasjonskopier, lokale lenker og tegnkoding granskes. Skrivebeskyttede kontroller tester ekte MSI-oppdagelse og oppstart.",
+        "Jeg har testet Spanish (Spain) i en ny konto med godt resultat: installasjon, aktivering/deaktivering av standard, bevaring etter avlogging eller omstart og avinstallering. Jeg fjernet den gamle brukerinstallasjonen først. Jeg har ikke testet de andre 16 oppsettene eller alle Windows-konfigurasjoner manuelt; oversettelsene har ikke fått uavhengig språklig gjennomgang. Siste bygg legger synlig versjon til den testede logikken."
       ],
-      "upgrade": "Ytterligere kompatibilitetstest rapportert av brukeren: Med et v0.1.0-oppsett installert gjenkjente v0.2.0-programmet den eksisterende installasjonen og kunne angi den som standardtastatur. Dette bekrefter dette tilfellet på den testede maskinen, uten å dokumentere en full avinstallasjon og nyinstallasjon eller dekning av alle oppsett.",
+      "upgrade": "Hvis en eldre installasjon tilhører en annen konto, fjern den først fra opprinnelig konto og installer denne versjonen fra ønsket konto. En ny konto eller åpning av det nye installasjonsprogrammet flytter ikke en eksisterende MSI-brukerregistrering. Jeg fullførte denne overgangen og gjentok deretter hele testen i en ny konto med godt resultat.",
       "downloads": [
         "Velg `ANGLE_QUOTES_NATIVE_WINDOWS.zip` for alle oppsett, eller den enkelte ZIP-filen for ditt oppsett. Pakk ut hele ZIP-filen og behold filene samlet. `SHA256SUMS.txt` inneholder SHA256-hashene til de 18 nedlastbare ZIP-filene.",
         "GitHubs **Source code**-nedlastinger i ZIP/TAR.GZ-format genereres separat og er ikke installasjonspakkene."
       ]
     },
     "da": {
-      "title": "Valg af standardtastatur",
+      "title": "Pålidelig afinstallation mellem Windows-konti",
       "headings": [
         "Nyt installationsprogram",
         "Pålidelighed og dokumentation",
@@ -277,36 +276,36 @@
         "Downloads"
       ],
       "installer": [
-        "Alle 17 layouts har nu et installationsvindue med det valgfrie felt **Brug som standardtastatur for min konto**. Markér det, og installer eller anvend ændringen for at gemme Windows' standardinputmetode.",
-        "Åbn `setup.exe` igen, fjern markeringen, og klik på **Anvend** for at gendanne den tidligere indstilling, mens tastaturet forbliver installeret. Hvis det tidligere tastatur ikke er tilgængeligt, beder programmet dig vælge en anden tilgængelig inputmetode.",
-        "Feltet afspejler den aktuelle Windows-indstilling. Andre sprog og tastaturer bevares; gentagen aktivering overskriver ikke den oprindelige gendannelsesoplysning med samme layout.",
-        "**Afinstaller** gendanner først den tidligere standard efter behov og fjerner derefter layoutet. Direkte fjernelse via MSI eller Windows-apps springer dette ekstra gendannelsestrin over.",
-        "Grænsefladen følger Windows-sproget: spansk, engelsk, fransk, tysk, italiensk, portugisisk, norsk bokmål, dansk, russisk, ukrainsk og belarusisk, med engelsk som reserve.",
-        "Åbn `setup.exe` normalt uden **Kør som administrator**. Kun MSI-handlinger beder om administratorrettigheder; indstillingerne gælder den konto, der åbnede programmet. Der installeres ingen baggrundsapp eller planlagt opgave."
+        "Retter fejl **1605**, der skyldes forveksling af et systemregistreret tastatur med en MSI-installation for den aktuelle konto.",
+        "Afinstallationen vælger det registrerede produkt efter kontrol af cachelagret MSI, navn og DLL i stedet for at antage identiteten fra den hentede pakke.",
+        "Eksisterende installationer pr. bruger fjernes fra ejerkontoen. Installationer for computeren beder om administratorgodkendelse.",
+        "Nye installationer registreres for hele computeren; standardtastaturet er fortsat en selvstændig indstilling pr. konto.",
+        "Manglende, tvetydige eller ikke verificerbare produkter meldes, før standardindstillingen gendannes. Tastaturfiler og registreringsdatabaseposter slettes ikke manuelt.",
+        "Vindue og dialoger viser **v0.2.1**. Filegenskaberne viser samme version. Fjernelse af et systemtastatur kan påvirke andre konti."
       ],
       "reliability": [
-        "Programmet undgår unødvendige forespørgsler om indstillinger ved opstart. Hvis Windows-forespørgslen om standardinput giver en generel undtagelse, læses den gemte indstilling med skrivebeskyttet adgang. Adgangsfejl og ugyldige værdier er fortsat fejl.",
-        "Konfigurationsfejl viser kommandoen og placeringen i scriptet og gemmer en lokal diagnosefil under `%LOCALAPPDATA%\\AngleQuotes\\logs`. Logfiler uploades ikke automatisk.",
-        "Vejledninger til installation, gendannelse og fjernelse er opdateret på alle 11 README-sprog og i mapperne til de 17 layouts. Kildekode til bygning, oversættelser og isolerede indstillingstests er inkluderet."
+        "Nye MSI-installationer bruger udtrykkeligt `ALLUSERS=1`. Fjernelse pr. bruger genstarter ikke handlingen som en anden administrator.",
+        "Detaljerede `/L*V`-logfiler og produkt-/kontekstdiagnoser gemmes lokalt under `%LOCALAPPDATA%\\AngleQuotes\\logs`. De uploades ikke automatisk og kan indeholde konto-ID’er og stier.",
+        "Successtatus `0` kontrolleres mod MSI-oversigten før bekræftelse. Genstartskoden `3010` bevares. Versionen har én fælles kilde."
       ],
       "compatibility": [
-        "Tastatur-DLL'er, MSI-pakker, tegntildelinger og øvelsestekster er uændrede fra v0.1.0. Windows 10/11 på x86/x64 understøttes fortsat; ARM64 er ikke inkluderet. Windows kan kræve aflogning eller genstart, før tastaturet vises eller fungerer korrekt.",
+        "Tastatur-DLL'er, MSI-pakker, tegntildelinger og øvelsestekster er uændrede fra v0.2.0. Windows 10/11 på x86/x64 understøttes fortsat; ARM64 er ikke inkluderet. Windows kan kræve aflogning eller genstart, før tastaturet vises eller fungerer korrekt.",
         "SmartScreen: Advarslen »Windows beskyttede din pc« med »Ukendt udgiver« er observeret ved kørsel af setup.exe hentet fra GitHub i både v0.1.0 og v0.2.0. Installationsprogrammerne er stadig usignerede. Hvis du har kontrolleret filens oprindelse og vil fortsætte, vælger du »Flere oplysninger« og derefter »Kør alligevel«, hvis Windows tilbyder dette. Du behøver ikke deaktivere SmartScreen eller Microsoft Defender."
       ],
       "validation": [
-        "35 isolerede indstillingskontroller består i både 32- og 64-bit Windows PowerShell 5.1 med simulerede Windows-indstillinger og registreringsdatabaseposter.",
-        "204 kontroller af installationsmetadata, arkitekturer, viste navne og integrerede ressourcer består. Tegntabelrapporterne dækker alle 17 layouts med 11 016 tegnsammenligninger for hver arkitektur x86, x64 og WOW64 samt kontrol af døde taster.",
-        "Pakkekontrollerne verificerer hashene for de 18 ZIP-filer, indholdet af de enkelte mapper, README-kopier, lokale links og tegnkodning. Den faktiske opstart er også kontrolleret med skrivebeskyttet adgang i 32- og 64-bit PowerShell.",
-        "Brugeren rapporterer en samlet vellykket manuel test af den rettede kandidat **Spanish (Spain) - Angle Quotes** på Windows Home x64, angivet version 26H2, build 26300.9818. De enkelte tilfælde blev ikke registreret separat. Dette dokumenterer ikke manuel dækning af de øvrige 16 layouts eller alle understøttede Windows-versioner. De nye oversættelser har ikke fået uafhængig sproglig gennemgang."
+        "26 isolerede MSI-identitets-/kontekstkontroller og de eksisterende 35 indstillingskontroller består i 32- og 64-bit Windows PowerShell 5.1. Windows-indstillinger og MSI-handlinger simuleres.",
+        "238 kontroller af metadata, arkitekturer, viste navne, integrerede ressourcer og versioner dækker alle 17 layouts. DLL’er og MSI-pakker er uændrede.",
+        "Hashene for de 18 ZIP-filer, mappeindhold, dokumentationskopier, lokale links og tegnkodning kontrolleres. Skrivebeskyttede kontroller tester den faktiske MSI-registrering og opstart.",
+        "Jeg har testet Spanish (Spain) i en ny konto med godt resultat: installation, aktivering/deaktivering af standard, bevarelse efter aflogning eller genstart og afinstallation. Jeg fjernede den gamle brugerinstallation først. Jeg har ikke testet de øvrige 16 layouts eller alle Windows-konfigurationer manuelt; oversættelserne har ikke fået uafhængig sproglig gennemgang. Det endelige build tilføjer synlig version til den testede logik."
       ],
-      "upgrade": "Yderligere kompatibilitetstest rapporteret af brugeren: Med et v0.1.0-layout installeret genkendte v0.2.0-programmet den eksisterende installation og kunne angive det som standardtastatur. Det bekræfter dette tilfælde på den testede maskine uden at dokumentere en fuld afinstallation og geninstallation eller dækning af alle layouts.",
+      "upgrade": "Hvis en ældre installation tilhører en anden konto, fjern den først fra den oprindelige konto, og installer denne version fra den ønskede konto. En ny konto eller åbning af det nye installationsprogram migrerer ikke en eksisterende MSI-brugerregistrering. Jeg gennemførte denne overgang og gentog derefter hele testen i en ny konto med godt resultat.",
       "downloads": [
         "Vælg `ANGLE_QUOTES_NATIVE_WINDOWS.zip` til alle layouts eller den enkelte ZIP-fil til dit layout. Pak hele ZIP-filen ud, og behold filerne samlet. `SHA256SUMS.txt` indeholder SHA256-hashene for de 18 ZIP-filer, der kan downloades.",
         "GitHubs **Source code**-downloads i ZIP/TAR.GZ-format genereres separat og er ikke installationspakkerne."
       ]
     },
     "ru": {
-      "title": "Выбор раскладки по умолчанию",
+      "title": "Надёжное удаление между учётными записями Windows",
       "headings": [
         "Новый установщик",
         "Надёжность и документация",
@@ -315,36 +314,36 @@
         "Загрузки"
       ],
       "installer": [
-        "Все 17 раскладок теперь включают окно установки с необязательным флажком **Использовать по умолчанию для моей учётной записи**. Установите флажок и выполните установку или примените изменение, чтобы сохранить метод ввода по умолчанию в Windows.",
-        "Снова откройте `setup.exe`, снимите флажок и нажмите **Применить**, чтобы восстановить прежнюю настройку, оставив раскладку установленной. Если прежняя раскладка недоступна, установщик предложит выбрать другой доступный метод ввода.",
-        "Флажок отражает текущую настройку Windows. Другие языки и раскладки сохраняются; повторное включение не заменяет исходные данные восстановления этой же раскладкой.",
-        "**Удалить** сначала восстанавливает прежний метод ввода по умолчанию, если необходимо, а затем удаляет раскладку. Прямое удаление через MSI или приложения Windows пропускает этот дополнительный шаг восстановления.",
-        "Интерфейс следует языку Windows: испанскому, английскому, французскому, немецкому, итальянскому, португальскому, норвежскому букмолу, датскому, русскому, украинскому и белорусскому. При отсутствии перевода используется английский.",
-        "Открывайте `setup.exe` обычным способом, без **Запуска от имени администратора**. Повышение прав запрашивается только для операций MSI; настройки ввода применяются к учётной записи, открывшей установщик. Фоновое приложение и запланированная задача не устанавливаются."
+        "Исправляет ошибку **1605**, связанную со смешением системной регистрации раскладки и установки MSI для текущей учётной записи.",
+        "При удалении выбирается реально зарегистрированный продукт после проверки его MSI в кеше, имени и DLL, а не предполагается его совпадение с загруженным пакетом.",
+        "Существующие установки для пользователя удаляются из учётной записи владельца. Установки для компьютера требуют разрешения администратора.",
+        "Новые установки регистрируются для всего компьютера; раскладка по умолчанию остаётся отдельной настройкой каждой учётной записи.",
+        "Отсутствующие, неоднозначные или непроверяемые продукты выявляются до восстановления настройки по умолчанию. Файлы раскладок и записи реестра не удаляются вручную.",
+        "Окно и диалоги теперь показывают **v0.2.1**. В свойствах файла указана та же версия. Удаление системной раскладки может затронуть другие учётные записи."
       ],
       "reliability": [
-        "Установщик избегает ненужных запросов настроек при запуске. При обычном исключении из запроса Windows о методе ввода по умолчанию он читает сохранённую настройку без записи. Ошибки доступа и некорректные значения по-прежнему считаются ошибками.",
-        "Ошибки настройки показывают команду и место в скрипте и сохраняют локальный файл диагностики в `%LOCALAPPDATA%\\AngleQuotes\\logs`. Журналы не отправляются автоматически.",
-        "Инструкции по установке, восстановлению и удалению обновлены на всех 11 языках README и в папках 17 раскладок. Включены исходники сборки, переводы и изолированные тесты настроек."
+        "Новые установки MSI явно используют `ALLUSERS=1`. Удаление установки для пользователя не перезапускается от имени другого администратора.",
+        "Подробные журналы `/L*V` и сведения о продукте и контексте сохраняются локально в `%LOCALAPPDATA%\\AngleQuotes\\logs`. Они не отправляются автоматически и могут содержать идентификаторы учётных записей и пути.",
+        "Код успеха `0` сверяется со списком MSI до подтверждения завершения. Код необходимости перезагрузки `3010` сохраняется. Версия берётся из единого источника."
       ],
       "compatibility": [
-        "DLL раскладок, пакеты MSI, назначения символов и тренировочные тексты не изменились по сравнению с v0.1.0. Сохраняется поддержка Windows 10/11 на x86/x64; ARM64 не включена. Для появления или правильной работы раскладки Windows может потребовать выход из системы или перезагрузку.",
+        "DLL раскладок, пакеты MSI, назначения символов и тренировочные тексты не изменились по сравнению с v0.2.0. Сохраняется поддержка Windows 10/11 на x86/x64; ARM64 не включена. Для появления или правильной работы раскладки Windows может потребовать выход из системы или перезагрузку.",
         "SmartScreen: предупреждение «Система Windows защитила ваш компьютер» с надписью «Неизвестный издатель» наблюдалось при запуске setup.exe, загруженного с GitHub, как в v0.1.0, так и в v0.2.0. Установщики по-прежнему не имеют цифровой подписи. Если вы проверили источник файла и решили продолжить, выберите «Подробнее», затем «Выполнить в любом случае», если Windows предлагает этот вариант. Отключать SmartScreen или Microsoft Defender не требуется."
       ],
       "validation": [
-        "35 изолированных проверок настроек проходят в Windows PowerShell 5.1 как 32-, так и 64-разрядной версии с имитацией настроек Windows и записей реестра.",
-        "Проходят 204 проверки метаданных установщиков, архитектур, отображаемых имён и встроенных ресурсов. Отчёты таблиц символов охватывают все 17 раскладок: по 11 016 сравнений символов для x86, x64 и WOW64, а также проверки мёртвых клавиш.",
-        "Аудиты пакетов проверяют хеши 18 ZIP-архивов, содержимое отдельных папок, копии README, локальные ссылки и кодировку. Реальный путь запуска установщика также проверен без записи в 32- и 64-разрядной PowerShell.",
-        "Пользователь сообщает об успешной общей ручной проверке исправленного кандидата **Spanish (Spain) - Angle Quotes** в Windows Home x64, указанная версия 26H2, сборка 26300.9818. Отдельные случаи не записывались. Это не подтверждает ручную проверку остальных 16 раскладок или всех поддерживаемых версий Windows. Новые переводы не прошли независимую языковую проверку."
+        "26 изолированных проверок идентичности и контекста MSI и существующие 35 проверок настроек проходят в Windows PowerShell 5.1 для 32 и 64 бит. Настройки Windows и операции MSI имитируются.",
+        "238 проверок метаданных, архитектур, имён, встроенных ресурсов и версий охватывают все 17 раскладок. DLL и пакеты MSI не изменились.",
+        "Проверяются хеши 18 ZIP-архивов, содержимое папок, копии документации, локальные ссылки и кодировка. Проверки без записи охватывают нативное обнаружение MSI и реальный запуск.",
+        "Я успешно проверил Spanish (Spain) в новой учётной записи: установку, включение/отключение по умолчанию, сохранение после выхода из системы или перезагрузки и удаление. Сначала я удалил старую установку для пользователя. Я не проверял вручную другие 16 раскладок и все конфигурации Windows; переводы не прошли независимую языковую проверку. Финальная сборка добавляет отображение версии к проверенной логике."
       ],
-      "upgrade": "Дополнительная проверка совместимости со слов пользователя: при уже установленной раскладке v0.1.0 установщик v0.2.0 правильно распознал существующую установку и позволил выбрать её по умолчанию. Это подтверждает данный сценарий на проверенном компьютере, но не полное удаление и повторную установку или охват всех раскладок.",
+      "upgrade": "Если старая установка принадлежит другой учётной записи, сначала удалите её из исходной учётной записи, затем установите эту версию из нужной. Создание новой учётной записи или запуск нового установщика не переносит существующую регистрацию MSI для пользователя. Я успешно выполнил этот переход, а затем повторил полную проверку в новой учётной записи.",
       "downloads": [
         "Выберите `ANGLE_QUOTES_NATIVE_WINDOWS.zip` для всех раскладок или отдельный ZIP для своей. Полностью распакуйте ZIP и храните файлы вместе. В `SHA256SUMS.txt` приведены хеши SHA256 всех 18 загружаемых ZIP-архивов.",
         "Архивы **Source code** ZIP/TAR.GZ на GitHub создаются отдельно и не являются пакетами установки."
       ]
     },
     "uk": {
-      "title": "Вибір розкладки за замовчуванням",
+      "title": "Надійне видалення між обліковими записами Windows",
       "headings": [
         "Новий інсталятор",
         "Надійність і документація",
@@ -353,36 +352,36 @@
         "Завантаження"
       ],
       "installer": [
-        "Усі 17 розкладок тепер мають вікно встановлення з необов’язковим прапорцем **Використовувати за замовчуванням для мого облікового запису**. Установіть прапорець і виконайте встановлення або застосуйте зміну, щоб зберегти метод введення за замовчуванням у Windows.",
-        "Знову відкрийте `setup.exe`, зніміть прапорець і натисніть **Застосувати**, щоб відновити попереднє налаштування, залишивши розкладку встановленою. Якщо попередня розкладка недоступна, інсталятор запропонує вибрати інший доступний метод введення.",
-        "Прапорець відображає поточне налаштування Windows. Інші мови й розкладки зберігаються; повторне ввімкнення не замінює початкові дані відновлення цією самою розкладкою.",
-        "**Видалити** спочатку відновлює попередній метод введення за замовчуванням, якщо потрібно, а потім видаляє розкладку. Пряме видалення через MSI або програми Windows пропускає цей додатковий крок відновлення.",
-        "Інтерфейс відповідає мові Windows: іспанській, англійській, французькій, німецькій, італійській, португальській, норвезькій букмол, данській, російській, українській і білоруській. За відсутності перекладу використовується англійська.",
-        "Відкривайте `setup.exe` звичайним способом, без **Запуску від імені адміністратора**. Підвищення прав потрібне лише для операцій MSI; налаштування введення стосуються облікового запису, який відкрив інсталятор. Фонова програма й заплановане завдання не встановлюються."
+        "Виправляє помилку **1605**, пов’язану зі змішуванням системної реєстрації розкладки й інсталяції MSI для поточного облікового запису.",
+        "Під час видалення вибирається справді зареєстрований продукт після перевірки його MSI в кеші, назви й DLL, без припущення про збіг із завантаженим пакетом.",
+        "Наявні інсталяції для користувача видаляються з облікового запису власника. Інсталяції для комп’ютера потребують дозволу адміністратора.",
+        "Нові інсталяції реєструються для всього комп’ютера; розкладка за замовчуванням залишається окремим налаштуванням кожного облікового запису.",
+        "Відсутні, неоднозначні чи неперевірювані продукти виявляються до відновлення налаштування за замовчуванням. Файли розкладок і записи реєстру не видаляються вручну.",
+        "Вікно й діалоги тепер показують **v0.2.1**. Властивості файлу містять ту саму версію. Видалення системної розкладки може вплинути на інші облікові записи."
       ],
       "reliability": [
-        "Інсталятор уникає зайвих запитів налаштувань під час запуску. Якщо запит Windows про метод введення за замовчуванням спричиняє загальний виняток, він читає збережене налаштування без запису. Помилки доступу й некоректні значення залишаються помилками.",
-        "Помилки налаштування показують команду й місце у скрипті та зберігають локальний діагностичний файл у `%LOCALAPPDATA%\\AngleQuotes\\logs`. Журнали не надсилаються автоматично.",
-        "Інструкції зі встановлення, відновлення й видалення оновлено всіма 11 мовами README та в папках 17 розкладок. Додано вихідний код збирання, переклади й ізольовані тести налаштувань."
+        "Нові інсталяції MSI явно використовують `ALLUSERS=1`. Видалення інсталяції для користувача не перезапускається від імені іншого адміністратора.",
+        "Докладні журнали `/L*V` і дані про продукт та контекст зберігаються локально в `%LOCALAPPDATA%\\AngleQuotes\\logs`. Вони не надсилаються автоматично й можуть містити ідентифікатори облікових записів і шляхи.",
+        "Код успіху `0` перевіряється за списком MSI до підтвердження завершення. Код потреби перезавантаження `3010` зберігається. Версія має єдине джерело."
       ],
       "compatibility": [
-        "DLL розкладок, пакети MSI, призначення символів і тренувальні тексти не змінилися порівняно з v0.1.0. Зберігається підтримка Windows 10/11 на x86/x64; ARM64 не включено. Для появи або правильної роботи розкладки Windows може вимагати вихід із системи чи перезавантаження.",
+        "DLL розкладок, пакети MSI, призначення символів і тренувальні тексти не змінилися порівняно з v0.2.0. Зберігається підтримка Windows 10/11 на x86/x64; ARM64 не включено. Для появи або правильної роботи розкладки Windows може вимагати вихід із системи чи перезавантаження.",
         "SmartScreen: попередження «Система Windows захистила ваш комп’ютер» із написом «Невідомий видавець» спостерігалося під час запуску setup.exe, завантаженого з GitHub, як у v0.1.0, так і у v0.2.0. Інсталятори досі не мають цифрового підпису. Якщо ви перевірили джерело файлу й вирішили продовжити, виберіть «Докладніше», а потім «Виконати в будь-якому разі», якщо Windows пропонує цей варіант. Вимикати SmartScreen або Microsoft Defender не потрібно."
       ],
       "validation": [
-        "35 ізольованих перевірок налаштувань проходять у Windows PowerShell 5.1 у 32- та 64-бітному виконанні з імітацією налаштувань Windows і записів реєстру.",
-        "Проходять 204 перевірки метаданих інсталяторів, архітектур, відображуваних назв і вбудованих ресурсів. Звіти таблиць символів охоплюють усі 17 розкладок: по 11 016 порівнянь символів для x86, x64 і WOW64 та перевірки мертвих клавіш.",
-        "Аудити пакетів перевіряють хеші 18 ZIP-архівів, вміст окремих папок, копії README, локальні посилання й кодування. Реальний шлях запуску також перевірено без запису в 32- та 64-бітній PowerShell.",
-        "Користувач повідомляє про успішну загальну ручну перевірку виправленого кандидата **Spanish (Spain) - Angle Quotes** у Windows Home x64, зазначена версія 26H2, збірка 26300.9818. Окремі випадки не записувалися. Це не підтверджує ручну перевірку інших 16 розкладок або всіх підтримуваних версій Windows. Нові переклади не пройшли незалежної мовної перевірки."
+        "26 ізольованих перевірок ідентичності й контексту MSI та наявні 35 перевірок налаштувань проходять у Windows PowerShell 5.1 для 32 і 64 біт. Налаштування Windows та операції MSI імітуються.",
+        "238 перевірок метаданих, архітектур, назв, вбудованих ресурсів і версій охоплюють усі 17 розкладок. DLL і пакети MSI не змінилися.",
+        "Перевіряються хеші 18 ZIP-архівів, вміст папок, копії документації, локальні посилання й кодування. Перевірки без запису охоплюють нативне виявлення MSI та справжній запуск.",
+        "Я успішно перевірив Spanish (Spain) у новому обліковому записі: встановлення, увімкнення/вимкнення за замовчуванням, збереження після виходу із системи чи перезавантаження та видалення. Спочатку я видалив стару інсталяцію для користувача. Я не перевіряв вручну інші 16 розкладок і всі конфігурації Windows; переклади не пройшли незалежної мовної перевірки. Остаточна збірка додає відображення версії до перевіреної логіки."
       ],
-      "upgrade": "Додаткова перевірка сумісності зі слів користувача: за вже встановленої розкладки v0.1.0 інсталятор v0.2.0 правильно розпізнав наявну інсталяцію та дозволив вибрати її за замовчуванням. Це підтверджує цей сценарій на перевіреному комп’ютері, але не повне видалення й повторне встановлення або охоплення всіх розкладок.",
+      "upgrade": "Якщо стара інсталяція належить іншому обліковому запису, спочатку видаліть її з початкового запису, а потім установіть цю версію з потрібного. Створення нового облікового запису чи запуск нового інсталятора не переносить наявну реєстрацію MSI для користувача. Я успішно виконав цей перехід, а потім повторив повну перевірку в новому обліковому записі.",
       "downloads": [
         "Виберіть `ANGLE_QUOTES_NATIVE_WINDOWS.zip` для всіх розкладок або окремий ZIP для своєї. Повністю розпакуйте ZIP і зберігайте файли разом. У `SHA256SUMS.txt` наведено хеші SHA256 усіх 18 доступних ZIP-архівів.",
         "Архіви **Source code** ZIP/TAR.GZ на GitHub створюються окремо й не є пакетами встановлення."
       ]
     },
     "be": {
-      "title": "Выбар раскладкі па змаўчанні",
+      "title": "Надзейнае выдаленне паміж уліковымі запісамі Windows",
       "headings": [
         "Новы ўсталёўшчык",
         "Надзейнасць і дакументацыя",
@@ -391,33 +390,37 @@
         "Спампоўкі"
       ],
       "installer": [
-        "Усе 17 раскладак цяпер маюць акно ўсталявання з неабавязковым сцяжком **Выкарыстоўваць па змаўчанні для майго ўліковага запісу**. Пазначце сцяжок і выканайце ўсталяванне або ўжывіце змену, каб захаваць метад уводу па змаўчанні ў Windows.",
-        "Зноў адкрыйце `setup.exe`, зніміце сцяжок і націсніце **Ужыць**, каб аднавіць папярэднюю наладу, пакінуўшы раскладку ўсталяванай. Калі папярэдняя раскладка недаступная, праграма прапануе выбраць іншы даступны метад уводу.",
-        "Сцяжок адлюстроўвае бягучую наладу Windows. Іншыя мовы і раскладкі захоўваюцца; паўторнае ўключэнне не замяняе першапачатковыя даныя аднаўлення гэтай жа раскладкай.",
-        "**Выдаліць** спачатку аднаўляе папярэдні метад уводу па змаўчанні, калі трэба, а потым выдаляе раскладку. Прамое выдаленне праз MSI або праграмы Windows прапускае гэты дадатковы крок аднаўлення.",
-        "Інтэрфейс адпавядае мове Windows: іспанскай, англійскай, французскай, нямецкай, італьянскай, партугальскай, нарвежскай букмол, дацкай, рускай, украінскай і беларускай. Калі перакладу няма, выкарыстоўваецца англійская.",
-        "Адкрывайце `setup.exe` звычайным спосабам, без **Запуску ад імя адміністратара**. Павышэнне правоў патрабуецца толькі для аперацый MSI; налады ўводу датычацца ўліковага запісу, які адкрыў праграму. Фонавая праграма і запланаванае заданне не ўсталёўваюцца."
+        "Выпраўляе памылку **1605**, звязаную са змяшэннем сістэмнай рэгістрацыі раскладкі і ўсталявання MSI для бягучага ўліковага запісу.",
+        "Пры выдаленні выбіраецца сапраўды зарэгістраваны прадукт пасля праверкі яго MSI ў кэшы, назвы і DLL, без дапушчэння пра супадзенне са спампаваным пакетам.",
+        "Існуючыя ўсталяванні для карыстальніка выдаляюцца з уліковага запісу ўладальніка. Усталяванні для камп’ютара патрабуюць дазволу адміністратара.",
+        "Новыя ўсталяванні рэгіструюцца для ўсяго камп’ютара; раскладка па змаўчанні застаецца асобнай наладай кожнага ўліковага запісу.",
+        "Адсутныя, неадназначныя або неправяральныя прадукты выяўляюцца да аднаўлення налады па змаўчанні. Файлы раскладак і запісы рэестра не выдаляюцца ўручную.",
+        "Акно і дыялогі цяпер паказваюць **v0.2.1**. Уласцівасці файла змяшчаюць тую ж версію. Выдаленне сістэмнай раскладкі можа паўплываць на іншыя ўліковыя запісы."
       ],
       "reliability": [
-        "Усталёўшчык пазбягае непатрэбных запытаў налад пры запуску. Калі запыт Windows пра метад уводу па змаўчанні выклікае агульнае выключэнне, праграма чытае захаваную наладу без запісу. Памылкі доступу і некарэктныя значэнні застаюцца памылкамі.",
-        "Памылкі наладжвання паказваюць каманду і месца ў скрыпце і захоўваюць лакальны дыягнастычны файл у `%LOCALAPPDATA%\\AngleQuotes\\logs`. Журналы не адпраўляюцца аўтаматычна.",
-        "Інструкцыі па ўсталяванні, аднаўленні і выдаленні абноўлены на ўсіх 11 мовах README і ў папках 17 раскладак. Уключаны зыходны код зборкі, пераклады і ізаляваныя тэсты налад."
+        "Новыя ўсталяванні MSI яўна выкарыстоўваюць `ALLUSERS=1`. Выдаленне ўсталявання для карыстальніка не перазапускаецца ад імя іншага адміністратара.",
+        "Падрабязныя журналы `/L*V` і даныя пра прадукт і кантэкст захоўваюцца лакальна ў `%LOCALAPPDATA%\\AngleQuotes\\logs`. Яны не адпраўляюцца аўтаматычна і могуць змяшчаць ідэнтыфікатары ўліковых запісаў і шляхі.",
+        "Код поспеху `0` правяраецца па спісе MSI да пацверджання завяршэння. Код неабходнасці перазагрузкі `3010` захоўваецца. Версія мае адзіную крыніцу."
       ],
       "compatibility": [
-        "DLL раскладак, пакеты MSI, прызначэнні сімвалаў і трэніровачныя тэксты не змяніліся ў параўнанні з v0.1.0. Захоўваецца падтрымка Windows 10/11 на x86/x64; ARM64 не ўключана. Для з’яўлення або правільнай працы раскладкі Windows можа патрабаваць выхаду з сістэмы ці перазагрузкі.",
+        "DLL раскладак, пакеты MSI, прызначэнні сімвалаў і трэніровачныя тэксты не змяніліся ў параўнанні з v0.2.0. Захоўваецца падтрымка Windows 10/11 на x86/x64; ARM64 не ўключана. Для з’яўлення або правільнай працы раскладкі Windows можа патрабаваць выхаду з сістэмы ці перазагрузкі.",
         "SmartScreen: папярэджанне «Сістэма Windows абараніла ваш камп’ютар» з надпісам «Невядомы выдавец» назіралася пры запуску setup.exe, спампаванага з GitHub, як у v0.1.0, так і ў v0.2.0. Усталёўшчыкі па-ранейшаму не маюць лічбавага подпісу. Калі вы праверылі крыніцу файла і вырашылі працягнуць, выберыце «Больш звестак», а затым «Выканаць у любым выпадку», калі Windows прапануе такі варыянт. Адключаць SmartScreen або Microsoft Defender не патрабуецца."
       ],
       "validation": [
-        "35 ізаляваных праверак налад праходзяць у Windows PowerShell 5.1 у 32- і 64-бітным выкананні з імітацыяй налад Windows і запісаў рэестра.",
-        "Праходзяць 204 праверкі метаданых усталёўшчыкаў, архітэктур, паказаных назваў і ўбудаваных рэсурсаў. Справаздачы табліц сімвалаў ахопліваюць усе 17 раскладак: па 11 016 параўнанняў сімвалаў для x86, x64 і WOW64, а таксама праверкі мёртвых клавіш.",
-        "Аўдыты пакетаў правяраюць хэшы 18 ZIP-архіваў, змесціва асобных папак, копіі README, лакальныя спасылкі і кадаванне. Сапраўдны шлях запуску таксама правераны без запісу ў 32- і 64-бітнай PowerShell.",
-        "Карыстальнік паведамляе пра паспяховую агульную ручную праверку выпраўленага кандыдата **Spanish (Spain) - Angle Quotes** у Windows Home x64, пазначаная версія 26H2, зборка 26300.9818. Асобныя выпадкі не запісваліся. Гэта не пацвярджае ручной праверкі астатніх 16 раскладак або ўсіх падтрымоўваных версій Windows. Новыя пераклады не прайшлі незалежнай моўнай праверкі."
+        "26 ізаляваных праверак ідэнтычнасці і кантэксту MSI і існуючыя 35 праверак налад праходзяць у Windows PowerShell 5.1 для 32 і 64 біт. Налады Windows і аперацыі MSI імітуюцца.",
+        "238 праверак метаданых, архітэктур, назваў, убудаваных рэсурсаў і версій ахопліваюць усе 17 раскладак. DLL і пакеты MSI не змяніліся.",
+        "Правяраюцца хэшы 18 ZIP-архіваў, змесціва папак, копіі дакументацыі, лакальныя спасылкі і кадаванне. Праверкі без запісу ахопліваюць натыўнае выяўленне MSI і сапраўдны запуск.",
+        "Я паспяхова праверыў Spanish (Spain) у новым уліковым запісе: усталяванне, уключэнне/выключэнне па змаўчанні, захаванне пасля выхаду з сістэмы або перазагрузкі і выдаленне. Спачатку я выдаліў старое ўсталяванне для карыстальніка. Я не правяраў уручную астатнія 16 раскладак і ўсе канфігурацыі Windows; пераклады не прайшлі незалежнай моўнай праверкі. Канчатковая зборка дадае паказ версіі да праверанай логікі."
       ],
-      "upgrade": "Дадатковая праверка сумяшчальнасці са слоў карыстальніка: пры ўжо ўсталяванай раскладцы v0.1.0 усталёўшчык v0.2.0 правільна распазнаў існуючую інсталяцыю і дазволіў выбраць яе па змаўчанні. Гэта пацвярджае гэты сцэнар на правераным камп’ютары, але не поўнае выдаленне і паўторнае ўсталяванне або ахоп усіх раскладак.",
+      "upgrade": "Калі старое ўсталяванне належыць іншаму ўліковаму запісу, спачатку выдаліце яго з першапачатковага запісу, а потым усталюйце гэтую версію з патрэбнага. Стварэнне новага ўліковага запісу або запуск новага ўсталёўшчыка не пераносіць існуючую рэгістрацыю MSI для карыстальніка. Я паспяхова выканаў гэты пераход, а потым паўтарыў поўную праверку ў новым уліковым запісе.",
       "downloads": [
         "Выберыце `ANGLE_QUOTES_NATIVE_WINDOWS.zip` для ўсіх раскладак або асобны ZIP для сваёй. Цалкам распакуйце ZIP і захоўвайце файлы разам. У `SHA256SUMS.txt` пададзены хэшы SHA256 усіх 18 даступных ZIP-архіваў.",
         "Архівы **Source code** ZIP/TAR.GZ на GitHub ствараюцца асобна і не з’яўляюцца пакетамі ўсталявання."
       ]
     }
-  }
+  },
+  "summary": [
+    "Fixes MSI uninstall identity and account-context handling. New installs are registered for the whole computer; default-keyboard preferences remain per account.",
+    "Setup windows and executable properties now identify v0.2.1. For older per-user installs owned by another account, uninstall from that original account before reinstalling. Keyboard DLLs and MSI packages are unchanged."
+  ]
 }

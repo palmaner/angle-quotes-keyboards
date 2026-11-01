@@ -35,6 +35,8 @@ Windows 10/11 sur PC x86 ou x64 ; ARM64 n’est pas inclus. Aucune connexion Int
 
 Si setup.exe ne démarre pas, ouvrez `_amd64.msi` pour Windows 64 bits ou `_i386.msi` pour 32 bits. Les installateurs ne sont pas signés ; Windows peut afficher « Éditeur inconnu ». L’ouverture directe du MSI contourne la case du clavier par défaut.
 
+Les nouvelles installations rendent le clavier disponible pour tout l’ordinateur ; la préférence par défaut ne concerne que votre compte. Supprimer le clavier peut affecter d’autres comptes. Si une ancienne installation appartient à un autre compte, supprimez-la depuis celui-ci avant de réinstaller ; ouvrir le nouvel installateur ne la migre pas.
+
 SmartScreen : l’avertissement « Windows a protégé votre ordinateur », avec « Éditeur inconnu », a été observé en lançant setup.exe téléchargé depuis GitHub dans v0.1.0 et v0.2.0. Les installateurs restent non signés. Si vous avez vérifié l’origine du fichier et décidez de continuer, choisissez « Informations complémentaires », puis « Exécuter quand même », si Windows propose cette option. Il n’est pas nécessaire de désactiver SmartScreen ou Microsoft Defender.
 
 ## Changements de caractères
@@ -61,7 +63,7 @@ J’ai essayé cinq variantes originales sur mon portable ; elles fonctionnent, 
 
 Je maintiens ce projet. Pour signaler un problème, ouvrez une issue avec la version de Windows, le clavier, le raccourci, le résultat et l’effet éventuel d’une déconnexion.
 
-La nouvelle case réussit les tests automatisés simulés et les contrôles des paquets. L’utilisateur rapporte un essai manuel global réussi de Spanish (Spain) sur Windows Home x64, version indiquée 26H2, build 26300.9818. Les cas individuels n’ont pas été consignés séparément ; la couverture manuelle des autres dispositions ou systèmes n’est pas établie. Les nouvelles traductions n’ont pas reçu de révision linguistique indépendante.
+v0.2.1: J’ai testé avec succès Spanish (Spain) dans un compte nouvellement créé : installation, activation/désactivation du défaut, persistance après déconnexion ou redémarrage, et désinstallation. J’ai d’abord supprimé l’ancienne installation par utilisateur. Je n’ai pas testé manuellement les 16 autres dispositions ni toutes les configurations Windows ; les traductions n’ont pas reçu de révision linguistique indépendante. La compilation finale ajoute la version visible à la logique testée.
 
 Créé avec [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). Mon code original et mes modifications sont sous [licence MIT](LICENSE). Les composants Microsoft conservent leurs conditions ; voir les [avis de tiers](THIRD_PARTY_NOTICES.md).
 

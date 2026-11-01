@@ -22,6 +22,8 @@ Hvis setup.exe ikke starter, åpne _amd64.msi for 64-biters Windows eller _i386.
 
 For å slutte å bruke oppsettet som standard åpner du setup.exe igjen, fjerner avmerkingen og klikker «Bruk». Forrige innstilling gjenopprettes, og tastaturet forblir installert. Hvis forrige tastatur ikke er tilgjengelig, velger du et annet. Klikk «Avinstaller» i samme vindu for å fjerne oppsettet; standardinnstillingen gjenopprettes først ved behov. Win+Mellomrom bytter valgt tastatur uten å fjerne denne innstillingen. Direkte fjerning via Windows-apper eller MSI utfører ikke denne gjenopprettingen.
 
+Nye installasjoner gjør tastaturet tilgjengelig for hele datamaskinen; standardinnstillingen gjelder bare din konto. Fjerning kan påvirke andre kontoer. Hvis en eldre installasjon tilhører en annen konto, fjern den der før ny installasjon; åpning av det nye programmet flytter den ikke.
+
 SmartScreen: Advarselen «Windows beskyttet PC-en» med «Ukjent utgiver» er observert ved kjøring av setup.exe lastet ned fra GitHub i både v0.1.0 og v0.2.0. Installasjonsprogrammene er fortsatt usignerte. Hvis du har kontrollert filens opprinnelse og vil fortsette, velger du «Mer informasjon» og deretter «Kjør likevel», hvis Windows tilbyr dette. Du trenger ikke deaktivere SmartScreen eller Microsoft Defender.
 
 ØVING: Kopier practice.txt til custom-modus i Monkeytype eller et annet skriveverktøy. Disse oppdiktede tekstene er laget med KI for øving og kan inneholde feil.

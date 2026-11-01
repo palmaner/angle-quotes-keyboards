@@ -35,6 +35,8 @@ Windows 10/11 on x86 or x64 PCs. ARM64 is not included. No Internet connection o
 
 If setup.exe does not start, open `_amd64.msi` for 64-bit Windows or `_i386.msi` for 32-bit Windows. The installers are unsigned, so Windows may show “Unknown publisher”. Opening the MSI directly bypasses the default-keyboard checkbox.
 
+New installations make the keyboard available to the whole computer; the default preference applies only to your account. Removing the keyboard can affect other accounts. If an older installation belongs to another account, remove it there before reinstalling; opening the new installer alone does not migrate it.
+
 SmartScreen: the “Windows protected your PC” warning with “Unknown publisher” has been observed when running setup.exe downloaded from GitHub in both v0.1.0 and v0.2.0. The installers remain unsigned. If you have checked the file’s origin and decide to continue, select “More info” and then “Run anyway”, if Windows offers that option. You do not need to disable SmartScreen or Microsoft Defender.
 
 ## Character changes
@@ -61,7 +63,7 @@ I have tried five of the original layouts on my laptop and they work, although s
 
 I maintain this project. To report a problem, open an issue with your Windows version, the layout name, the shortcut, what happened and whether signing out helped.
 
-The new checkbox passes simulated automated tests and package checks. The user reports successful overall manual testing of Spanish (Spain) on Windows Home x64, reported version 26H2, build 26300.9818. Individual cases were not recorded separately, and manual coverage of the other layouts or systems is not established. New translations have not received independent linguistic review.
+v0.2.1: I successfully tested Spanish (Spain) in a newly created account: installation, enabling/disabling the default, persistence after sign-out or restart, and uninstall. I removed the older per-user installation first. I have not manually tested the other 16 layouts or every Windows configuration; the translations have not received independent linguistic review. The final rebuild adds visible version information to the tested logic.
 
 Built with [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). My original code and modifications are available under the [MIT License](LICENSE). Microsoft components retain their own terms; see [third-party notices](THIRD_PARTY_NOTICES.md).
 

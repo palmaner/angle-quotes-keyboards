@@ -35,6 +35,8 @@ Windows 10/11 su PC x86 o x64; ARM64 non è incluso. Non servono Internet né un
 
 Se setup.exe non parte, apri `_amd64.msi` per Windows a 64 bit oppure `_i386.msi` per 32 bit. Gli installer non sono firmati; Windows potrebbe indicare un autore sconosciuto. Aprire direttamente il MSI esclude la casella della tastiera predefinita.
 
+Le nuove installazioni rendono la tastiera disponibile per tutto il computer; la preferenza predefinita riguarda solo il tuo account. Rimuoverla può interessare altri account. Se una vecchia installazione appartiene a un altro account, rimuovila da lì prima di reinstallare; aprire il nuovo programma non la migra.
+
 SmartScreen: l’avviso «PC protetto da Windows», con «Autore sconosciuto», è stato osservato eseguendo setup.exe scaricato da GitHub sia in v0.1.0 sia in v0.2.0. I programmi di installazione restano privi di firma digitale. Se hai verificato l’origine del file e decidi di continuare, scegli «Ulteriori informazioni» e poi «Esegui comunque», se Windows offre questa opzione. Non occorre disattivare SmartScreen o Microsoft Defender.
 
 ## Modifiche ai caratteri
@@ -61,7 +63,7 @@ Ho provato cinque varianti originali sul mio portatile e funzionano, talvolta do
 
 Mi occupo del progetto. Per segnalare un problema, apri un'issue con versione di Windows, tastiera, scorciatoia, risultato e indicazione se un nuovo accesso ha aiutato.
 
-La nuova casella supera i test automatici simulati e le verifiche dei pacchetti. L’utente segnala una prova manuale complessivamente riuscita di Spanish (Spain) su Windows Home x64, versione indicata 26H2, build 26300.9818. I singoli casi non sono stati registrati separatamente; non è accertata la copertura manuale delle altre disposizioni o dei sistemi. Le nuove traduzioni non hanno ricevuto una revisione linguistica indipendente.
+v0.2.1: Ho provato con successo Spanish (Spain) in un account nuovo: installazione, attivazione/disattivazione del predefinito, persistenza dopo disconnessione o riavvio e disinstallazione. Prima ho rimosso la vecchia installazione per utente. Non ho testato manualmente le altre 16 disposizioni né tutte le configurazioni Windows; le traduzioni non hanno ricevuto una revisione linguistica indipendente. La compilazione finale aggiunge la versione visibile alla logica provata.
 
 Creato con [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). Il mio codice originale e le mie modifiche usano la [licenza MIT](LICENSE). I componenti Microsoft mantengono le proprie condizioni; consulta gli [avvisi sulle terze parti](THIRD_PARTY_NOTICES.md).
 

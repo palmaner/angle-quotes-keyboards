@@ -35,6 +35,8 @@ Windows 10/11 em PCs x86 ou x64; ARM64 não incluído. Não é necessária Inter
 
 Se setup.exe não iniciar, abra `_amd64.msi` para Windows de 64 bits ou `_i386.msi` para 32 bits. Os instaladores não estão assinados; o Windows pode mostrar um editor desconhecido. Abrir diretamente o MSI omite a caixa do teclado predefinido.
 
+As novas instalações disponibilizam o teclado para todo o computador; a preferência predefinida aplica-se apenas à sua conta. Removê-lo pode afetar outras contas. Se a instalação antiga pertencer a outra conta, remova-a aí antes de reinstalar; abrir o novo instalador não a migra.
+
 SmartScreen: o aviso «O Windows protegeu o seu PC», com «Editor desconhecido», foi observado ao executar setup.exe transferido do GitHub tanto na v0.1.0 como na v0.2.0. Os instaladores continuam sem assinatura digital. Se verificou a origem do ficheiro e decidir continuar, escolha «Mais informações» e depois «Executar mesmo assim», se o Windows disponibilizar essa opção. Não é necessário desativar o SmartScreen nem o Microsoft Defender.
 
 ## Alterações de caracteres
@@ -61,7 +63,7 @@ Experimentei cinco variantes originais no meu portátil e funcionam, por vezes a
 
 Mantenho este projeto. Para comunicar uma falha, abra uma issue com a versão do Windows, teclado, atalho, resultado e se voltar a entrar na sessão ajudou.
 
-A nova caixa passa os testes automáticos simulados e as verificações dos pacotes. O utilizador comunica um teste manual global bem-sucedido de Spanish (Spain) em Windows Home x64, versão indicada 26H2, compilação 26300.9818. Os casos individuais não foram registados separadamente; não está comprovada a cobertura manual das outras disposições ou sistemas. As novas traduções não receberam revisão linguística independente.
+v0.2.1: Testei com sucesso Spanish (Spain) numa conta nova: instalação, ativação/desativação do predefinido, persistência após terminar sessão ou reiniciar e desinstalação. Primeiro removi a instalação antiga por utilizador. Não testei manualmente as outras 16 disposições nem todas as configurações Windows; as traduções não receberam revisão linguística independente. A compilação final acrescenta a versão visível à lógica testada.
 
 Criado com [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). O meu código original e as minhas alterações usam a [licença MIT](LICENSE). Os componentes Microsoft mantêm as suas condições; consulte os [avisos de terceiros](THIRD_PARTY_NOTICES.md).
 

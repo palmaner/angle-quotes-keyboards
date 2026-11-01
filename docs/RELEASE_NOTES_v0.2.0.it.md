@@ -28,9 +28,9 @@ SmartScreen: l’avviso «PC protetto da Windows», con «Autore sconosciuto», 
 - Superate 35 verifiche isolate delle preferenze in Windows PowerShell 5.1 sia a 32 sia a 64 bit, con impostazioni Windows e voci del registro simulate.
 - Superate 204 verifiche di metadati degli installer, architetture, nomi visualizzati e risorse integrate. I rapporti delle tabelle coprono le 17 disposizioni, con 11 016 confronti di caratteri per ciascuna architettura x86, x64 e WOW64, oltre alle verifiche dei tasti morti.
 - Le verifiche dei pacchetti controllano gli hash dei 18 ZIP, i contenuti delle cartelle individuali, le copie dei README, i collegamenti locali e la codifica. Anche il percorso reale di avvio è stato controllato in sola lettura con PowerShell a 32 e 64 bit.
-- L’utente segnala una prova manuale complessivamente riuscita della candidata corretta **Spanish (Spain) - Angle Quotes** su Windows Home x64, versione indicata 26H2, build 26300.9818. I singoli casi non sono stati registrati separatamente. Non è accertata la copertura manuale delle altre 16 disposizioni né di tutte le versioni Windows supportate. Le nuove traduzioni non hanno ricevuto una revisione linguistica indipendente.
+- Ho provato con successo la candidata corretta **Spanish (Spain) - Angle Quotes** su Windows Home x64, versione 26H2, build 26300.9818. I singoli casi non sono stati registrati separatamente. Non è accertata la copertura manuale delle altre 16 disposizioni né di tutte le versioni Windows supportate. Le nuove traduzioni non hanno ricevuto una revisione linguistica indipendente.
 
-Ulteriore prova di compatibilità segnalata dall’utente: con una disposizione v0.1.0 già installata, il programma v0.2.0 ha riconosciuto l’installazione esistente e ha consentito di impostarla come tastiera predefinita. La prova verifica questo caso sul computer usato, senza attestare una disinstallazione e reinstallazione complete o la copertura di tutte le disposizioni.
+Ho verificato anche la compatibilità: con una disposizione v0.1.0 già installata, il programma v0.2.0 ha riconosciuto l’installazione esistente e ha consentito di impostarla come tastiera predefinita. La prova verifica questo caso sul computer usato, senza attestare una disinstallazione e reinstallazione complete o la copertura di tutte le disposizioni.
 
 ## Download
 
