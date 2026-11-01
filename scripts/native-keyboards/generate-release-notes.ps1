@@ -39,7 +39,7 @@ if($ReleaseBodyPath){
     }) -join ' · '
     $body=@(
         $data.summary
-        '### Notas de versión / Release notes'
+        '### Release notes'
         $links
         '### Downloads'
         'Download `ANGLE_QUOTES_NATIVE_WINDOWS.zip` for all layouts or the individual ZIP for yours. Extract the complete ZIP and keep its files together. `SHA256SUMS.txt` lists the hashes for the 18 ZIP files. The GitHub **Source code** archives are not the packaged installer downloads.'
