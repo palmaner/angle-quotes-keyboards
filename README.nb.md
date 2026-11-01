@@ -35,7 +35,7 @@ Windows 10/11 på x86- eller x64-PC-er; ARM64 er ikke inkludert. Du trenger verk
 
 Hvis setup.exe ikke starter, åpne `_amd64.msi` for 64-biters Windows eller `_i386.msi` for 32-biters Windows. Installasjonsprogrammene er usignerte; Windows kan vise en ukjent utgiver. Hvis MSI åpnes direkte, er avmerkingen for standardtastatur ikke tilgjengelig.
 
-SmartScreen: advarselen «Windows beskyttet PC-en» ble observert med v0.1.0, ikke i den vellykkede testen av v0.2.0-kandidaten. Installasjonsprogrammene i v0.2.0 er fortsatt usignerte og kan vise advarselen. Denne versjonen slår ikke av eller fjerner beskyttelsen.
+SmartScreen: Advarselen «Windows beskyttet PC-en» med «Ukjent utgiver» er observert ved kjøring av setup.exe lastet ned fra GitHub i både v0.1.0 og v0.2.0. Installasjonsprogrammene er fortsatt usignerte. Hvis du har kontrollert filens opprinnelse og vil fortsette, velger du «Mer informasjon» og deretter «Kjør likevel», hvis Windows tilbyr dette. Du trenger ikke deaktivere SmartScreen eller Microsoft Defender.
 
 ## Endrede tegn
 

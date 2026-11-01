@@ -35,7 +35,7 @@ Windows 10/11 em PCs x86 ou x64; ARM64 não incluído. Não é necessária Inter
 
 Se setup.exe não iniciar, abra `_amd64.msi` para Windows de 64 bits ou `_i386.msi` para 32 bits. Os instaladores não estão assinados; o Windows pode mostrar um editor desconhecido. Abrir diretamente o MSI omite a caixa do teclado predefinido.
 
-SmartScreen: o aviso «O Windows protegeu o seu PC» foi observado na v0.1.0, não no teste bem-sucedido da candidata v0.2.0. Os instaladores v0.2.0 continuam sem assinatura digital e podem mostrá-lo. Esta versão não desativa nem remove essa proteção.
+SmartScreen: o aviso «O Windows protegeu o seu PC», com «Editor desconhecido», foi observado ao executar setup.exe transferido do GitHub tanto na v0.1.0 como na v0.2.0. Os instaladores continuam sem assinatura digital. Se verificou a origem do ficheiro e decidir continuar, escolha «Mais informações» e depois «Executar mesmo assim», se o Windows disponibilizar essa opção. Não é necessário desativar o SmartScreen nem o Microsoft Defender.
 
 ## Alterações de caracteres
 

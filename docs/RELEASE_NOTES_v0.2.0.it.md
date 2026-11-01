@@ -21,7 +21,7 @@
 
 DLL delle tastiere, pacchetti MSI, assegnazioni dei caratteri e testi di pratica non cambiano rispetto a v0.1.0. Restano supportati Windows 10/11 su x86/x64; ARM64 non è incluso. Windows può richiedere disconnessione o riavvio prima che la tastiera compaia o funzioni correttamente.
 
-I programmi di installazione restano privi di firma digitale. L’avviso SmartScreen **PC protetto da Windows** è stato osservato con v0.1.0, ma non segnalato nella prova riuscita della candidata v0.2.0. Un programma v0.2.0 non firmato può ancora mostrarlo. Questa versione non rimuove né disattiva SmartScreen.
+SmartScreen: l’avviso «PC protetto da Windows», con «Autore sconosciuto», è stato osservato eseguendo setup.exe scaricato da GitHub sia in v0.1.0 sia in v0.2.0. I programmi di installazione restano privi di firma digitale. Se hai verificato l’origine del file e decidi di continuare, scegli «Ulteriori informazioni» e poi «Esegui comunque», se Windows offre questa opzione. Non occorre disattivare SmartScreen o Microsoft Defender.
 
 ## Verifica
 

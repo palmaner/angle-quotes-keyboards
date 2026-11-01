@@ -35,7 +35,7 @@ Windows 10/11 su PC x86 o x64; ARM64 non è incluso. Non servono Internet né un
 
 Se setup.exe non parte, apri `_amd64.msi` per Windows a 64 bit oppure `_i386.msi` per 32 bit. Gli installer non sono firmati; Windows potrebbe indicare un autore sconosciuto. Aprire direttamente il MSI esclude la casella della tastiera predefinita.
 
-SmartScreen: l’avviso «PC protetto da Windows» è stato osservato con v0.1.0, non durante la prova riuscita della candidata v0.2.0. I programmi di installazione v0.2.0 restano privi di firma digitale e potrebbero mostrarlo. Questa versione non disattiva né rimuove tale protezione.
+SmartScreen: l’avviso «PC protetto da Windows», con «Autore sconosciuto», è stato osservato eseguendo setup.exe scaricato da GitHub sia in v0.1.0 sia in v0.2.0. I programmi di installazione restano privi di firma digitale. Se hai verificato l’origine del file e decidi di continuare, scegli «Ulteriori informazioni» e poi «Esegui comunque», se Windows offre questa opzione. Non occorre disattivare SmartScreen o Microsoft Defender.
 
 ## Modifiche ai caratteri
 

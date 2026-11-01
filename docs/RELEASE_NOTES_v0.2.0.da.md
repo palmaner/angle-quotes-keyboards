@@ -21,7 +21,7 @@
 
 Tastatur-DLL'er, MSI-pakker, tegntildelinger og øvelsestekster er uændrede fra v0.1.0. Windows 10/11 på x86/x64 understøttes fortsat; ARM64 er ikke inkluderet. Windows kan kræve aflogning eller genstart, før tastaturet vises eller fungerer korrekt.
 
-Installationsprogrammerne er stadig usignerede. SmartScreen-advarslen **Windows beskyttede din pc** blev observeret med v0.1.0, men ikke rapporteret ved den vellykkede test af v0.2.0-kandidaten. Et usigneret v0.2.0-program kan stadig udløse advarslen. Denne version fjerner eller deaktiverer ikke SmartScreen.
+SmartScreen: Advarslen »Windows beskyttede din pc« med »Ukendt udgiver« er observeret ved kørsel af setup.exe hentet fra GitHub i både v0.1.0 og v0.2.0. Installationsprogrammerne er stadig usignerede. Hvis du har kontrolleret filens oprindelse og vil fortsætte, vælger du »Flere oplysninger« og derefter »Kør alligevel«, hvis Windows tilbyder dette. Du behøver ikke deaktivere SmartScreen eller Microsoft Defender.
 
 ## Validering
 

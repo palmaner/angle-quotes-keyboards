@@ -21,7 +21,7 @@
 
 As DLL de teclado, pacotes MSI, atribuições de caracteres e textos de prática mantêm-se iguais aos da v0.1.0. Mantém-se o suporte de Windows 10/11 em x86/x64; ARM64 não está incluído. O Windows pode exigir terminar a sessão ou reiniciar antes de o teclado aparecer ou funcionar corretamente.
 
-Os instaladores continuam sem assinatura digital. O aviso SmartScreen **O Windows protegeu o seu PC** foi observado na v0.1.0, mas não foi comunicado no teste bem-sucedido da candidata v0.2.0. Um instalador v0.2.0 não assinado pode continuar a mostrá-lo. Esta versão não remove nem desativa o SmartScreen.
+SmartScreen: o aviso «O Windows protegeu o seu PC», com «Editor desconhecido», foi observado ao executar setup.exe transferido do GitHub tanto na v0.1.0 como na v0.2.0. Os instaladores continuam sem assinatura digital. Se verificou a origem do ficheiro e decidir continuar, escolha «Mais informações» e depois «Executar mesmo assim», se o Windows disponibilizar essa opção. Não é necessário desativar o SmartScreen nem o Microsoft Defender.
 
 ## Validação
 

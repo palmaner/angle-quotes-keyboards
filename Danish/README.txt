@@ -22,7 +22,7 @@ Hvis setup.exe ikke starter, åbn _amd64.msi til 64-bit Windows eller _i386.msi 
 
 For at stoppe med at bruge layoutet som standard skal du åbne setup.exe igen, fjerne markeringen og klikke på »Anvend«. Den tidligere indstilling gendannes, og tastaturet forbliver installeret. Hvis det tidligere tastatur ikke er tilgængeligt, vælger du et andet. Klik på »Afinstaller« i samme vindue for at fjerne layoutet; standardindstillingen gendannes først, hvis nødvendigt. Win+Mellemrum skifter det valgte tastatur uden at fjerne denne indstilling. Direkte fjernelse via Windows-apps eller MSI udfører ikke denne gendannelse.
 
-SmartScreen: advarslen »Windows beskyttede din pc« blev observeret med v0.1.0, ikke ved den vellykkede test af v0.2.0-kandidaten. Installationsprogrammerne i v0.2.0 er stadig usignerede og kan vise advarslen. Denne version deaktiverer eller fjerner ikke beskyttelsen.
+SmartScreen: Advarslen »Windows beskyttede din pc« med »Ukendt udgiver« er observeret ved kørsel af setup.exe hentet fra GitHub i både v0.1.0 og v0.2.0. Installationsprogrammerne er stadig usignerede. Hvis du har kontrolleret filens oprindelse og vil fortsætte, vælger du »Flere oplysninger« og derefter »Kør alligevel«, hvis Windows tilbyder dette. Du behøver ikke deaktivere SmartScreen eller Microsoft Defender.
 
 ØVELSE: Kopiér practice.txt til custom-tilstand i Monkeytype eller et andet skriveværktøj. Disse opdigtede tekster er lavet med AI til øvelse og kan indeholde fejl.
 practice/: short.txt, medium.txt, long.txt.

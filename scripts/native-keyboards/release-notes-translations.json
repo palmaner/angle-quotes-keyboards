@@ -25,7 +25,7 @@
       ],
       "compatibility": [
         "Keyboard DLLs, MSI packages, character assignments and practice texts are unchanged from v0.1.0. Support remains Windows 10/11 on x86/x64; ARM64 is not included. Windows may require sign-out or restart before a keyboard appears or behaves correctly.",
-        "The installers remain unsigned. A **Windows protected your PC** SmartScreen warning was observed with v0.1.0; it was not reported in the successful v0.2.0 candidate test. An unsigned v0.2.0 installer may still trigger a warning. This release does not remove or disable SmartScreen protection."
+        "SmartScreen: the “Windows protected your PC” warning with “Unknown publisher” has been observed when running setup.exe downloaded from GitHub in both v0.1.0 and v0.2.0. The installers remain unsigned. If you have checked the file’s origin and decide to continue, select “More info” and then “Run anyway”, if Windows offers that option. You do not need to disable SmartScreen or Microsoft Defender."
       ],
       "validation": [
         "35 isolated preference assertions pass in both 32-bit and 64-bit Windows PowerShell 5.1, using simulated Windows settings and registry entries.",
@@ -63,7 +63,7 @@
       ],
       "compatibility": [
         "Las DLL de teclado, los paquetes MSI, las asignaciones de caracteres y los textos de práctica no cambian respecto a v0.1.0. Se mantiene Windows 10/11 en x86/x64; ARM64 no está incluido. Windows puede requerir cerrar sesión o reiniciar para que el teclado aparezca o funcione correctamente.",
-        "Los instaladores siguen sin firma digital. El aviso de SmartScreen **Windows protegió su PC** se observó con v0.1.0; no se comunicó en la prueba satisfactoria de la candidata v0.2.0. Un instalador de v0.2.0 sin firma podría seguir mostrándolo. Esta versión no elimina ni desactiva la protección de SmartScreen."
+        "SmartScreen: el aviso «Windows protegió su PC», con «Editor desconocido», se ha observado al ejecutar setup.exe descargado de GitHub tanto en v0.1.0 como en v0.2.0. Los instaladores siguen sin firma digital. Si has comprobado el origen del archivo y decides continuar, pulsa «Más información» y después «Ejecutar de todas formas», si Windows ofrece esa opción. No es necesario desactivar SmartScreen ni Microsoft Defender."
       ],
       "validation": [
         "Se superan 35 comprobaciones aisladas de preferencias tanto en Windows PowerShell 5.1 de 32 bits como de 64 bits, usando configuraciones de Windows y entradas de registro simuladas.",
@@ -101,7 +101,7 @@
       ],
       "compatibility": [
         "Les DLL de clavier, les paquets MSI, les affectations de caractères et les textes d’entraînement restent identiques à v0.1.0. Windows 10/11 sur x86/x64 reste pris en charge ; ARM64 n’est pas inclus. Windows peut demander une déconnexion ou un redémarrage avant que le clavier apparaisse ou fonctionne correctement.",
-        "Les installateurs restent non signés. L’avertissement SmartScreen **Windows a protégé votre ordinateur** a été observé avec v0.1.0, mais pas signalé lors de l’essai réussi du candidat v0.2.0. Un installateur v0.2.0 non signé peut toujours déclencher cet avertissement. Cette version ne supprime ni ne désactive la protection SmartScreen."
+        "SmartScreen : l’avertissement « Windows a protégé votre ordinateur », avec « Éditeur inconnu », a été observé en lançant setup.exe téléchargé depuis GitHub dans v0.1.0 et v0.2.0. Les installateurs restent non signés. Si vous avez vérifié l’origine du fichier et décidez de continuer, choisissez « Informations complémentaires », puis « Exécuter quand même », si Windows propose cette option. Il n’est pas nécessaire de désactiver SmartScreen ou Microsoft Defender."
       ],
       "validation": [
         "35 vérifications isolées des préférences réussissent dans Windows PowerShell 5.1 en 32 et 64 bits, avec des paramètres Windows et des entrées du registre simulés.",
@@ -139,7 +139,7 @@
       ],
       "compatibility": [
         "Tastatur-DLLs, MSI-Pakete, Zeichenzuweisungen und Übungstexte bleiben gegenüber v0.1.0 unverändert. Unterstützt wird weiterhin Windows 10/11 auf x86/x64; ARM64 ist nicht enthalten. Windows kann Abmelden oder einen Neustart erfordern, bevor eine Tastatur erscheint oder richtig funktioniert.",
-        "Die Installationsprogramme bleiben unsigniert. Die SmartScreen-Warnung **Der Computer wurde durch Windows geschützt** wurde bei v0.1.0 beobachtet, nicht beim erfolgreichen Test des v0.2.0-Kandidaten gemeldet. Ein unsigniertes v0.2.0-Installationsprogramm kann weiterhin eine Warnung auslösen. Diese Version entfernt oder deaktiviert den SmartScreen-Schutz nicht."
+        "SmartScreen: Die Warnung „Der Computer wurde durch Windows geschützt“ mit „Unbekannter Herausgeber“ wurde beim Start von setup.exe aus GitHub-Downloads sowohl bei v0.1.0 als auch bei v0.2.0 beobachtet. Die Installationsprogramme sind weiterhin unsigniert. Wenn du die Herkunft der Datei geprüft hast und fortfahren möchtest, wähle „Weitere Informationen“ und dann „Trotzdem ausführen“, sofern Windows diese Option anbietet. SmartScreen oder Microsoft Defender müssen nicht deaktiviert werden."
       ],
       "validation": [
         "35 isolierte Einstellungsprüfungen bestehen in Windows PowerShell 5.1 mit 32 und 64 Bit, mit simulierten Windows-Einstellungen und Registrierungseinträgen.",
@@ -177,7 +177,7 @@
       ],
       "compatibility": [
         "DLL delle tastiere, pacchetti MSI, assegnazioni dei caratteri e testi di pratica non cambiano rispetto a v0.1.0. Restano supportati Windows 10/11 su x86/x64; ARM64 non è incluso. Windows può richiedere disconnessione o riavvio prima che la tastiera compaia o funzioni correttamente.",
-        "I programmi di installazione restano privi di firma digitale. L’avviso SmartScreen **PC protetto da Windows** è stato osservato con v0.1.0, ma non segnalato nella prova riuscita della candidata v0.2.0. Un programma v0.2.0 non firmato può ancora mostrarlo. Questa versione non rimuove né disattiva SmartScreen."
+        "SmartScreen: l’avviso «PC protetto da Windows», con «Autore sconosciuto», è stato osservato eseguendo setup.exe scaricato da GitHub sia in v0.1.0 sia in v0.2.0. I programmi di installazione restano privi di firma digitale. Se hai verificato l’origine del file e decidi di continuare, scegli «Ulteriori informazioni» e poi «Esegui comunque», se Windows offre questa opzione. Non occorre disattivare SmartScreen o Microsoft Defender."
       ],
       "validation": [
         "Superate 35 verifiche isolate delle preferenze in Windows PowerShell 5.1 sia a 32 sia a 64 bit, con impostazioni Windows e voci del registro simulate.",
@@ -215,7 +215,7 @@
       ],
       "compatibility": [
         "As DLL de teclado, pacotes MSI, atribuições de caracteres e textos de prática mantêm-se iguais aos da v0.1.0. Mantém-se o suporte de Windows 10/11 em x86/x64; ARM64 não está incluído. O Windows pode exigir terminar a sessão ou reiniciar antes de o teclado aparecer ou funcionar corretamente.",
-        "Os instaladores continuam sem assinatura digital. O aviso SmartScreen **O Windows protegeu o seu PC** foi observado na v0.1.0, mas não foi comunicado no teste bem-sucedido da candidata v0.2.0. Um instalador v0.2.0 não assinado pode continuar a mostrá-lo. Esta versão não remove nem desativa o SmartScreen."
+        "SmartScreen: o aviso «O Windows protegeu o seu PC», com «Editor desconhecido», foi observado ao executar setup.exe transferido do GitHub tanto na v0.1.0 como na v0.2.0. Os instaladores continuam sem assinatura digital. Se verificou a origem do ficheiro e decidir continuar, escolha «Mais informações» e depois «Executar mesmo assim», se o Windows disponibilizar essa opção. Não é necessário desativar o SmartScreen nem o Microsoft Defender."
       ],
       "validation": [
         "Passam 35 verificações isoladas de preferências em Windows PowerShell 5.1 de 32 e 64 bits, usando definições do Windows e entradas do registo simuladas.",
@@ -253,7 +253,7 @@
       ],
       "compatibility": [
         "Tastatur-DLL-er, MSI-pakker, tegntilordninger og øvingstekster er uendret fra v0.1.0. Windows 10/11 på x86/x64 støttes fortsatt; ARM64 er ikke inkludert. Windows kan kreve avlogging eller omstart før tastaturet vises eller fungerer riktig.",
-        "Installasjonsprogrammene er fortsatt usignerte. SmartScreen-advarselen **Windows beskyttet PC-en** ble observert med v0.1.0, men ble ikke rapportert ved den vellykkede testen av v0.2.0-kandidaten. Et usignert v0.2.0-program kan fortsatt utløse advarselen. Denne versjonen fjerner eller deaktiverer ikke SmartScreen."
+        "SmartScreen: Advarselen «Windows beskyttet PC-en» med «Ukjent utgiver» er observert ved kjøring av setup.exe lastet ned fra GitHub i både v0.1.0 og v0.2.0. Installasjonsprogrammene er fortsatt usignerte. Hvis du har kontrollert filens opprinnelse og vil fortsette, velger du «Mer informasjon» og deretter «Kjør likevel», hvis Windows tilbyr dette. Du trenger ikke deaktivere SmartScreen eller Microsoft Defender."
       ],
       "validation": [
         "35 isolerte innstillingskontroller består i både 32- og 64-biters Windows PowerShell 5.1, med simulerte Windows-innstillinger og registeroppføringer.",
@@ -291,7 +291,7 @@
       ],
       "compatibility": [
         "Tastatur-DLL'er, MSI-pakker, tegntildelinger og øvelsestekster er uændrede fra v0.1.0. Windows 10/11 på x86/x64 understøttes fortsat; ARM64 er ikke inkluderet. Windows kan kræve aflogning eller genstart, før tastaturet vises eller fungerer korrekt.",
-        "Installationsprogrammerne er stadig usignerede. SmartScreen-advarslen **Windows beskyttede din pc** blev observeret med v0.1.0, men ikke rapporteret ved den vellykkede test af v0.2.0-kandidaten. Et usigneret v0.2.0-program kan stadig udløse advarslen. Denne version fjerner eller deaktiverer ikke SmartScreen."
+        "SmartScreen: Advarslen »Windows beskyttede din pc« med »Ukendt udgiver« er observeret ved kørsel af setup.exe hentet fra GitHub i både v0.1.0 og v0.2.0. Installationsprogrammerne er stadig usignerede. Hvis du har kontrolleret filens oprindelse og vil fortsætte, vælger du »Flere oplysninger« og derefter »Kør alligevel«, hvis Windows tilbyder dette. Du behøver ikke deaktivere SmartScreen eller Microsoft Defender."
       ],
       "validation": [
         "35 isolerede indstillingskontroller består i både 32- og 64-bit Windows PowerShell 5.1 med simulerede Windows-indstillinger og registreringsdatabaseposter.",
@@ -329,7 +329,7 @@
       ],
       "compatibility": [
         "DLL раскладок, пакеты MSI, назначения символов и тренировочные тексты не изменились по сравнению с v0.1.0. Сохраняется поддержка Windows 10/11 на x86/x64; ARM64 не включена. Для появления или правильной работы раскладки Windows может потребовать выход из системы или перезагрузку.",
-        "Установщики по-прежнему не имеют цифровой подписи. Предупреждение SmartScreen **Система Windows защитила ваш компьютер** наблюдалось в v0.1.0; при успешной проверке кандидата v0.2.0 о нём не сообщалось. Неподписанный установщик v0.2.0 всё ещё может вызвать предупреждение. Эта версия не удаляет и не отключает защиту SmartScreen."
+        "SmartScreen: предупреждение «Система Windows защитила ваш компьютер» с надписью «Неизвестный издатель» наблюдалось при запуске setup.exe, загруженного с GitHub, как в v0.1.0, так и в v0.2.0. Установщики по-прежнему не имеют цифровой подписи. Если вы проверили источник файла и решили продолжить, выберите «Подробнее», затем «Выполнить в любом случае», если Windows предлагает этот вариант. Отключать SmartScreen или Microsoft Defender не требуется."
       ],
       "validation": [
         "35 изолированных проверок настроек проходят в Windows PowerShell 5.1 как 32-, так и 64-разрядной версии с имитацией настроек Windows и записей реестра.",
@@ -367,7 +367,7 @@
       ],
       "compatibility": [
         "DLL розкладок, пакети MSI, призначення символів і тренувальні тексти не змінилися порівняно з v0.1.0. Зберігається підтримка Windows 10/11 на x86/x64; ARM64 не включено. Для появи або правильної роботи розкладки Windows може вимагати вихід із системи чи перезавантаження.",
-        "Інсталятори й далі не мають цифрового підпису. Попередження SmartScreen **Система Windows захистила ваш комп’ютер** спостерігалося у v0.1.0; під час успішної перевірки кандидата v0.2.0 про нього не повідомлялося. Непідписаний інсталятор v0.2.0 може й надалі показувати попередження. Ця версія не видаляє і не вимикає захист SmartScreen."
+        "SmartScreen: попередження «Система Windows захистила ваш комп’ютер» із написом «Невідомий видавець» спостерігалося під час запуску setup.exe, завантаженого з GitHub, як у v0.1.0, так і у v0.2.0. Інсталятори досі не мають цифрового підпису. Якщо ви перевірили джерело файлу й вирішили продовжити, виберіть «Докладніше», а потім «Виконати в будь-якому разі», якщо Windows пропонує цей варіант. Вимикати SmartScreen або Microsoft Defender не потрібно."
       ],
       "validation": [
         "35 ізольованих перевірок налаштувань проходять у Windows PowerShell 5.1 у 32- та 64-бітному виконанні з імітацією налаштувань Windows і записів реєстру.",
@@ -405,7 +405,7 @@
       ],
       "compatibility": [
         "DLL раскладак, пакеты MSI, прызначэнні сімвалаў і трэніровачныя тэксты не змяніліся ў параўнанні з v0.1.0. Захоўваецца падтрымка Windows 10/11 на x86/x64; ARM64 не ўключана. Для з’яўлення або правільнай працы раскладкі Windows можа патрабаваць выхаду з сістэмы ці перазагрузкі.",
-        "Усталёўшчыкі па-ранейшаму не маюць лічбавага подпісу. Папярэджанне SmartScreen **Сістэма Windows абараніла ваш камп’ютар** назіралася ў v0.1.0; падчас паспяховай праверкі кандыдата v0.2.0 пра яго не паведамлялася. Непадпісаны ўсталёўшчык v0.2.0 можа і надалей паказваць папярэджанне. Гэтая версія не выдаляе і не адключае абарону SmartScreen."
+        "SmartScreen: папярэджанне «Сістэма Windows абараніла ваш камп’ютар» з надпісам «Невядомы выдавец» назіралася пры запуску setup.exe, спампаванага з GitHub, як у v0.1.0, так і ў v0.2.0. Усталёўшчыкі па-ранейшаму не маюць лічбавага подпісу. Калі вы праверылі крыніцу файла і вырашылі працягнуць, выберыце «Больш звестак», а затым «Выканаць у любым выпадку», калі Windows прапануе такі варыянт. Адключаць SmartScreen або Microsoft Defender не патрабуецца."
       ],
       "validation": [
         "35 ізаляваных праверак налад праходзяць у Windows PowerShell 5.1 у 32- і 64-бітным выкананні з імітацыяй налад Windows і запісаў рэестра.",

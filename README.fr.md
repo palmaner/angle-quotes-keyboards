@@ -35,7 +35,7 @@ Windows 10/11 sur PC x86 ou x64 ; ARM64 n’est pas inclus. Aucune connexion Int
 
 Si setup.exe ne démarre pas, ouvrez `_amd64.msi` pour Windows 64 bits ou `_i386.msi` pour 32 bits. Les installateurs ne sont pas signés ; Windows peut afficher « Éditeur inconnu ». L’ouverture directe du MSI contourne la case du clavier par défaut.
 
-SmartScreen : l’avertissement « Windows a protégé votre ordinateur » a été observé avec v0.1.0, pas lors de l’essai réussi de la version candidate v0.2.0. Les installateurs v0.2.0 ne sont toujours pas signés et peuvent l’afficher. Cette version ne désactive ni ne supprime cette protection.
+SmartScreen : l’avertissement « Windows a protégé votre ordinateur », avec « Éditeur inconnu », a été observé en lançant setup.exe téléchargé depuis GitHub dans v0.1.0 et v0.2.0. Les installateurs restent non signés. Si vous avez vérifié l’origine du fichier et décidez de continuer, choisissez « Informations complémentaires », puis « Exécuter quand même », si Windows propose cette option. Il n’est pas nécessaire de désactiver SmartScreen ou Microsoft Defender.
 
 ## Changements de caractères
 

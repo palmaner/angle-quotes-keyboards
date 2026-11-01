@@ -21,7 +21,7 @@
 
 Les DLL de clavier, les paquets MSI, les affectations de caractères et les textes d’entraînement restent identiques à v0.1.0. Windows 10/11 sur x86/x64 reste pris en charge ; ARM64 n’est pas inclus. Windows peut demander une déconnexion ou un redémarrage avant que le clavier apparaisse ou fonctionne correctement.
 
-Les installateurs restent non signés. L’avertissement SmartScreen **Windows a protégé votre ordinateur** a été observé avec v0.1.0, mais pas signalé lors de l’essai réussi du candidat v0.2.0. Un installateur v0.2.0 non signé peut toujours déclencher cet avertissement. Cette version ne supprime ni ne désactive la protection SmartScreen.
+SmartScreen : l’avertissement « Windows a protégé votre ordinateur », avec « Éditeur inconnu », a été observé en lançant setup.exe téléchargé depuis GitHub dans v0.1.0 et v0.2.0. Les installateurs restent non signés. Si vous avez vérifié l’origine du fichier et décidez de continuer, choisissez « Informations complémentaires », puis « Exécuter quand même », si Windows propose cette option. Il n’est pas nécessaire de désactiver SmartScreen ou Microsoft Defender.
 
 ## Validation
 

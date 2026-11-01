@@ -21,7 +21,7 @@
 
 Keyboard DLLs, MSI packages, character assignments and practice texts are unchanged from v0.1.0. Support remains Windows 10/11 on x86/x64; ARM64 is not included. Windows may require sign-out or restart before a keyboard appears or behaves correctly.
 
-The installers remain unsigned. A **Windows protected your PC** SmartScreen warning was observed with v0.1.0; it was not reported in the successful v0.2.0 candidate test. An unsigned v0.2.0 installer may still trigger a warning. This release does not remove or disable SmartScreen protection.
+SmartScreen: the “Windows protected your PC” warning with “Unknown publisher” has been observed when running setup.exe downloaded from GitHub in both v0.1.0 and v0.2.0. The installers remain unsigned. If you have checked the file’s origin and decide to continue, select “More info” and then “Run anyway”, if Windows offers that option. You do not need to disable SmartScreen or Microsoft Defender.
 
 ## Validation
 

@@ -21,7 +21,7 @@
 
 Tastatur-DLLs, MSI-Pakete, Zeichenzuweisungen und Übungstexte bleiben gegenüber v0.1.0 unverändert. Unterstützt wird weiterhin Windows 10/11 auf x86/x64; ARM64 ist nicht enthalten. Windows kann Abmelden oder einen Neustart erfordern, bevor eine Tastatur erscheint oder richtig funktioniert.
 
-Die Installationsprogramme bleiben unsigniert. Die SmartScreen-Warnung **Der Computer wurde durch Windows geschützt** wurde bei v0.1.0 beobachtet, nicht beim erfolgreichen Test des v0.2.0-Kandidaten gemeldet. Ein unsigniertes v0.2.0-Installationsprogramm kann weiterhin eine Warnung auslösen. Diese Version entfernt oder deaktiviert den SmartScreen-Schutz nicht.
+SmartScreen: Die Warnung „Der Computer wurde durch Windows geschützt“ mit „Unbekannter Herausgeber“ wurde beim Start von setup.exe aus GitHub-Downloads sowohl bei v0.1.0 als auch bei v0.2.0 beobachtet. Die Installationsprogramme sind weiterhin unsigniert. Wenn du die Herkunft der Datei geprüft hast und fortfahren möchtest, wähle „Weitere Informationen“ und dann „Trotzdem ausführen“, sofern Windows diese Option anbietet. SmartScreen oder Microsoft Defender müssen nicht deaktiviert werden.
 
 ## Validierung
 

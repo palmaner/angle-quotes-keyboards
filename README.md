@@ -35,7 +35,7 @@ Windows 10/11 on x86 or x64 PCs. ARM64 is not included. No Internet connection o
 
 If setup.exe does not start, open `_amd64.msi` for 64-bit Windows or `_i386.msi` for 32-bit Windows. The installers are unsigned, so Windows may show “Unknown publisher”. Opening the MSI directly bypasses the default-keyboard checkbox.
 
-SmartScreen: a “Windows protected your PC” warning was observed with v0.1.0, not in the successful v0.2.0 candidate test. The v0.2.0 installers remain unsigned and may show it. This release does not disable or remove that protection.
+SmartScreen: the “Windows protected your PC” warning with “Unknown publisher” has been observed when running setup.exe downloaded from GitHub in both v0.1.0 and v0.2.0. The installers remain unsigned. If you have checked the file’s origin and decide to continue, select “More info” and then “Run anyway”, if Windows offers that option. You do not need to disable SmartScreen or Microsoft Defender.
 
 ## Character changes
 

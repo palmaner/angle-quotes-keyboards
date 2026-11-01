@@ -35,7 +35,7 @@ Windows 10/11 auf x86- oder x64-PCs; ARM64 ist nicht enthalten. Internet und ein
 
 Startet setup.exe nicht, öffne `_amd64.msi` für 64-Bit-Windows oder `_i386.msi` für 32 Bit. Die Installationsprogramme sind nicht signiert; Windows kann einen unbekannten Herausgeber anzeigen. Beim direkten Öffnen des MSI ist das Kästchen für die Standardtastatur nicht verfügbar.
 
-SmartScreen: Die Warnung „Der Computer wurde durch Windows geschützt“ wurde bei v0.1.0 beobachtet, nicht beim erfolgreichen Test des v0.2.0-Kandidaten. Die Installationsprogramme von v0.2.0 sind weiterhin nicht signiert und können diese Warnung auslösen. Diese Version deaktiviert oder entfernt den Schutz nicht.
+SmartScreen: Die Warnung „Der Computer wurde durch Windows geschützt“ mit „Unbekannter Herausgeber“ wurde beim Start von setup.exe aus GitHub-Downloads sowohl bei v0.1.0 als auch bei v0.2.0 beobachtet. Die Installationsprogramme sind weiterhin unsigniert. Wenn du die Herkunft der Datei geprüft hast und fortfahren möchtest, wähle „Weitere Informationen“ und dann „Trotzdem ausführen“, sofern Windows diese Option anbietet. SmartScreen oder Microsoft Defender müssen nicht deaktiviert werden.
 
 ## Zeichenänderungen
 
