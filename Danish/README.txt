@@ -9,12 +9,20 @@ AltGr+6: ikke tildelt → «
 
 Eurotegnet (€) fjernes fra AltGr+5, men er stadig tilgængeligt med AltGr+E. Denne genvej fandtes allerede.
 
-INSTALLATION
-1. Pak hele ZIP-filen ud, og kør setup.exe. Godkend administratoranmodningen.
-2. Tryk Win+Mellemrum, og vælg navnet ovenfor.
-3. Afprøv genvejene i Notesblok med AltGr og den øverste talrække.
-Hvis layoutet mangler, skal du logge ud og ind igen; tilføj det i sprogindstillingerne om nødvendigt.
-Win+Mellemrum skifter tilbage til det oprindelige layout. Vælg dette først, og fjern derefter det nye layout fra installerede apps for at afinstallere.
+Windows 10/11 på x86- eller x64-pc'er; ARM64 er ikke inkluderet. Du behøver hverken internet eller Keyboard Layout Creator installeret.
+
+1. Pak hele ZIP-filen ud, og åbn mappen til dit layout. Hold filerne samlet.
+2. Åbn setup.exe normalt uden Kør som administrator. Afkrydsningsfeltet »Brug som standardtastatur for min konto« er valgfrit: markér det for at gemme indstillingen mellem sessioner. Kun installationen beder om administratorrettigheder.
+3. Tryk Win+Mellemrum, og vælg navnet, der slutter med “- Angle Quotes”.
+4. Prøv AltGr (højre Alt) og den øverste talrække i Notesblok.
+
+Installationsprogrammet kan opføre sig uensartet. Det kan være nødvendigt at logge ud og ind igen, før layoutet vises eller virker.
+
+Hvis setup.exe ikke starter, åbn _amd64.msi til 64-bit Windows eller _i386.msi til 32-bit Windows. Installationsprogrammerne er usignerede; Windows kan vise en ukendt udgiver. Hvis MSI åbnes direkte, er afkrydsningsfeltet for standardtastatur ikke tilgængeligt.
+
+For at stoppe med at bruge layoutet som standard skal du åbne setup.exe igen, fjerne markeringen og klikke på »Anvend«. Den tidligere indstilling gendannes, og tastaturet forbliver installeret. Hvis det tidligere tastatur ikke er tilgængeligt, vælger du et andet. Klik på »Afinstaller« i samme vindue for at fjerne layoutet; standardindstillingen gendannes først, hvis nødvendigt. Win+Mellemrum skifter det valgte tastatur uden at fjerne denne indstilling. Direkte fjernelse via Windows-apps eller MSI udfører ikke denne gendannelse.
+
+SmartScreen: advarslen »Windows beskyttede din pc« blev observeret med v0.1.0, ikke ved den vellykkede test af v0.2.0-kandidaten. Installationsprogrammerne i v0.2.0 er stadig usignerede og kan vise advarslen. Denne version deaktiverer eller fjerner ikke beskyttelsen.
 
 ØVELSE: Kopiér practice.txt til custom-tilstand i Monkeytype eller et andet skriveværktøj. Disse opdigtede tekster er lavet med AI til øvelse og kan indeholde fejl.
 practice/: short.txt, medium.txt, long.txt.

@@ -27,13 +27,15 @@ The two English variants are for trying angle quotes, not a proposal to change s
 Windows 10/11 on x86 or x64 PCs. ARM64 is not included. No Internet connection or Keyboard Layout Creator installation is needed.
 
 1. Extract the whole downloaded ZIP and open your layout's folder. Keep its files together.
-2. Run **setup.exe** and approve the administrator prompt.
+2. Open **setup.exe** normally, without **Run as administrator**. The **“Use as the default keyboard for my account”** checkbox is optional: select it to save this preference between sessions. Only installation requests administrator permission.
 3. Press **Windows+Space** and select the name ending in **“- Angle Quotes”**.
 4. Test it in Notepad using right Alt and the top number row.
 
-**The installer can behave inconsistently, and Windows may require you to sign out and back in before the layout appears or works correctly.** Installing a layout does not necessarily select it. If it is still missing, add it in your language's keyboard options in Windows Settings.
+**The installer can behave inconsistently, and Windows may require you to sign out and back in before the layout appears or works correctly.**
 
-If setup.exe does not start, open `_amd64.msi` for 64-bit Windows or `_i386.msi` for 32-bit Windows. The installers are unsigned, so Windows may show “Unknown publisher”.
+If setup.exe does not start, open `_amd64.msi` for 64-bit Windows or `_i386.msi` for 32-bit Windows. The installers are unsigned, so Windows may show “Unknown publisher”. Opening the MSI directly bypasses the default-keyboard checkbox.
+
+SmartScreen: a “Windows protected your PC” warning was observed with v0.1.0, not in the successful v0.2.0 candidate test. The v0.2.0 installers remain unsigned and may show it. This release does not disable or remove that protection.
 
 ## Character changes
 
@@ -45,7 +47,7 @@ Other tested character combinations and accents are preserved. Native Ctrl+Alt c
 
 ## Switch back or uninstall
 
-Use **Windows+Space** to return to your original keyboard. To uninstall, select the original first, then rerun the custom layout's installer and choose **Remove**.
+To stop using it as default, reopen **setup.exe**, clear the checkbox and click **“Apply”**. This restores your previous preference and leaves the keyboard installed. If the previous keyboard is unavailable, choose another. To remove the layout, click **“Uninstall”** in the same window; the default is restored first if needed. Windows+Space switches the selected keyboard but does not clear this preference. Removing directly through Windows Apps or MSI bypasses this restoration.
 
 ## Practise typing
 
@@ -58,6 +60,8 @@ I have included [practice collections](practice/README.md) in the supported lang
 I have tried five of the original layouts on my laptop and they work, although signing out was sometimes necessary. I have not manually tested all 17 layouts, including the two experimental English variants. Automated checks cover character tables, accents and display names across x86, x64 and WOW64.
 
 I maintain this project. To report a problem, open an issue with your Windows version, the layout name, the shortcut, what happened and whether signing out helped.
+
+The new checkbox passes simulated automated tests and package checks. The user reports successful overall manual testing of Spanish (Spain) on Windows Home x64, reported version 26H2, build 26300.9818. Individual cases were not recorded separately, and manual coverage of the other layouts or systems is not established. New translations have not received independent linguistic review.
 
 Built with [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). My original code and modifications are available under the [MIT License](LICENSE). Microsoft components retain their own terms; see [third-party notices](THIRD_PARTY_NOTICES.md).
 

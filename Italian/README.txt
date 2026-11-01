@@ -10,12 +10,20 @@ AltGr+7: non assegnato → »
 L'euro (€) lascia AltGr+5 e rimane disponibile con AltGr+E; questa scorciatoia esisteva già.
 Base: tastiera italiana standard di Windows.
 
-INSTALLAZIONE
-1. Estrai l'intero ZIP ed esegui setup.exe. Autorizza l'installazione come amministratore.
-2. Premi Win+Spazio e seleziona il nome indicato sopra.
-3. Prova le scorciatoie nel Blocco note con AltGr e la fila superiore dei numeri.
-Se la tastiera non compare, esci dalla sessione e accedi di nuovo; aggiungila nelle opzioni della lingua se necessario.
-Win+Spazio ripristina la tastiera precedente. Per disinstallare, seleziona prima quella precedente e rimuovi questa dalle applicazioni installate.
+Windows 10/11 su PC x86 o x64; ARM64 non è incluso. Non servono Internet né un'installazione di Keyboard Layout Creator.
+
+1. Estrai tutto lo ZIP e apri la cartella della tua tastiera. Mantieni insieme i file.
+2. Apri setup.exe normalmente, senza Esegui come amministratore. La casella «Usa come tastiera predefinita per il mio account» è facoltativa: selezionala per salvare la preferenza tra le sessioni. Solo l’installazione richiede i permessi di amministratore.
+3. Premi Win+Spazio e seleziona il nome che termina con “- Angle Quotes”.
+4. Prova AltGr (Alt destro) e la fila superiore dei numeri nel Blocco note.
+
+L'installer può comportarsi in modo irregolare: potrebbe essere necessario uscire dalla sessione e rientrare prima che la tastiera compaia o funzioni.
+
+Se setup.exe non parte, apri _amd64.msi per Windows a 64 bit oppure _i386.msi per 32 bit. Gli installer non sono firmati; Windows potrebbe indicare un autore sconosciuto. Aprire direttamente il MSI esclude la casella della tastiera predefinita.
+
+Per non usarla più come predefinita, riapri setup.exe, deseleziona la casella e premi «Applica». La preferenza precedente viene ripristinata e la tastiera resta installata. Se la tastiera precedente non è disponibile, scegline un’altra. Per rimuovere la disposizione, premi «Disinstalla» nella stessa finestra; se necessario viene prima ripristinata la preferenza precedente. Win+Spazio cambia la tastiera selezionata senza cancellare questa preferenza. La rimozione diretta tramite le app di Windows o MSI non esegue questo ripristino.
+
+SmartScreen: l’avviso «PC protetto da Windows» è stato osservato con v0.1.0, non durante la prova riuscita della candidata v0.2.0. I programmi di installazione v0.2.0 restano privi di firma digitale e potrebbero mostrarlo. Questa versione non disattiva né rimuove tale protezione.
 
 ESERCIZI: Copia practice.txt nella modalità custom di Monkeytype o in un altro programma di dattilografia. Questi testi di fantasia sono stati generati con IA per esercitarsi e possono contenere errori.
 practice/: short.txt, medium.txt, long.txt.

@@ -27,13 +27,15 @@ Les deux variantes anglaises servent à essayer les guillemets, sans proposer de
 Windows 10/11 sur PC x86 ou x64 ; ARM64 n’est pas inclus. Aucune connexion Internet ni installation de Keyboard Layout Creator n’est nécessaire.
 
 1. Extrayez tout le ZIP et ouvrez le dossier de votre clavier. Gardez les fichiers ensemble.
-2. Lancez **setup.exe** et acceptez les droits administrateur.
+2. Ouvrez **setup.exe** normalement, sans **Exécuter en tant qu’administrateur**. La case **« Utiliser comme clavier par défaut pour mon compte »** est facultative : cochez-la pour enregistrer cette préférence entre les sessions. Seule l’installation demande les droits administrateur.
 3. Appuyez sur **Win+Espace** et choisissez le nom se terminant par **“- Angle Quotes”**.
 4. Testez AltGr (Alt droit) et la rangée supérieure des chiffres dans le Bloc-notes.
 
-**L’installateur peut se comporter de façon irrégulière : une déconnexion puis reconnexion peut être nécessaire pour que le clavier apparaisse ou fonctionne.** L’installer ne le sélectionne pas forcément. S’il manque, ajoutez-le dans les options de clavier de votre langue dans les Paramètres.
+**L’installateur peut se comporter de façon irrégulière : une déconnexion puis reconnexion peut être nécessaire pour que le clavier apparaisse ou fonctionne.**
 
-Si setup.exe ne démarre pas, ouvrez `_amd64.msi` pour Windows 64 bits ou `_i386.msi` pour 32 bits. Les installateurs ne sont pas signés ; Windows peut afficher « Éditeur inconnu ».
+Si setup.exe ne démarre pas, ouvrez `_amd64.msi` pour Windows 64 bits ou `_i386.msi` pour 32 bits. Les installateurs ne sont pas signés ; Windows peut afficher « Éditeur inconnu ». L’ouverture directe du MSI contourne la case du clavier par défaut.
+
+SmartScreen : l’avertissement « Windows a protégé votre ordinateur » a été observé avec v0.1.0, pas lors de l’essai réussi de la version candidate v0.2.0. Les installateurs v0.2.0 ne sont toujours pas signés et peuvent l’afficher. Cette version ne désactive ni ne supprime cette protection.
 
 ## Changements de caractères
 
@@ -45,7 +47,7 @@ Les autres combinaisons et accents vérifiés sont conservés. Ctrl+Alt peut pro
 
 ## Revenir au clavier d’origine ou désinstaller
 
-Utilisez **Win+Espace** pour revenir au clavier d’origine. Pour désinstaller, sélectionnez-le d’abord, relancez l’installateur du clavier personnalisé et choisissez **Remove**.
+Pour ne plus l’utiliser par défaut, rouvrez **setup.exe**, décochez la case et cliquez sur **« Appliquer »**. La préférence précédente est rétablie et le clavier reste installé. Si l’ancien clavier n’est plus disponible, choisissez-en un autre. Pour supprimer la disposition, cliquez sur **« Désinstaller »** dans la même fenêtre ; le clavier par défaut est d’abord rétabli si nécessaire. Win+Espace change le clavier sélectionné sans effacer cette préférence. La suppression directe depuis les applications Windows ou le MSI ne réalise pas cette restauration.
 
 ## Entraînement
 
@@ -58,6 +60,8 @@ J’ai inclus des [textes d’entraînement](practice/README.md) dans les langue
 J’ai essayé cinq variantes originales sur mon portable ; elles fonctionnent, parfois après une déconnexion. Je n’ai pas testé manuellement les 17, notamment les deux variantes anglaises expérimentales. Les vérifications automatiques couvrent les tables de caractères, les accents et les noms en x86, x64 et WOW64.
 
 Je maintiens ce projet. Pour signaler un problème, ouvrez une issue avec la version de Windows, le clavier, le raccourci, le résultat et l’effet éventuel d’une déconnexion.
+
+La nouvelle case réussit les tests automatisés simulés et les contrôles des paquets. L’utilisateur rapporte un essai manuel global réussi de Spanish (Spain) sur Windows Home x64, version indiquée 26H2, build 26300.9818. Les cas individuels n’ont pas été consignés séparément ; la couverture manuelle des autres dispositions ou systèmes n’est pas établie. Les nouvelles traductions n’ont pas reçu de révision linguistique indépendante.
 
 Créé avec [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). Mon code original et mes modifications sont sous [licence MIT](LICENSE). Les composants Microsoft conservent leurs conditions ; voir les [avis de tiers](THIRD_PARTY_NOTICES.md).
 

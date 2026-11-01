@@ -27,13 +27,15 @@ As duas variantes inglesas servem para experimentar as aspas angulares, não par
 Windows 10/11 em PCs x86 ou x64; ARM64 não incluído. Não é necessária Internet nem a instalação do Keyboard Layout Creator.
 
 1. Extraia todo o ZIP e abra a pasta do seu teclado. Mantenha os ficheiros juntos.
-2. Execute **setup.exe** e aceite a autorização de administrador.
+2. Abra **setup.exe** normalmente, sem **Executar como administrador**. A caixa **«Usar como teclado predefinido da minha conta»** é opcional: selecione-a para guardar a preferência entre sessões. Só a instalação pede permissões de administrador.
 3. Prima **Win+Espaço** e selecione o nome terminado em **“- Angle Quotes”**.
 4. Teste AltGr (Alt direito) e a fila superior dos números no Bloco de Notas.
 
-**O instalador pode comportar-se de forma irregular: por vezes é necessário terminar a sessão e voltar a entrar para o teclado aparecer ou funcionar.** Instalá-lo não o seleciona necessariamente. Se não aparecer, adicione-o nas opções de teclado do seu idioma nas Definições.
+**O instalador pode comportar-se de forma irregular: por vezes é necessário terminar a sessão e voltar a entrar para o teclado aparecer ou funcionar.**
 
-Se setup.exe não iniciar, abra `_amd64.msi` para Windows de 64 bits ou `_i386.msi` para 32 bits. Os instaladores não estão assinados; o Windows pode mostrar um editor desconhecido.
+Se setup.exe não iniciar, abra `_amd64.msi` para Windows de 64 bits ou `_i386.msi` para 32 bits. Os instaladores não estão assinados; o Windows pode mostrar um editor desconhecido. Abrir diretamente o MSI omite a caixa do teclado predefinido.
+
+SmartScreen: o aviso «O Windows protegeu o seu PC» foi observado na v0.1.0, não no teste bem-sucedido da candidata v0.2.0. Os instaladores v0.2.0 continuam sem assinatura digital e podem mostrá-lo. Esta versão não desativa nem remove essa proteção.
 
 ## Alterações de caracteres
 
@@ -45,7 +47,7 @@ As restantes combinações e os acentos verificados são preservados. Ctrl+Alt p
 
 ## Voltar ao teclado anterior ou desinstalar
 
-Use **Win+Espaço** para voltar ao teclado original. Selecione-o antes de desinstalar, volte a executar o instalador do teclado personalizado e escolha **Remove**.
+Para deixar de o usar como predefinido, reabra **setup.exe**, desmarque a caixa e clique em **«Aplicar»**. A preferência anterior é restaurada e o teclado continua instalado. Se o teclado anterior não estiver disponível, escolha outro. Para remover a disposição, clique em **«Desinstalar»** na mesma janela; a preferência anterior é restaurada primeiro, se necessário. Win+Espaço muda o teclado selecionado sem apagar esta preferência. A remoção direta pelas Aplicações do Windows ou pelo MSI não executa esta restauração.
 
 ## Prática de escrita
 
@@ -58,6 +60,8 @@ Incluí [textos de prática](practice/README.md) nos idiomas do projeto. As cate
 Experimentei cinco variantes originais no meu portátil e funcionam, por vezes após voltar a entrar na sessão. Não testei manualmente as 17, incluindo as duas inglesas experimentais. As verificações automáticas cobrem tabelas de caracteres, acentos e nomes em x86, x64 e WOW64.
 
 Mantenho este projeto. Para comunicar uma falha, abra uma issue com a versão do Windows, teclado, atalho, resultado e se voltar a entrar na sessão ajudou.
+
+A nova caixa passa os testes automáticos simulados e as verificações dos pacotes. O utilizador comunica um teste manual global bem-sucedido de Spanish (Spain) em Windows Home x64, versão indicada 26H2, compilação 26300.9818. Os casos individuais não foram registados separadamente; não está comprovada a cobertura manual das outras disposições ou sistemas. As novas traduções não receberam revisão linguística independente.
 
 Criado com [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). O meu código original e as minhas alterações usam a [licença MIT](LICENSE). Os componentes Microsoft mantêm as suas condições; consulte os [avisos de terceiros](THIRD_PARTY_NOTICES.md).
 

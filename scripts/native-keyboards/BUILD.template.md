@@ -1,4 +1,4 @@
-# Build and verify
+﻿# Build and verify
 
 End users only need a release ZIP. These steps are for rebuilding the project.
 
@@ -14,6 +14,7 @@ Run the following from the repository root:
 & .\scripts\native-keyboards\build.ps1
 & .\scripts\native-keyboards\test.ps1
 & .\scripts\native-keyboards\test-installers.ps1
+& .\scripts\native-keyboards\test-setup.ps1
 & .\scripts\native-keyboards\distribute.ps1
 ```
 
@@ -30,6 +31,7 @@ Run the character-table tests in 32-bit Windows PowerShell as well, once normall
 - `scripts/native-keyboards/layouts.json`: layout identities, Windows bases and AltGr assignments.
 - `scripts/native-keyboards/locales.json`: local instructions.
 - `scripts/native-keyboards/readme-translations.json`: all 11 README translations, rendered by one shared generator.
+- `scripts/native-keyboards/release-notes-translations.json`: versioned release notes in the same 11 languages, rendered by `generate-release-notes.ps1`. Selectors use relative links; the optional release-page body links to files at the release tag.
 - `sources/base/`: saved Windows-base KLC exports used to generate the layouts.
 - `sources/*.klc`: generated KLC snapshots for this release.
 - `outputs/`: generated installers and ZIPs; ignored by Git.
@@ -40,3 +42,25 @@ The build uses saved base exports when available. It restores missing work cache
 The scripts use MSKLC's internal packaging functions, so they depend on version 1.4. Generated MSI identifiers and timestamps can vary between builds; byte-identical output is not promised. The source snapshots and character-table checks make the intended mappings inspectable.
 
 Do not distribute the MSKLC compiler or Windows system DLLs with the project. See [third-party notices](../THIRD_PARTY_NOTICES.md).
+
+## Default keyboard checkbox
+
+`build.ps1` finishes by running `build-setup.ps1`. The latter can also rebuild only the launchers, using the existing MSI packages, without recompiling keyboard DLLs:
+
+```powershell
+& .\scripts\native-keyboards\build-setup.ps1 -PackageRoot .
+```
+
+The launcher is compiled with the Windows .NET Framework C# compiler and an `asInvoker` manifest. It embeds the PowerShell 5.1 WinForms interface, preference functions and translations. It runs only while setup is open. Only Windows Installer is elevated; user preferences are applied in the initiating account. Start setup normally, without **Run as administrator**. Extract the complete ZIP before running it.
+
+The checkbox reads the registered keyboard DLL and the current default input preference, rather than assuming a fixed custom KLID. It preserves the user's language list, saves the preceding preference under `%LOCALAPPDATA%\AngleQuotes\defaults`, and uses the International module to set or restore the default. Clearing the checkbox keeps the keyboard installed. If the saved keyboard is unavailable, the user must choose another available input method. Uninstalling through this launcher restores the preference first; direct MSI maintenance and Windows Apps removal bypass this extra step. These preferences apply to the current account, not the sign-in screen or other users.
+
+`test-setup.ps1` uses in-memory replacements for the Windows settings commands and keyboard registry. It tests preference restoration, repeated activation, multiple layouts, missing keyboards and rejected changes without installing or activating a keyboard. `test-installers.ps1` checks embedded identities, resources, translations and the non-elevated manifest as well as the existing MSI and DLL metadata.
+
+Manual test scenarios for disposable x86/x64 Windows 10/11 systems: install with the checkbox both cleared and selected; reopen, select and clear it; change the default in Windows Settings and reopen; sign out and restart after activation and restoration; cancel UAC; enter a different administrator's credentials; uninstall while active; and remove the saved previous keyboard before restoring. Automated tests do not establish persistence across real sessions or reboots. The user reports overall manual success with the corrected Spanish (Spain) candidate on Windows Home x64, reported version 26H2, build 26300.9818. Individual scenarios were not recorded separately; this report does not establish complete coverage of this matrix or the other layouts.
+
+Microsoft references: [default input method override](https://learn.microsoft.com/en-us/powershell/module/international/set-windefaultinputmethodoverride), [user language list](https://learn.microsoft.com/en-us/powershell/module/international/set-winuserlanguagelist), [registered keyboard identifiers](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-language-pack-default-values).
+
+Setup failures show the failing command and script location and save detailed diagnostics under `%LOCALAPPDATA%\AngleQuotes\logs`. Logs remain local and are not uploaded; review them before sharing because they can contain local paths. A keyboard that is not registered is shown as not installed without querying user input preferences. When the International module throws a plain `System.Exception` while reading the default override, setup falls back to a read-only lookup of `InputMethodOverride`; a missing value means Windows language-list selection. Permission failures and malformed values remain errors.
+
+For a read-only startup check, extract `setup-core.ps1`, `setup-ui.ps1` and `setup-config.json` from a launcher's embedded resources into a temporary work directory, and run Windows PowerShell 5.1 with `-NoProfile -STA -File setup-ui.ps1 -PackageRoot <layout-folder> -CheckStartup`. This constructs the real interface and reads its real initial state, then exits before showing the window or running MSI/preference changes. Preview mode instead uses simulated state and cannot establish that the real Windows settings commands work.

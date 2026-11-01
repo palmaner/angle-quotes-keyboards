@@ -27,13 +27,15 @@ De to engelske varianter er til afprøvning af vinkelanførselstegn, ikke et for
 Windows 10/11 på x86- eller x64-pc'er; ARM64 er ikke inkluderet. Du behøver hverken internet eller Keyboard Layout Creator installeret.
 
 1. Pak hele ZIP-filen ud, og åbn mappen til dit layout. Hold filerne samlet.
-2. Kør **setup.exe**, og godkend administratoranmodningen.
+2. Åbn **setup.exe** normalt uden **Kør som administrator**. Afkrydsningsfeltet **»Brug som standardtastatur for min konto«** er valgfrit: markér det for at gemme indstillingen mellem sessioner. Kun installationen beder om administratorrettigheder.
 3. Tryk **Win+Mellemrum**, og vælg navnet, der slutter med **“- Angle Quotes”**.
 4. Prøv AltGr (højre Alt) og den øverste talrække i Notesblok.
 
-**Installationsprogrammet kan opføre sig uensartet. Det kan være nødvendigt at logge ud og ind igen, før layoutet vises eller virker.** Installation vælger ikke nødvendigvis layoutet. Hvis det mangler, tilføj det i tastaturindstillingerne for dit sprog i Indstillinger.
+**Installationsprogrammet kan opføre sig uensartet. Det kan være nødvendigt at logge ud og ind igen, før layoutet vises eller virker.**
 
-Hvis setup.exe ikke starter, åbn `_amd64.msi` til 64-bit Windows eller `_i386.msi` til 32-bit Windows. Installationsprogrammerne er usignerede; Windows kan vise en ukendt udgiver.
+Hvis setup.exe ikke starter, åbn `_amd64.msi` til 64-bit Windows eller `_i386.msi` til 32-bit Windows. Installationsprogrammerne er usignerede; Windows kan vise en ukendt udgiver. Hvis MSI åbnes direkte, er afkrydsningsfeltet for standardtastatur ikke tilgængeligt.
+
+SmartScreen: advarslen »Windows beskyttede din pc« blev observeret med v0.1.0, ikke ved den vellykkede test af v0.2.0-kandidaten. Installationsprogrammerne i v0.2.0 er stadig usignerede og kan vise advarslen. Denne version deaktiverer eller fjerner ikke beskyttelsen.
 
 ## Ændrede tegn
 
@@ -45,7 +47,7 @@ Andre kontrollerede kombinationer og accenter bevares. Ctrl+Alt kan give de samm
 
 ## Skift tilbage eller afinstaller
 
-Brug **Win+Mellemrum** til at vende tilbage til det oprindelige layout. Vælg det først, kør installationsprogrammet for det tilpassede layout igen, og vælg **Remove**.
+For at stoppe med at bruge layoutet som standard skal du åbne **setup.exe** igen, fjerne markeringen og klikke på **»Anvend«**. Den tidligere indstilling gendannes, og tastaturet forbliver installeret. Hvis det tidligere tastatur ikke er tilgængeligt, vælger du et andet. Klik på **»Afinstaller«** i samme vindue for at fjerne layoutet; standardindstillingen gendannes først, hvis nødvendigt. Win+Mellemrum skifter det valgte tastatur uden at fjerne denne indstilling. Direkte fjernelse via Windows-apps eller MSI udfører ikke denne gendannelse.
 
 ## Skriveøvelser
 
@@ -58,6 +60,8 @@ Jeg har tilføjet [øvelsestekster](practice/README.md) på projektets sprog. Ka
 Jeg har prøvet fem oprindelige varianter på min bærbare pc. De virker, nogle gange efter nyt login. Jeg har ikke testet alle 17 manuelt, herunder de to eksperimentelle engelske varianter. Automatiske kontroller dækker tegntabeller, accenter og navne på x86, x64 og WOW64.
 
 Jeg vedligeholder projektet. Opret en issue med Windows-version, layout, genvej, resultat og om nyt login hjalp.
+
+Det nye afkrydsningsfelt består simulerede automatiske tests og pakkekontroller. Brugeren rapporterer en samlet vellykket manuel test af Spanish (Spain) på Windows Home x64, angivet version 26H2, build 26300.9818. De enkelte tilfælde blev ikke registreret separat; manuel dækning af andre layouts eller systemer er ikke dokumenteret. De nye oversættelser har ikke fået uafhængig sproglig gennemgang.
 
 Lavet med [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). Min oprindelige kode og mine ændringer bruger [MIT-licensen](LICENSE). Microsoft-komponenter beholder deres vilkår; se [tredjepartsmeddelelser](THIRD_PARTY_NOTICES.md).
 

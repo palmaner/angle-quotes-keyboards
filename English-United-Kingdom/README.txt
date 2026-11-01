@@ -10,12 +10,20 @@ AltGr+7: unassigned → »
 EXPERIMENTAL: intended for trying angle quotes, not as a proposed standard English keyboard. This uses the standard US or UK Windows base, not US-International or UK Extended. Native Ctrl+Alt may produce the same characters as AltGr.
 These AltGr positions were unassigned; no existing symbol has been displaced.
 
-INSTALL
-1. Extract the whole ZIP, keep its files together and run setup.exe. Approve the administrator prompt.
-2. Press Windows+Space and select the exact keyboard name above.
-3. Try right Alt+5 and right Alt+7 in Notepad using the top number row. Right Alt acts as AltGr in this layout.
-The installer may require you to sign out and back in. If the keyboard is still missing, add it through your language's keyboard options in Windows Settings.
-Use Windows+Space to return to your original keyboard. Select the original first, then rerun this installer and choose Remove to uninstall.
+Windows 10/11 on x86 or x64 PCs. ARM64 is not included. No Internet connection or Keyboard Layout Creator installation is needed.
+
+1. Extract the whole downloaded ZIP and open your layout's folder. Keep its files together.
+2. Open setup.exe normally, without Run as administrator. The “Use as the default keyboard for my account” checkbox is optional: select it to save this preference between sessions. Only installation requests administrator permission.
+3. Press Windows+Space and select the name ending in “- Angle Quotes”.
+4. Test it in Notepad using right Alt and the top number row.
+
+The installer can behave inconsistently, and Windows may require you to sign out and back in before the layout appears or works correctly.
+
+If setup.exe does not start, open _amd64.msi for 64-bit Windows or _i386.msi for 32-bit Windows. The installers are unsigned, so Windows may show “Unknown publisher”. Opening the MSI directly bypasses the default-keyboard checkbox.
+
+To stop using it as default, reopen setup.exe, clear the checkbox and click “Apply”. This restores your previous preference and leaves the keyboard installed. If the previous keyboard is unavailable, choose another. To remove the layout, click “Uninstall” in the same window; the default is restored first if needed. Windows+Space switches the selected keyboard but does not clear this preference. Removing directly through Windows Apps or MSI bypasses this restoration.
+
+SmartScreen: a “Windows protected your PC” warning was observed with v0.1.0, not in the successful v0.2.0 candidate test. The v0.2.0 installers remain unsigned and may show it. This release does not disable or remove that protection.
 
 PRACTICE: Copy practice.txt into Monkeytype custom mode or another typing tool. These fictional texts were generated with AI for practice and may contain errors.
 practice/: short.txt, medium.txt, long.txt.

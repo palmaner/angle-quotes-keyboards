@@ -51,7 +51,7 @@ foreach($layout in $layouts) {
     if($layout.slug -eq 'German-Austria'){$notes.Add($text.austria)}
     if($layout.slug -in @('Spanish-Latin-America','Italian','Ukrainian','Portuguese-Portugal')){$notes.Add($text.variant)}
     $content=@($layout.title,$text.intro,$text.changes,($rows -join "`r`n"),($notes -join "`r`n"),$text.install,$text.practice,$text.limits) -join "`r`n`r`n"
-    [IO.File]::WriteAllText((Join-Path $out ($layout.slug+'\README.txt')),($content -replace "`r?`n","`r`n")+"`r`n",$utf8)
+    [IO.File]::WriteAllText((Join-Path $out ($layout.slug+'\README.txt')),($content -replace "`r?`n","`n")+"`n",$utf8)
 }
 $oldReadme=Join-Path $out 'READ_ME_FIRST.txt'
 if(Test-Path -LiteralPath $oldReadme){Remove-Item -LiteralPath $oldReadme}
@@ -59,6 +59,7 @@ New-Item -ItemType Directory -Path (Join-Path $out 'docs') -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'BUILD.template.md') -Destination (Join-Path $out 'docs\BUILD.md') -Force
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'CONTRIBUTING.template.md') -Destination (Join-Path $out 'CONTRIBUTING.md') -Force
 & (Join-Path $PSScriptRoot 'generate-readmes.ps1') -OutputRoot $out
+& (Join-Path $PSScriptRoot 'generate-release-notes.ps1') -OutputRoot (Join-Path $out 'docs')
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 Add-Type -AssemblyName System.IO.Compression
 function Write-PackageZip([string]$Source,[string]$Destination) {

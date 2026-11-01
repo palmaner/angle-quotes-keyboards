@@ -59,6 +59,23 @@ foreach($layout in $layouts) {
         $checks++
     }
     if(-not (Test-Path -LiteralPath (Join-Path $dir 'setup.exe'))){throw 'Missing executable installer'}
+    $setupBytes=[IO.File]::ReadAllBytes((Join-Path $dir 'setup.exe'))
+    if(-not [Text.Encoding]::UTF8.GetString($setupBytes).Contains('level="asInvoker"')){throw 'Setup must run as the initiating user'}
+    $assembly=[Reflection.Assembly]::Load($setupBytes)
+    $reader=[IO.StreamReader]::new($assembly.GetManifestResourceStream('setup-config.json'))
+    try{$config=$reader.ReadToEnd() | ConvertFrom-Json}finally{$reader.Dispose()}
+    if($config.layout.name -ne $layout.name -or $config.layout.locale -ne $layout.locale -or $config.layout.title -ne $layout.title){throw 'Wrong setup identity'}
+    foreach($language in @('es','en','fr','de','it','pt','nb','da','ru','uk','be')){
+        foreach($key in $config.texts.en.PSObject.Properties.Name){
+            if(-not $config.texts.$language.$key){throw ('Missing setup translation: '+$language+' '+$key)}
+        }
+    }
+    foreach($resource in @('setup-core.ps1','setup-ui.ps1')){
+        $reader=[IO.StreamReader]::new($assembly.GetManifestResourceStream($resource))
+        try{$embedded=$reader.ReadToEnd()}finally{$reader.Dispose()}
+        if($embedded -cne [IO.File]::ReadAllText((Join-Path $PSScriptRoot $resource))){throw 'Stale embedded setup script'}
+    }
+    $checks+=4
 }
 [void][Runtime.InteropServices.Marshal]::FinalReleaseComObject($installer)
 @{passed=$true;installerAndArchitectureChecks=$checks;uniqueProducts=$codes.Count;installed=$false} | ConvertTo-Json | Set-Content (Join-Path $repo 'work\native-keyboards\validation-installers.json') -Encoding UTF8

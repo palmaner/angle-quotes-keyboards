@@ -57,5 +57,5 @@ foreach($code in $languages.Keys){
     $lines.Add($t.maintainers)
     $body=($lines -join "`r`n`r`n")+"`r`n"
     $fileName=if($code -eq 'en'){'README.md'}else{'README.'+$code+'.md'}
-    [IO.File]::WriteAllText((Join-Path $OutputRoot $fileName),($body -replace "`r?`n","`r`n"),$utf8)
+    [IO.File]::WriteAllText((Join-Path $OutputRoot $fileName),($body -replace "`r?`n","`n"),$utf8)
 }

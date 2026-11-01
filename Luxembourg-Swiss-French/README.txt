@@ -12,12 +12,20 @@ AltGr+1: ¦ → |
 § passe d’AltGr+5 à AltGr+8 et reste aussi sur la touche §, à gauche de 1. | passe d’AltGr+7 à AltGr+1. Les caractères ¢ (ancien AltGr+8) et ¦ (ancien AltGr+1) sont remplacés, sans nouveau raccourci dans cette version.
 Base : clavier français suisse, associé au français du Luxembourg. Il ne s’agit pas d’une disposition luxembourgeoise générale.
 
-INSTALLATION
-1. Extrayez tout le ZIP et lancez setup.exe. Acceptez les droits administrateur.
-2. Appuyez sur Win+Espace et sélectionnez le nom indiqué ci-dessus.
-3. Testez les raccourcis dans le Bloc-notes avec AltGr et la rangée supérieure des chiffres.
-Si le clavier manque, déconnectez-vous puis reconnectez-vous ; ajoutez-le dans les options de langue si nécessaire.
-Win+Espace permet de revenir au clavier précédent. Pour désinstaller, sélectionnez d’abord celui-ci, puis supprimez ce clavier des applications installées.
+Windows 10/11 sur PC x86 ou x64 ; ARM64 n’est pas inclus. Aucune connexion Internet ni installation de Keyboard Layout Creator n’est nécessaire.
+
+1. Extrayez tout le ZIP et ouvrez le dossier de votre clavier. Gardez les fichiers ensemble.
+2. Ouvrez setup.exe normalement, sans Exécuter en tant qu’administrateur. La case « Utiliser comme clavier par défaut pour mon compte » est facultative : cochez-la pour enregistrer cette préférence entre les sessions. Seule l’installation demande les droits administrateur.
+3. Appuyez sur Win+Espace et choisissez le nom se terminant par “- Angle Quotes”.
+4. Testez AltGr (Alt droit) et la rangée supérieure des chiffres dans le Bloc-notes.
+
+L’installateur peut se comporter de façon irrégulière : une déconnexion puis reconnexion peut être nécessaire pour que le clavier apparaisse ou fonctionne.
+
+Si setup.exe ne démarre pas, ouvrez _amd64.msi pour Windows 64 bits ou _i386.msi pour 32 bits. Les installateurs ne sont pas signés ; Windows peut afficher « Éditeur inconnu ». L’ouverture directe du MSI contourne la case du clavier par défaut.
+
+Pour ne plus l’utiliser par défaut, rouvrez setup.exe, décochez la case et cliquez sur « Appliquer ». La préférence précédente est rétablie et le clavier reste installé. Si l’ancien clavier n’est plus disponible, choisissez-en un autre. Pour supprimer la disposition, cliquez sur « Désinstaller » dans la même fenêtre ; le clavier par défaut est d’abord rétabli si nécessaire. Win+Espace change le clavier sélectionné sans effacer cette préférence. La suppression directe depuis les applications Windows ou le MSI ne réalise pas cette restauration.
+
+SmartScreen : l’avertissement « Windows a protégé votre ordinateur » a été observé avec v0.1.0, pas lors de l’essai réussi de la version candidate v0.2.0. Les installateurs v0.2.0 ne sont toujours pas signés et peuvent l’afficher. Cette version ne désactive ni ne supprime cette protection.
 
 ENTRAÎNEMENT : Copiez practice.txt dans le mode custom de Monkeytype ou un autre outil de dactylographie. Ces textes fictifs ont été générés par IA pour la pratique et peuvent contenir des erreurs.
 practice/: short.txt, medium.txt, long.txt.

@@ -112,3 +112,4 @@ foreach($layout in $layouts) {
     }
     Copy-Item -LiteralPath $source -Destination (Join-Path $work ($layout.name+'.klc')) -Force
 }
+& (Join-Path $PSScriptRoot 'build-setup.ps1') -Only $Only

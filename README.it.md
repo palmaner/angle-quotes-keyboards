@@ -27,13 +27,15 @@ Le due varianti inglesi servono a provare le virgolette angolari, non a proporre
 Windows 10/11 su PC x86 o x64; ARM64 non è incluso. Non servono Internet né un'installazione di Keyboard Layout Creator.
 
 1. Estrai tutto lo ZIP e apri la cartella della tua tastiera. Mantieni insieme i file.
-2. Esegui **setup.exe** e autorizza l'installazione come amministratore.
+2. Apri **setup.exe** normalmente, senza **Esegui come amministratore**. La casella **«Usa come tastiera predefinita per il mio account»** è facoltativa: selezionala per salvare la preferenza tra le sessioni. Solo l’installazione richiede i permessi di amministratore.
 3. Premi **Win+Spazio** e seleziona il nome che termina con **“- Angle Quotes”**.
 4. Prova AltGr (Alt destro) e la fila superiore dei numeri nel Blocco note.
 
-**L'installer può comportarsi in modo irregolare: potrebbe essere necessario uscire dalla sessione e rientrare prima che la tastiera compaia o funzioni.** Installarla non significa necessariamente selezionarla. Se manca, aggiungila nelle opzioni della tastiera della tua lingua nelle Impostazioni.
+**L'installer può comportarsi in modo irregolare: potrebbe essere necessario uscire dalla sessione e rientrare prima che la tastiera compaia o funzioni.**
 
-Se setup.exe non parte, apri `_amd64.msi` per Windows a 64 bit oppure `_i386.msi` per 32 bit. Gli installer non sono firmati; Windows potrebbe indicare un autore sconosciuto.
+Se setup.exe non parte, apri `_amd64.msi` per Windows a 64 bit oppure `_i386.msi` per 32 bit. Gli installer non sono firmati; Windows potrebbe indicare un autore sconosciuto. Aprire direttamente il MSI esclude la casella della tastiera predefinita.
+
+SmartScreen: l’avviso «PC protetto da Windows» è stato osservato con v0.1.0, non durante la prova riuscita della candidata v0.2.0. I programmi di installazione v0.2.0 restano privi di firma digitale e potrebbero mostrarlo. Questa versione non disattiva né rimuove tale protezione.
 
 ## Modifiche ai caratteri
 
@@ -45,7 +47,7 @@ Le altre combinazioni e gli accenti verificati restano invariati. Ctrl+Alt può 
 
 ## Tornare alla tastiera precedente o disinstallare
 
-Usa **Win+Spazio** per tornare alla tastiera originale. Selezionala prima di disinstallare, poi riapri l'installer della tastiera personalizzata e scegli **Remove**.
+Per non usarla più come predefinita, riapri **setup.exe**, deseleziona la casella e premi **«Applica»**. La preferenza precedente viene ripristinata e la tastiera resta installata. Se la tastiera precedente non è disponibile, scegline un’altra. Per rimuovere la disposizione, premi **«Disinstalla»** nella stessa finestra; se necessario viene prima ripristinata la preferenza precedente. Win+Spazio cambia la tastiera selezionata senza cancellare questa preferenza. La rimozione diretta tramite le app di Windows o MSI non esegue questo ripristino.
 
 ## Esercizi di digitazione
 
@@ -58,6 +60,8 @@ Ho incluso [testi di esercitazione](practice/README.md) nelle lingue del progett
 Ho provato cinque varianti originali sul mio portatile e funzionano, talvolta dopo un nuovo accesso. Non ho verificato manualmente tutte le 17 varianti, comprese le due inglesi sperimentali. I controlli automatici coprono tabelle dei caratteri, accenti e nomi in x86, x64 e WOW64.
 
 Mi occupo del progetto. Per segnalare un problema, apri un'issue con versione di Windows, tastiera, scorciatoia, risultato e indicazione se un nuovo accesso ha aiutato.
+
+La nuova casella supera i test automatici simulati e le verifiche dei pacchetti. L’utente segnala una prova manuale complessivamente riuscita di Spanish (Spain) su Windows Home x64, versione indicata 26H2, build 26300.9818. I singoli casi non sono stati registrati separatamente; non è accertata la copertura manuale delle altre disposizioni o dei sistemi. Le nuove traduzioni non hanno ricevuto una revisione linguistica indipendente.
 
 Creato con [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). Il mio codice originale e le mie modifiche usano la [licenza MIT](LICENSE). I componenti Microsoft mantengono le proprie condizioni; consulta gli [avvisi sulle terze parti](THIRD_PARTY_NOTICES.md).
 
