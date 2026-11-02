@@ -1,5 +1,12 @@
-﻿param([Parameter(Mandatory=$true)][string]$OutputRoot)
+﻿param(
+    [Parameter(Mandatory=$true)][string]$OutputRoot,
+    [switch]$AllowPendingVideo
+)
 $ErrorActionPreference='Stop'
+$video=Get-Content (Join-Path $PSScriptRoot 'tutorial-video.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+$videoUrl=[string]$video.url
+if($videoUrl -and $videoUrl -notmatch '^https://github\.com/user-attachments/assets/[0-9a-fA-F-]{36}$'){throw 'Invalid GitHub video attachment URL'}
+if(-not $videoUrl -and -not $AllowPendingVideo){throw 'Upload the approved tutorial and set tutorial-video.json before generating public README files. Use -AllowPendingVideo for local preparation only.'}
 $catalog=Get-Content (Join-Path $PSScriptRoot 'layouts.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 $translations=Get-Content (Join-Path $PSScriptRoot 'readme-translations.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 $languages=[ordered]@{
@@ -22,6 +29,11 @@ foreach($code in $languages.Keys){
     $lines.Add($t.intro)
     $lines.Add($t.overview)
     $lines.Add('**['+$t.download+'](https://github.com/palmaner/angle-quotes-keyboards/releases/latest)** · ['+$t.issue+'](https://github.com/palmaner/angle-quotes-keyboards/issues)')
+    if(-not $t.videoTitle -or -not $t.videoNote){throw ('Missing video translation: '+$code)}
+    $lines.Add('## '+$t.videoTitle)
+    $lines.Add($t.videoNote)
+    if($videoUrl){$lines.Add('<'+$videoUrl+'>')}
+    else{$lines.Add('<!-- Video attachment pending upload approval. -->')}
     $lines.Add('## '+$t.choose)
     $lines.Add($t.chooseNote)
     $table=New-Object 'Collections.Generic.List[string]'

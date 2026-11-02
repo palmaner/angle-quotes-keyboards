@@ -8,6 +8,12 @@ Samlingen har **15 opprinnelige varianter og to eksperimentelle engelske variant
 
 **[Last ned tastaturer](https://github.com/palmaner/angle-quotes-keyboards/releases/latest)** · [Meld fra om et problem](https://github.com/palmaner/angle-quotes-keyboards/issues)
 
+## Videoveiledning
+
+Installasjon, et skriveeksempel med tastetrykk vist på skjermen og avinstallasjon. Teksten i videoen er på engelsk (1 min 40 s).
+
+<https://github.com/user-attachments/assets/929ffdb1-1dc7-4a61-92c1-566bd14acf4a>
+
 ## Velg oppsett
 
 Velg etter tastaturet du bruker, ikke bare nasjonaliteten din. Lenkene går til lokale instruksjoner med alle endrede plasseringer.

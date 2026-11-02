@@ -8,6 +8,12 @@ La colección incluye **15 variantes originales y dos inglesas experimentales: E
 
 **[Descargar teclados](https://github.com/palmaner/angle-quotes-keyboards/releases/latest)** · [Informar de un problema](https://github.com/palmaner/angle-quotes-keyboards/issues)
 
+## Vídeo tutorial
+
+Instalación, ejemplo de escritura con las pulsaciones visibles en pantalla y desinstalación. El vídeo tiene textos en inglés (1 min 40 s).
+
+<https://github.com/user-attachments/assets/929ffdb1-1dc7-4a61-92c1-566bd14acf4a>
+
 ## Elige tu distribución
 
 Elige según tu teclado habitual, no solo por nacionalidad. Los enlaces llevan a las instrucciones locales con todas las posiciones modificadas.

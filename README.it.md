@@ -8,6 +8,12 @@ La raccolta comprende **15 varianti originali e due inglesi sperimentali: Stati 
 
 **[Scarica le tastiere](https://github.com/palmaner/angle-quotes-keyboards/releases/latest)** · [Segnala un problema](https://github.com/palmaner/angle-quotes-keyboards/issues)
 
+## Video tutorial
+
+Installazione, esempio di scrittura con i tasti premuti visibili sullo schermo e disinstallazione. I testi del video sono in inglese (1 min 40 s).
+
+<https://github.com/user-attachments/assets/929ffdb1-1dc7-4a61-92c1-566bd14acf4a>
+
 ## Scegli la disposizione
 
 Scegli in base alla tastiera abituale, non soltanto alla nazionalità. I collegamenti portano alle istruzioni locali con tutte le posizioni modificate.

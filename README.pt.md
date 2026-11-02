@@ -8,6 +8,12 @@ A coleção inclui **15 variantes originais e duas inglesas experimentais: Estad
 
 **[Transferir teclados](https://github.com/palmaner/angle-quotes-keyboards/releases/latest)** · [Comunicar um problema](https://github.com/palmaner/angle-quotes-keyboards/issues)
 
+## Tutorial em vídeo
+
+Instalação, exemplo de escrita com as teclas premidas visíveis no ecrã e desinstalação. Os textos do vídeo estão em inglês (1 min 40 s).
+
+<https://github.com/user-attachments/assets/929ffdb1-1dc7-4a61-92c1-566bd14acf4a>
+
 ## Escolher a disposição
 
 Escolha de acordo com o teclado habitual, não apenas com a nacionalidade. As ligações apresentam as instruções locais e todas as posições alteradas.

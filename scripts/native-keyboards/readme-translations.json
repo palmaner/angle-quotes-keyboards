@@ -44,7 +44,9 @@
     "overview": "La colección incluye **15 variantes originales y dos inglesas experimentales: Estados Unidos y Reino Unido**.",
     "experimentalNote": "Las dos variantes inglesas sirven para probar las comillas angulares, no para proponer cambios en la puntuación inglesa. Usan los teclados estándar de Estados Unidos y Reino Unido; Alt derecho pasa a funcionar como AltGr. No son US-International ni UK Extended.",
     "experimentalLabel": "Experimental",
-    "maintainers": "Para desarrolladores (documentación en inglés): [compilar y verificar](docs/BUILD.md) / [comentarios y contribuciones](CONTRIBUTING.md)."
+    "maintainers": "Para desarrolladores (documentación en inglés): [compilar y verificar](docs/BUILD.md) / [comentarios y contribuciones](CONTRIBUTING.md).",
+    "videoTitle": "Vídeo tutorial",
+    "videoNote": "Instalación, ejemplo de escritura con las pulsaciones visibles en pantalla y desinstalación. El vídeo tiene textos en inglés (1 min 40 s)."
   },
   "fr": {
     "title": "Guillemets pour Windows",
@@ -91,7 +93,9 @@
     "overview": "La collection comprend **15 variantes originales et deux variantes anglaises expérimentales : États-Unis et Royaume-Uni**.",
     "experimentalNote": "Les deux variantes anglaises servent à essayer les guillemets, sans proposer de modifier la ponctuation anglaise. Elles utilisent les claviers américain et britannique standard ; Alt droit devient AltGr. Il ne s’agit pas de US-International ni de UK Extended.",
     "experimentalLabel": "Expérimental",
-    "maintainers": "Pour le développement (documentation en anglais) : [compiler et vérifier](docs/BUILD.md) / [retours et contributions](CONTRIBUTING.md)."
+    "maintainers": "Pour le développement (documentation en anglais) : [compiler et vérifier](docs/BUILD.md) / [retours et contributions](CONTRIBUTING.md).",
+    "videoTitle": "Tutoriel vidéo",
+    "videoNote": "Installation, exemple de saisie avec les touches pressées affichées à l’écran et désinstallation. Les textes de la vidéo sont en anglais (1 min 40 s)."
   },
   "de": {
     "title": "Guillemets für Windows",
@@ -138,7 +142,9 @@
     "overview": "Die Sammlung enthält **15 ursprüngliche Varianten und zwei experimentelle englische Varianten: USA und Vereinigtes Königreich**.",
     "experimentalNote": "Die beiden englischen Varianten dienen zum Ausprobieren von Guillemets, nicht als Vorschlag für eine neue englische Zeichensetzung. Sie verwenden die normalen US- und UK-Belegungen; die rechte Alt-Taste wird zu AltGr. Es handelt sich nicht um US-International oder UK Extended.",
     "experimentalLabel": "Experimentell",
-    "maintainers": "Für die Entwicklung (Dokumentation auf Englisch): [kompilieren und prüfen](docs/BUILD.md) / [Rückmeldungen und Beiträge](CONTRIBUTING.md)."
+    "maintainers": "Für die Entwicklung (Dokumentation auf Englisch): [kompilieren und prüfen](docs/BUILD.md) / [Rückmeldungen und Beiträge](CONTRIBUTING.md).",
+    "videoTitle": "Videoanleitung",
+    "videoNote": "Installation, ein Schreibbeispiel mit Anzeige der Tastendrücke und Deinstallation. Die Texte im Video sind auf Englisch (1 Min. 40 Sek.)."
   },
   "it": {
     "title": "Virgolette angolari per Windows",
@@ -185,7 +191,9 @@
     "overview": "La raccolta comprende **15 varianti originali e due inglesi sperimentali: Stati Uniti e Regno Unito**.",
     "experimentalNote": "Le due varianti inglesi servono a provare le virgolette angolari, non a proporre cambiamenti alla punteggiatura inglese. Usano le tastiere standard statunitense e britannica; Alt destro diventa AltGr. Non sono US-International o UK Extended.",
     "experimentalLabel": "Sperimentale",
-    "maintainers": "Per lo sviluppo (documentazione in inglese): [compilare e verificare](docs/BUILD.md) / [segnalazioni e contributi](CONTRIBUTING.md)."
+    "maintainers": "Per lo sviluppo (documentazione in inglese): [compilare e verificare](docs/BUILD.md) / [segnalazioni e contributi](CONTRIBUTING.md).",
+    "videoTitle": "Video tutorial",
+    "videoNote": "Installazione, esempio di scrittura con i tasti premuti visibili sullo schermo e disinstallazione. I testi del video sono in inglese (1 min 40 s)."
   },
   "pt": {
     "title": "Aspas angulares para Windows",
@@ -232,7 +240,9 @@
     "overview": "A coleção inclui **15 variantes originais e duas inglesas experimentais: Estados Unidos e Reino Unido**.",
     "experimentalNote": "As duas variantes inglesas servem para experimentar as aspas angulares, não para propor alterações à pontuação inglesa. Usam os teclados padrão dos EUA e do Reino Unido; Alt direito passa a funcionar como AltGr. Não são US-International nem UK Extended.",
     "experimentalLabel": "Experimental",
-    "maintainers": "Para desenvolvimento (documentação em inglês): [compilar e verificar](docs/BUILD.md) / [comentários e contribuições](CONTRIBUTING.md)."
+    "maintainers": "Para desenvolvimento (documentação em inglês): [compilar e verificar](docs/BUILD.md) / [comentários e contribuições](CONTRIBUTING.md).",
+    "videoTitle": "Tutorial em vídeo",
+    "videoNote": "Instalação, exemplo de escrita com as teclas premidas visíveis no ecrã e desinstalação. Os textos do vídeo estão em inglês (1 min 40 s)."
   },
   "nb": {
     "title": "Vinkelanførselstegn for Windows",
@@ -279,7 +289,9 @@
     "overview": "Samlingen har **15 opprinnelige varianter og to eksperimentelle engelske varianter: USA og Storbritannia**.",
     "experimentalNote": "De to engelske variantene er til utprøving av vinkelanførselstegn, ikke et forslag om å endre engelsk tegnsetting. De bruker standard US- og UK-oppsett; høyre Alt blir AltGr. Dette er ikke US-International eller UK Extended.",
     "experimentalLabel": "Eksperimentelt",
-    "maintainers": "For utvikling (dokumentasjon på engelsk): [bygg og kontroller](docs/BUILD.md) / [tilbakemeldinger og bidrag](CONTRIBUTING.md)."
+    "maintainers": "For utvikling (dokumentasjon på engelsk): [bygg og kontroller](docs/BUILD.md) / [tilbakemeldinger og bidrag](CONTRIBUTING.md).",
+    "videoTitle": "Videoveiledning",
+    "videoNote": "Installasjon, et skriveeksempel med tastetrykk vist på skjermen og avinstallasjon. Teksten i videoen er på engelsk (1 min 40 s)."
   },
   "da": {
     "title": "Vinkelanførselstegn til Windows",
@@ -326,7 +338,9 @@
     "overview": "Samlingen indeholder **15 oprindelige varianter og to eksperimentelle engelske varianter: USA og Storbritannien**.",
     "experimentalNote": "De to engelske varianter er til afprøvning af vinkelanførselstegn, ikke et forslag om at ændre engelsk tegnsætning. De bruger standard US- og UK-layouts; højre Alt bliver AltGr. Det er ikke US-International eller UK Extended.",
     "experimentalLabel": "Eksperimentelt",
-    "maintainers": "Til udvikling (dokumentation på engelsk): [byg og kontrollér](docs/BUILD.md) / [tilbagemeldinger og bidrag](CONTRIBUTING.md)."
+    "maintainers": "Til udvikling (dokumentation på engelsk): [byg og kontrollér](docs/BUILD.md) / [tilbagemeldinger og bidrag](CONTRIBUTING.md).",
+    "videoTitle": "Videovejledning",
+    "videoNote": "Installation, et skriveeksempel med tastetryk vist på skærmen og afinstallation. Teksten i videoen er på engelsk (1 min 40 s)."
   },
   "ru": {
     "title": "Угловые кавычки для Windows",
@@ -373,7 +387,9 @@
     "overview": "В наборе **15 исходных вариантов и два экспериментальных английских: США и Великобритания**.",
     "experimentalNote": "Два английских варианта предназначены для проверки угловых кавычек, а не для изменения английской пунктуации. Они используют стандартные раскладки US и UK; правый Alt становится AltGr. Это не US-International и не UK Extended.",
     "experimentalLabel": "Экспериментальные",
-    "maintainers": "Для разработки (документация на английском): [сборка и проверка](docs/BUILD.md) / [отзывы и участие](CONTRIBUTING.md)."
+    "maintainers": "Для разработки (документация на английском): [сборка и проверка](docs/BUILD.md) / [отзывы и участие](CONTRIBUTING.md).",
+    "videoTitle": "Видеоруководство",
+    "videoNote": "Установка, пример ввода с отображением нажатий клавиш на экране и удаление. Текст в видео на английском языке (1 мин 40 с)."
   },
   "uk": {
     "title": "Кутові лапки для Windows",
@@ -420,7 +436,9 @@
     "overview": "Набір містить **15 початкових варіантів і два експериментальні англійські: США та Велика Британія**.",
     "experimentalNote": "Два англійські варіанти призначено для перевірки кутових лапок, а не для зміни англійської пунктуації. Вони використовують стандартні розкладки US і UK; правий Alt стає AltGr. Це не US-International і не UK Extended.",
     "experimentalLabel": "Експериментальні",
-    "maintainers": "Для розробки (документація англійською): [збирання й перевірка](docs/BUILD.md) / [відгуки та внески](CONTRIBUTING.md)."
+    "maintainers": "Для розробки (документація англійською): [збирання й перевірка](docs/BUILD.md) / [відгуки та внески](CONTRIBUTING.md).",
+    "videoTitle": "Відеопосібник",
+    "videoNote": "Встановлення, приклад введення з відображенням натискань клавіш на екрані та видалення. Текст у відео англійською мовою (1 хв 40 с)."
   },
   "be": {
     "title": "Вуглавыя двукоссі для Windows",
@@ -467,7 +485,9 @@
     "overview": "Набор змяшчае **15 зыходных варыянтаў і два эксперыментальныя англійскія: ЗША і Вялікабрытанія**.",
     "experimentalNote": "Два англійскія варыянты прызначаны для праверкі вуглавых двукоссяў, а не для змены англійскай пунктуацыі. Яны выкарыстоўваюць стандартныя раскладкі US і UK; правы Alt становіцца AltGr. Гэта не US-International і не UK Extended.",
     "experimentalLabel": "Эксперыментальныя",
-    "maintainers": "Для распрацоўкі (дакументацыя па-англійску): [зборка і праверка](docs/BUILD.md) / [водгукі і ўдзел](CONTRIBUTING.md)."
+    "maintainers": "Для распрацоўкі (дакументацыя па-англійску): [зборка і праверка](docs/BUILD.md) / [водгукі і ўдзел](CONTRIBUTING.md).",
+    "videoTitle": "Відэаінструкцыя",
+    "videoNote": "Усталяванне, прыклад уводу з паказам націсканняў клавіш на экране і выдаленне. Тэкст у відэа на англійскай мове (1 хв 40 с)."
   },
   "en": {
     "title": "Angle Quotes for Windows",
@@ -514,6 +534,8 @@
     "practice": "I have included [practice collections](practice/README.md) in the supported languages, with angle quotes used in complete sentences. The categories describe **paragraph length**, not file size or story length: short paragraphs are usually around 10–25 words, medium paragraphs 25–50, and long paragraphs 80–120. Blank lines separate paragraphs; several may belong to the same story. Paste one paragraph or a whole collection into Monkeytype's **custom** mode. Each individual ZIP includes `practice/short.txt`, `practice/medium.txt`, `practice/long.txt` and a combined `practice.txt`.\n\n**These fictional texts were generated with AI for practice and may contain errors.** They are exercises, not language or punctuation references. The English examples deliberately use angle quotes for testing.",
     "statusTitle": "Testing and feedback",
     "status": "I have tried five of the original layouts on my laptop and they work, although signing out was sometimes necessary. I have not manually tested all 17 layouts, including the two experimental English variants. Automated checks cover character tables, accents and display names across x86, x64 and WOW64.\n\nI maintain this project. To report a problem, open an issue with your Windows version, the layout name, the shortcut, what happened and whether signing out helped.\n\nv0.2.1: I successfully tested Spanish (Spain) in a newly created account: installation, enabling/disabling the default, persistence after sign-out or restart, and uninstall. I removed the older per-user installation first. I have not manually tested the other 16 layouts or every Windows configuration; the translations have not received independent linguistic review. The final rebuild adds visible version information to the tested logic.",
-    "license": "Built with [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). My original code and modifications are available under the [MIT License](LICENSE). Microsoft components retain their own terms; see [third-party notices](THIRD_PARTY_NOTICES.md)."
+    "license": "Built with [Microsoft Keyboard Layout Creator 1.4](https://www.microsoft.com/en-us/download/details.aspx?id=102134). My original code and modifications are available under the [MIT License](LICENSE). Microsoft components retain their own terms; see [third-party notices](THIRD_PARTY_NOTICES.md).",
+    "videoTitle": "Video tutorial",
+    "videoNote": "Installation, a typing example with keystrokes shown on screen, and uninstallation. The video has English text (1 min 40 s)."
   }
 }

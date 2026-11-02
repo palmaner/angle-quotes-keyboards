@@ -8,6 +8,12 @@ The collection includes **15 original variants and two experimental English vari
 
 **[Download keyboards](https://github.com/palmaner/angle-quotes-keyboards/releases/latest)** · [Report a problem](https://github.com/palmaner/angle-quotes-keyboards/issues)
 
+## Video tutorial
+
+Installation, a typing example with keystrokes shown on screen, and uninstallation. The video has English text (1 min 40 s).
+
+<https://github.com/user-attachments/assets/929ffdb1-1dc7-4a61-92c1-566bd14acf4a>
+
 ## Choose your layout
 
 Choose by your existing keyboard layout, rather than nationality. The linked instructions use the corresponding language and list every changed position and displaced symbol.
