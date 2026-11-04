@@ -2,7 +2,7 @@
 
 [Español](README.es.md) · [English](README.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Italiano](README.it.md) · [Português](README.pt.md) · [Norsk bokmål](README.nb.md) · [Dansk](README.da.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Беларуская](README.be.md)
 
-Criei estas 17 disposições nativas para escrever aspas angulares com AltGr, mantendo o teclado original sem AutoHotkey nem aplicações em segundo plano.
+Criei estas 17 disposições nativas para escrever aspas angulares (« »), também chamadas aspas francesas, com AltGr, mantendo o teclado original sem AutoHotkey nem aplicações em segundo plano.
 
 A coleção inclui **15 variantes originais e duas inglesas experimentais: Estados Unidos e Reino Unido**.
 

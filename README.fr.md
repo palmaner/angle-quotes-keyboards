@@ -16,7 +16,7 @@ Installation, exemple de saisie avec les touches pressées affichées à l’éc
 
 ## Choisir une disposition
 
-Choisissez selon votre clavier habituel, pas seulement votre nationalité. Les liens donnent accès aux instructions locales et à toutes les positions modifiées.
+Choisissez selon votre clavier habituel, pas seulement votre nationalité. Les liens donnent accès aux instructions locales et à toutes les positions modifiées. Je n’ai pas inclus le français de France : depuis Windows 11 version 24H2, la disposition moderne « Français (Standard, AZERTY) » permet déjà de saisir les guillemets français. Elle est distincte de l’ancienne disposition AZERTY française ; les variantes de français belge et de français suisse restent incluses ici. Voir la [documentation de Microsoft en anglais](https://github.com/MicrosoftDocs/globalization/blob/main/globalization/keyboards/AZERTY_English.md).
 
 | Dispositions et instructions | Ouverture | Fermeture |
 | --- | --- | --- |

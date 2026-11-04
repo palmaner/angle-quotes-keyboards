@@ -2,7 +2,7 @@
 
 [Español](README.es.md) · [English](README.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Italiano](README.it.md) · [Português](README.pt.md) · [Norsk bokmål](README.nb.md) · [Dansk](README.da.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Беларуская](README.be.md)
 
-He creado estas 17 distribuciones nativas para escribir comillas angulares con AltGr, conservando el teclado original y sin AutoHotkey ni aplicaciones en segundo plano.
+He creado estas 17 distribuciones nativas para escribir comillas angulares (« »), también llamadas comillas latinas o españolas, con AltGr, conservando el teclado original y sin AutoHotkey ni aplicaciones en segundo plano.
 
 La colección incluye **15 variantes originales y dos inglesas experimentales: Estados Unidos y Reino Unido**.
 

@@ -2,7 +2,7 @@
 
 [Español](README.es.md) · [English](README.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Italiano](README.it.md) · [Português](README.pt.md) · [Norsk bokmål](README.nb.md) · [Dansk](README.da.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Беларуская](README.be.md)
 
-Ich habe diese 17 nativen Belegungen erstellt, um Guillemets mit AltGr zu tippen. Die ursprüngliche Tastatur bleibt erhalten; AutoHotkey oder Hintergrundprogramme sind nicht nötig.
+Ich habe diese 17 nativen Belegungen erstellt, um Guillemets (französische Anführungszeichen) mit AltGr zu tippen. Die ursprüngliche Tastatur bleibt erhalten; AutoHotkey oder Hintergrundprogramme sind nicht nötig.
 
 Die Sammlung enthält **15 ursprüngliche Varianten und zwei experimentelle englische Varianten: USA und Vereinigtes Königreich**.
 

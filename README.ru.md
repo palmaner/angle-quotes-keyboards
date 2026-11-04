@@ -2,7 +2,7 @@
 
 [Español](README.es.md) · [English](README.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Italiano](README.it.md) · [Português](README.pt.md) · [Norsk bokmål](README.nb.md) · [Dansk](README.da.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Беларуская](README.be.md)
 
-Я создал эти 17 встроенных раскладок, чтобы вводить угловые кавычки с AltGr, сохраняя исходную клавиатуру без AutoHotkey и фоновых приложений.
+Я создал эти 17 встроенных раскладок, чтобы вводить угловые кавычки (« »), также известные как кавычки-ёлочки, с AltGr, сохраняя исходную клавиатуру без AutoHotkey и фоновых приложений.
 
 В наборе **15 исходных вариантов и два экспериментальных английских: США и Великобритания**.
 

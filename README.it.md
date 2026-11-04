@@ -2,7 +2,7 @@
 
 [Español](README.es.md) · [English](README.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Italiano](README.it.md) · [Português](README.pt.md) · [Norsk bokmål](README.nb.md) · [Dansk](README.da.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Беларуская](README.be.md)
 
-Ho creato queste 17 disposizioni native per scrivere le virgolette angolari con AltGr, mantenendo la tastiera originale senza AutoHotkey né applicazioni in background.
+Ho creato queste 17 disposizioni native per scrivere le virgolette angolari (« »), dette anche virgolette caporali, con AltGr, mantenendo la tastiera originale senza AutoHotkey né applicazioni in background.
 
 La raccolta comprende **15 varianti originali e due inglesi sperimentali: Stati Uniti e Regno Unito**.
 

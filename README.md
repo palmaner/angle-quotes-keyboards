@@ -2,7 +2,7 @@
 
 [Español](README.es.md) · [English](README.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Italiano](README.it.md) · [Português](README.pt.md) · [Norsk bokmål](README.nb.md) · [Dansk](README.da.md) · [Русский](README.ru.md) · [Українська](README.uk.md) · [Беларуская](README.be.md)
 
-I created these 17 native Windows keyboard layouts to make «angle quotes» easy to type with AltGr. Each package keeps its original keyboard and adds the combinations below, without AutoHotkey or an app running in the background.
+I created these 17 native Windows keyboard layouts to make «angle quotes» (guillemets) easy to type with AltGr. Each package keeps its original keyboard and adds the combinations below, without AutoHotkey or an app running in the background.
 
 The collection includes **15 original variants and two experimental English variants: United States and United Kingdom**.
 
@@ -16,7 +16,7 @@ Installation, a typing example with keystrokes shown on screen, and uninstallati
 
 ## Choose your layout
 
-Choose by your existing keyboard layout, rather than nationality. The linked instructions use the corresponding language and list every changed position and displaced symbol.
+Choose by your existing keyboard layout, rather than nationality. The linked instructions use the corresponding language and list every changed position and displaced symbol. I have deliberately left out French (France) because Windows 11 version 24H2 introduced the modern French (Standard, AZERTY) layout, which already includes « ». This is distinct from the legacy French AZERTY layout; the Belgian French and Swiss French variants remain included here. See [Microsoft documentation](https://github.com/MicrosoftDocs/globalization/blob/main/globalization/keyboards/AZERTY_English.md).
 
 | Layouts and local instructions | Opening | Closing |
 | --- | --- | --- |

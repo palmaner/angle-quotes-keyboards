@@ -1,7 +1,7 @@
 ﻿{
   "es": {
     "title": "Comillas angulares para Windows",
-    "intro": "He creado estas 17 distribuciones nativas para escribir comillas angulares con AltGr, conservando el teclado original y sin AutoHotkey ni aplicaciones en segundo plano.",
+    "intro": "He creado estas 17 distribuciones nativas para escribir comillas angulares (« »), también llamadas comillas latinas o españolas, con AltGr, conservando el teclado original y sin AutoHotkey ni aplicaciones en segundo plano.",
     "download": "Descargar teclados",
     "issue": "Informar de un problema",
     "choose": "Elige tu distribución",
@@ -54,7 +54,7 @@
     "download": "Télécharger les claviers",
     "issue": "Signaler un problème",
     "choose": "Choisir une disposition",
-    "chooseNote": "Choisissez selon votre clavier habituel, pas seulement votre nationalité. Les liens donnent accès aux instructions locales et à toutes les positions modifiées.",
+    "chooseNote": "Choisissez selon votre clavier habituel, pas seulement votre nationalité. Les liens donnent accès aux instructions locales et à toutes les positions modifiées. Je n’ai pas inclus le français de France : depuis Windows 11 version 24H2, la disposition moderne « Français (Standard, AZERTY) » permet déjà de saisir les guillemets français. Elle est distincte de l’ancienne disposition AZERTY française ; les variantes de français belge et de français suisse restent incluses ici. Voir la [documentation de Microsoft en anglais](https://github.com/MicrosoftDocs/globalization/blob/main/globalization/keyboards/AZERTY_English.md).",
     "columns": [
       "Dispositions et instructions",
       "Ouverture",
@@ -99,7 +99,7 @@
   },
   "de": {
     "title": "Guillemets für Windows",
-    "intro": "Ich habe diese 17 nativen Belegungen erstellt, um Guillemets mit AltGr zu tippen. Die ursprüngliche Tastatur bleibt erhalten; AutoHotkey oder Hintergrundprogramme sind nicht nötig.",
+    "intro": "Ich habe diese 17 nativen Belegungen erstellt, um Guillemets (französische Anführungszeichen) mit AltGr zu tippen. Die ursprüngliche Tastatur bleibt erhalten; AutoHotkey oder Hintergrundprogramme sind nicht nötig.",
     "download": "Tastaturen herunterladen",
     "issue": "Problem melden",
     "choose": "Belegung auswählen",
@@ -148,7 +148,7 @@
   },
   "it": {
     "title": "Virgolette angolari per Windows",
-    "intro": "Ho creato queste 17 disposizioni native per scrivere le virgolette angolari con AltGr, mantenendo la tastiera originale senza AutoHotkey né applicazioni in background.",
+    "intro": "Ho creato queste 17 disposizioni native per scrivere le virgolette angolari (« »), dette anche virgolette caporali, con AltGr, mantenendo la tastiera originale senza AutoHotkey né applicazioni in background.",
     "download": "Scarica le tastiere",
     "issue": "Segnala un problema",
     "choose": "Scegli la disposizione",
@@ -197,7 +197,7 @@
   },
   "pt": {
     "title": "Aspas angulares para Windows",
-    "intro": "Criei estas 17 disposições nativas para escrever aspas angulares com AltGr, mantendo o teclado original sem AutoHotkey nem aplicações em segundo plano.",
+    "intro": "Criei estas 17 disposições nativas para escrever aspas angulares (« »), também chamadas aspas francesas, com AltGr, mantendo o teclado original sem AutoHotkey nem aplicações em segundo plano.",
     "download": "Transferir teclados",
     "issue": "Comunicar um problema",
     "choose": "Escolher a disposição",
@@ -344,7 +344,7 @@
   },
   "ru": {
     "title": "Угловые кавычки для Windows",
-    "intro": "Я создал эти 17 встроенных раскладок, чтобы вводить угловые кавычки с AltGr, сохраняя исходную клавиатуру без AutoHotkey и фоновых приложений.",
+    "intro": "Я создал эти 17 встроенных раскладок, чтобы вводить угловые кавычки (« »), также известные как кавычки-ёлочки, с AltGr, сохраняя исходную клавиатуру без AutoHotkey и фоновых приложений.",
     "download": "Скачать клавиатуры",
     "issue": "Сообщить о проблеме",
     "choose": "Выбор раскладки",
@@ -393,7 +393,7 @@
   },
   "uk": {
     "title": "Кутові лапки для Windows",
-    "intro": "Я створив ці 17 вбудованих розкладок, щоб вводити кутові лапки за допомогою AltGr, зберігаючи початкову клавіатуру без AutoHotkey і фонових програм.",
+    "intro": "Я створив ці 17 вбудованих розкладок, щоб вводити кутові лапки (« »), або «лапки-ялинки», за допомогою AltGr, зберігаючи початкову клавіатуру без AutoHotkey і фонових програм.",
     "download": "Завантажити клавіатури",
     "issue": "Повідомити про проблему",
     "choose": "Вибір розкладки",
@@ -442,7 +442,7 @@
   },
   "be": {
     "title": "Вуглавыя двукоссі для Windows",
-    "intro": "Я стварыў гэтыя 17 убудаваных раскладак, каб уводзіць вуглавыя двукоссі праз AltGr, захоўваючы зыходную клавіятуру без AutoHotkey і фонавых праграм.",
+    "intro": "Я стварыў гэтыя 17 убудаваных раскладак, каб уводзіць вуглавыя двукоссі (« »), так званыя «елачкі», праз AltGr, захоўваючы зыходную клавіятуру без AutoHotkey і фонавых праграм.",
     "download": "Спампаваць клавіятуры",
     "issue": "Паведаміць пра праблему",
     "choose": "Выбар раскладкі",
@@ -491,7 +491,7 @@
   },
   "en": {
     "title": "Angle Quotes for Windows",
-    "intro": "I created these 17 native Windows keyboard layouts to make «angle quotes» easy to type with AltGr. Each package keeps its original keyboard and adds the combinations below, without AutoHotkey or an app running in the background.",
+    "intro": "I created these 17 native Windows keyboard layouts to make «angle quotes» (guillemets) easy to type with AltGr. Each package keeps its original keyboard and adds the combinations below, without AutoHotkey or an app running in the background.",
     "overview": "The collection includes **15 original variants and two experimental English variants: United States and United Kingdom**.",
     "experimentalNote": "The two English variants are for trying angle quotes, not a proposal to change standard English punctuation. They use the standard US and UK layouts; right Alt becomes AltGr. They are not US-International or UK Extended.",
     "experimentalLabel": "Experimental",
@@ -499,7 +499,7 @@
     "download": "Download keyboards",
     "issue": "Report a problem",
     "choose": "Choose your layout",
-    "chooseNote": "Choose by your existing keyboard layout, rather than nationality. The linked instructions use the corresponding language and list every changed position and displaced symbol.",
+    "chooseNote": "Choose by your existing keyboard layout, rather than nationality. The linked instructions use the corresponding language and list every changed position and displaced symbol. I have deliberately left out French (France): Windows 11 version 24H2 introduced the modern French (Standard, AZERTY) layout, which already includes « ». This is distinct from the legacy French AZERTY layout; the Belgian French and Swiss French variants remain included here. See [Microsoft documentation](https://github.com/MicrosoftDocs/globalization/blob/main/globalization/keyboards/AZERTY_English.md).",
     "columns": [
       "Layouts and local instructions",
       "Opening",
